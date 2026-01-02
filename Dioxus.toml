@@ -1,0 +1,16 @@
+[application]
+name = "pounds-consulting"
+default_platform = "web"
+
+[web.app]
+title = "Pounds Consulting | Technical Solutions for Growing Businesses"
+
+[web.watcher]
+reload_html = true
+watch_path = ["src", "assets"]
+
+[web.resource.dev]
+style = ["assets/main.css"]
+
+[web.resource.release]
+style = ["assets/main.css"]

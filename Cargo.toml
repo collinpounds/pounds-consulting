@@ -1,0 +1,9 @@
+[package]
+name = "pounds-consulting"
+version = "0.1.0"
+edition = "2021"
+description = "Pounds Consulting Website - Technical Solutions for Growing Businesses"
+authors = ["Collin Pounds <collin@poundsconsulting.net>"]
+
+[dependencies]
+dioxus = { version = "0.7", features = ["web", "router"] }
