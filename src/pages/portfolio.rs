@@ -18,7 +18,7 @@ pub fn Portfolio() -> Element {
         section { class: "section portfolio-section",
             div { class: "container",
                 div { class: "portfolio-grid",
-                    // Club Car Wash
+                    // Club Car Wash (no external link)
                     div { class: "portfolio-card glass-card",
                         div { class: "portfolio-header",
                             h3 { class: "portfolio-title", "Club Car Wash" }
@@ -41,111 +41,123 @@ pub fn Portfolio() -> Element {
                     }
 
                     // Old Hawthorne
-                    div { class: "portfolio-card glass-card",
-                        div { class: "portfolio-header",
-                            h3 { class: "portfolio-title", "Old Hawthorne Country Club" }
-                            span { class: "portfolio-type", "Website Development" }
-                        }
-                        p { class: "portfolio-description",
-                            "Professional website for an upscale country club community in Columbia, Missouri. Clean, elegant design reflecting the club's brand with member-focused functionality."
-                        }
-                        div { class: "portfolio-tech",
-                            span { class: "tech-tag", "HTML/CSS/JS" }
-                            span { class: "tech-tag", "Responsive" }
-                            span { class: "tech-tag", "SEO" }
-                        }
-                        a { href: "https://oldhawthorne.com", target: "_blank", class: "portfolio-link",
-                            "Visit Site →"
+                    a { href: "https://oldhawthorne.com", target: "_blank", rel: "noopener noreferrer", class: "portfolio-card-link",
+                        div { class: "portfolio-card glass-card",
+                            div { class: "portfolio-header",
+                                h3 { class: "portfolio-title", "Old Hawthorne Country Club" }
+                                span { class: "portfolio-type", "Website Development" }
+                            }
+                            p { class: "portfolio-description",
+                                "Professional website for an upscale country club community in Columbia, Missouri. Clean, elegant design reflecting the club's brand with member-focused functionality."
+                            }
+                            div { class: "portfolio-tech",
+                                span { class: "tech-tag", "HTML/CSS/JS" }
+                                span { class: "tech-tag", "Responsive" }
+                                span { class: "tech-tag", "SEO" }
+                            }
+                            span { class: "portfolio-link btn btn-primary",
+                                "Visit Site →"
+                            }
                         }
                     }
 
                     // Gracie Humaita Columbia
-                    div { class: "portfolio-card glass-card",
-                        div { class: "portfolio-header",
-                            h3 { class: "portfolio-title", "Gracie Humaita Columbia" }
-                            span { class: "portfolio-type", "Website Development" }
-                        }
-                        p { class: "portfolio-description",
-                            "Website for a Brazilian Jiu-Jitsu academy. Designed to showcase class schedules, instructor profiles, and drive new student sign-ups."
-                        }
-                        div { class: "portfolio-tech",
-                            span { class: "tech-tag", "Mobile-First" }
-                            span { class: "tech-tag", "Lead Capture" }
-                        }
-                        a { href: "https://graciehumaitacolumbia.com", target: "_blank", class: "portfolio-link",
-                            "Visit Site →"
+                    a { href: "https://graciehumaitacolumbia.com", target: "_blank", rel: "noopener noreferrer", class: "portfolio-card-link",
+                        div { class: "portfolio-card glass-card",
+                            div { class: "portfolio-header",
+                                h3 { class: "portfolio-title", "Gracie Humaita Columbia" }
+                                span { class: "portfolio-type", "Website Development" }
+                            }
+                            p { class: "portfolio-description",
+                                "Website for a Brazilian Jiu-Jitsu academy. Designed to showcase class schedules, instructor profiles, and drive new student sign-ups."
+                            }
+                            div { class: "portfolio-tech",
+                                span { class: "tech-tag", "Mobile-First" }
+                                span { class: "tech-tag", "Lead Capture" }
+                            }
+                            span { class: "portfolio-link btn btn-primary",
+                                "Visit Site →"
+                            }
                         }
                     }
 
                     // ATT Indianapolis
-                    div { class: "portfolio-card glass-card",
-                        div { class: "portfolio-header",
-                            h3 { class: "portfolio-title", "ATT Indianapolis" }
-                            span { class: "portfolio-type", "Website Development" }
-                        }
-                        p { class: "portfolio-description",
-                            "Professional website build for a martial arts training facility. Focus on clean presentation and easy navigation for prospective students."
-                        }
-                        div { class: "portfolio-tech",
-                            span { class: "tech-tag", "Responsive" }
-                            span { class: "tech-tag", "SEO" }
-                        }
-                        a { href: "https://attindianapolis.com", target: "_blank", class: "portfolio-link",
-                            "Visit Site →"
+                    a { href: "https://attindianapolis.com", target: "_blank", rel: "noopener noreferrer", class: "portfolio-card-link",
+                        div { class: "portfolio-card glass-card",
+                            div { class: "portfolio-header",
+                                h3 { class: "portfolio-title", "ATT Indianapolis" }
+                                span { class: "portfolio-type", "Website Development" }
+                            }
+                            p { class: "portfolio-description",
+                                "Professional website build for a martial arts training facility. Focus on clean presentation and easy navigation for prospective students."
+                            }
+                            div { class: "portfolio-tech",
+                                span { class: "tech-tag", "Responsive" }
+                                span { class: "tech-tag", "SEO" }
+                            }
+                            span { class: "portfolio-link btn btn-primary",
+                                "Visit Site →"
+                            }
                         }
                     }
 
                     // Apex Earthwork
-                    div { class: "portfolio-card glass-card",
-                        div { class: "portfolio-header",
-                            h3 { class: "portfolio-title", "Apex Earthwork" }
-                            span { class: "portfolio-type", "Website Development" }
-                        }
-                        p { class: "portfolio-description",
-                            "Business website for an earthwork and excavation company. Professional presentation designed to generate leads and showcase capabilities."
-                        }
-                        div { class: "portfolio-tech",
-                            span { class: "tech-tag", "Lead Gen" }
-                            span { class: "tech-tag", "Mobile" }
-                        }
-                        a { href: "https://apexearthwork.com", target: "_blank", class: "portfolio-link",
-                            "Visit Site →"
+                    a { href: "https://apexearthwork.com", target: "_blank", rel: "noopener noreferrer", class: "portfolio-card-link",
+                        div { class: "portfolio-card glass-card",
+                            div { class: "portfolio-header",
+                                h3 { class: "portfolio-title", "Apex Earthwork" }
+                                span { class: "portfolio-type", "Website Development" }
+                            }
+                            p { class: "portfolio-description",
+                                "Business website for an earthwork and excavation company. Professional presentation designed to generate leads and showcase capabilities."
+                            }
+                            div { class: "portfolio-tech",
+                                span { class: "tech-tag", "Lead Gen" }
+                                span { class: "tech-tag", "Mobile" }
+                            }
+                            span { class: "portfolio-link btn btn-primary",
+                                "Visit Site →"
+                            }
                         }
                     }
 
                     // Missouri Jiu Jitsu
-                    div { class: "portfolio-card glass-card",
-                        div { class: "portfolio-header",
-                            h3 { class: "portfolio-title", "Missouri Jiu Jitsu" }
-                            span { class: "portfolio-type", "Website Development" }
-                        }
-                        p { class: "portfolio-description",
-                            "Website for a jiu-jitsu academy featuring class information, instructor bios, and membership inquiry functionality."
-                        }
-                        div { class: "portfolio-tech",
-                            span { class: "tech-tag", "Responsive" }
-                            span { class: "tech-tag", "Forms" }
-                        }
-                        a { href: "https://missourijiujitsu.com", target: "_blank", class: "portfolio-link",
-                            "Visit Site →"
+                    a { href: "https://missourijiujitsu.com", target: "_blank", rel: "noopener noreferrer", class: "portfolio-card-link",
+                        div { class: "portfolio-card glass-card",
+                            div { class: "portfolio-header",
+                                h3 { class: "portfolio-title", "Missouri Jiu Jitsu" }
+                                span { class: "portfolio-type", "Website Development" }
+                            }
+                            p { class: "portfolio-description",
+                                "Website for a jiu-jitsu academy featuring class information, instructor bios, and membership inquiry functionality."
+                            }
+                            div { class: "portfolio-tech",
+                                span { class: "tech-tag", "Responsive" }
+                                span { class: "tech-tag", "Forms" }
+                            }
+                            span { class: "portfolio-link btn btn-primary",
+                                "Visit Site →"
+                            }
                         }
                     }
 
                     // Delaware Krav Maga
-                    div { class: "portfolio-card glass-card",
-                        div { class: "portfolio-header",
-                            h3 { class: "portfolio-title", "Delaware Krav Maga" }
-                            span { class: "portfolio-type", "Website Development" }
-                        }
-                        p { class: "portfolio-description",
-                            "Professional website for a Krav Maga self-defense training center. Clear presentation of programs with strong calls-to-action for new students."
-                        }
-                        div { class: "portfolio-tech",
-                            span { class: "tech-tag", "Mobile-First" }
-                            span { class: "tech-tag", "Lead Capture" }
-                        }
-                        a { href: "https://delawarekravmaga.com", target: "_blank", class: "portfolio-link",
-                            "Visit Site →"
+                    a { href: "https://delawarekravmaga.com", target: "_blank", rel: "noopener noreferrer", class: "portfolio-card-link",
+                        div { class: "portfolio-card glass-card",
+                            div { class: "portfolio-header",
+                                h3 { class: "portfolio-title", "Delaware Krav Maga" }
+                                span { class: "portfolio-type", "Website Development" }
+                            }
+                            p { class: "portfolio-description",
+                                "Professional website for a Krav Maga self-defense training center. Clear presentation of programs with strong calls-to-action for new students."
+                            }
+                            div { class: "portfolio-tech",
+                                span { class: "tech-tag", "Mobile-First" }
+                                span { class: "tech-tag", "Lead Capture" }
+                            }
+                            span { class: "portfolio-link btn btn-primary",
+                                "Visit Site →"
+                            }
                         }
                     }
                 }

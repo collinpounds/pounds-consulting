@@ -1,9 +1,13 @@
 [application]
 name = "pounds-consulting"
 default_platform = "web"
+asset_dir = "assets"
 
 [web.app]
 title = "Pounds Consulting | Technical Solutions for Growing Businesses"
+
+[web.wasm_opt]
+level = "0"
 
 [web.watcher]
 reload_html = true

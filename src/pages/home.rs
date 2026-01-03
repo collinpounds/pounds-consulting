@@ -8,16 +8,19 @@ pub fn Home() -> Element {
         // Hero Section
         section { class: "hero",
             div { class: "hero-content",
-                h1 { class: "hero-title", "We Can Help" }
+                h1 { class: "hero-title", "Your Technical Partner" }
                 p { class: "hero-subtitle",
-                    "Technical consulting for businesses that want solutions, not complexity. Based in Missouri, serving clients nationwide."
+                    "Not a vendor. Not an agency. A partner who treats your business like it matters."
+                }
+                p { class: "hero-body",
+                    "We work alongside you to build websites, fix technical problems, and make smart technology decisions. Direct communication. Honest advice. Work that lasts."
                 }
                 a {
                     href: "https://calendar.app.google/LNasBbmDr8LXNEuu5",
                     target: "_blank",
                     rel: "noopener noreferrer",
                     class: "btn btn-primary btn-large",
-                    "Let's Meet"
+                    "Let's Talk"
                 }
             }
             div { class: "hero-decoration" }
@@ -29,13 +32,13 @@ pub fn Home() -> Element {
                 h2 { class: "section-title", "Technology Should Work for You" }
                 div { class: "intro-content glass-card",
                     p {
-                        "Most businesses don't need more software. They need the right software, built correctly, with someone who keeps things simple and user-friendly."
+                        "Most businesses don't need more software. They need the right software, built correctly, by someone who keeps things simple."
                     }
                     p {
-                        "Pounds Consulting exists to bridge the gap between your business goals and the technical work required to get there. No jargon. No overengineered solutions. Just common sense and clean execution."
+                        "We help you figure out what you actually need, build it right, and make sure it keeps working. No jargon. No overcomplicated solutions. Just common sense and clean work."
                     }
                     p {
-                        "Whether you're launching a new product, fixing something that's broken, or trying to figure out what to build next—we can help you get there faster and with less headache."
+                        "Whether you're starting something new, fixing something broken, or just trying to figure out where to start, we can help."
                     }
                 }
             }
@@ -48,22 +51,22 @@ pub fn Home() -> Element {
                 div { class: "services-grid",
                     ServiceCard {
                         title: "Website Development".to_string(),
-                        description: "Build a web presence that actually works. From simple business sites to custom web applications, we design and develop solutions that load fast, look sharp, and convert visitors into customers.".to_string(),
+                        description: "We build websites that load fast, look professional, and turn visitors into customers. No templates. No bloat. Just clean, custom work.".to_string(),
                         icon: "🌐".to_string()
                     }
                     ServiceCard {
                         title: "Digital Marketing".to_string(),
-                        description: "Build a web presence without the mess. We manage Email, SMS, Phone, Customer Intake, Scheduling, Membership. We build the digital marketing structure and then integrate the funnel directly into your operation.".to_string(),
+                        description: "Email, SMS, scheduling, customer intake, memberships. We set up the systems that bring in leads and keep customers coming back.".to_string(),
                         icon: "📱".to_string()
                     }
                     ServiceCard {
                         title: "Technical Strategy".to_string(),
-                        description: "Not sure what you need? We help you figure it out. Product roadmaps, technology evaluations, vendor selection—you get an expert perspective before you commit resources.".to_string(),
+                        description: "Not sure what you need? We help you figure it out before you spend money on the wrong thing. Honest advice, no sales pitch.".to_string(),
                         icon: "🎯".to_string()
                     }
                     ServiceCard {
                         title: "Business Solutions".to_string(),
-                        description: "Software integrations, workflow automation, data migrations. We solve the technical problems that slow your business down so you can focus on growth.".to_string(),
+                        description: "Connect your software, automate repetitive tasks, move data between systems. We fix the technical problems that slow you down.".to_string(),
                         icon: "⚡".to_string()
                     }
                 }
@@ -82,23 +85,30 @@ pub fn Home() -> Element {
                 div { class: "why-grid",
                     div { class: "why-card glass-card",
                         div { class: "why-icon", "✨" }
-                        h3 { class: "why-title", "Keep it simple." }
+                        h3 { class: "why-title", "We keep it simple" }
                         p { class: "why-description",
-                            "Every recommendation we make is grounded in what actually works for your situation, not what sounds impressive on a slide deck."
+                            "Every recommendation we make is based on what actually works for your situation, not what sounds impressive."
                         }
                     }
                     div { class: "why-card glass-card",
                         div { class: "why-icon", "🤝" }
-                        h3 { class: "why-title", "Midwest Work Ethic" }
+                        h3 { class: "why-title", "We show up" }
                         p { class: "why-description",
-                            "We show up, we communicate, and we deliver what we promise."
+                            "We answer emails. We meet deadlines. We tell you the truth, even when it's not what you want to hear."
                         }
                     }
                     div { class: "why-card glass-card",
                         div { class: "why-icon", "📈" }
-                        h3 { class: "why-title", "Real Experience" }
+                        h3 { class: "why-title", "We've done this before" }
                         p { class: "why-description",
-                            "Five years solving complex problems in healthcare technology, financial systems, and compliance-heavy environments. We've seen what works and what doesn't."
+                            "Five years of building software in healthcare, finance, and small business. We know what works and what doesn't."
+                        }
+                    }
+                    div { class: "why-card glass-card",
+                        div { class: "why-icon", "🧠" }
+                        h3 { class: "why-title", "No problem too big" }
+                        p { class: "why-description",
+                            "Need expertise we don't have in-house? We have a network of brilliant specialists we can bring in. Whatever the challenge, we know someone who's solved it."
                         }
                     }
                 }
@@ -107,8 +117,8 @@ pub fn Home() -> Element {
 
         // CTA Section
         CtaSection {
-            title: "Ready to Solve Something?".to_string(),
-            description: "Let's have a conversation about what you're building and how we can help.".to_string(),
+            title: "Ready to get started?".to_string(),
+            description: "Let's talk about what you're trying to build and how we can help.".to_string(),
             button_text: "Schedule a Call".to_string(),
             use_calendar_link: true
         }

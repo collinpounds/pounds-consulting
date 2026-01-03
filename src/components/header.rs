@@ -10,6 +10,7 @@ pub fn Header() -> Element {
             div { class: "header-container",
                 Link { to: Route::Home {}, class: "logo",
                     span { class: "logo-text", "POUNDS" }
+                    span { class: "logo-accent", " / " }
                     span { class: "logo-accent", "CONSULTING" }
                 }
 

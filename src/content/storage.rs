@@ -4,6 +4,8 @@ use web_sys::window;
 const SETTINGS_KEY: &str = "site_settings";
 const ARTICLES_KEY: &str = "site_articles";
 const AUTH_KEY: &str = "admin_auth";
+const ARTICLES_VERSION_KEY: &str = "articles_version";
+const CURRENT_ARTICLES_VERSION: &str = "v3"; // Increment this to force refresh
 
 /// Load settings from localStorage, or return defaults
 pub fn load_settings() -> SiteSettings {
@@ -74,14 +76,20 @@ fn set_to_storage<T: serde::Serialize>(key: &str, value: &T) -> bool {
     false
 }
 
-/// Initialize storage with defaults if empty
+/// Initialize storage with defaults if empty or outdated
 pub fn init_storage() {
     // Only set defaults if storage is empty
     if get_from_storage::<SiteSettings>(SETTINGS_KEY).is_none() {
         save_settings(&SiteSettings::default());
     }
-    if get_from_storage::<ArticlesData>(ARTICLES_KEY).is_none() {
+
+    // Check articles version - force refresh if version changed
+    let stored_version: Option<String> = get_from_storage(ARTICLES_VERSION_KEY);
+    let needs_refresh = stored_version.as_deref() != Some(CURRENT_ARTICLES_VERSION);
+
+    if needs_refresh || get_from_storage::<ArticlesData>(ARTICLES_KEY).is_none() {
         save_articles(&ArticlesData::default());
+        set_to_storage(ARTICLES_VERSION_KEY, &CURRENT_ARTICLES_VERSION.to_string());
     }
 }
 

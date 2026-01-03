@@ -2,6 +2,22 @@ use crate::content::{load_articles, ArticleStatus};
 use crate::Route;
 use dioxus::prelude::*;
 
+/// Render a paragraph, handling inline **bold** text
+fn render_paragraph(text: &str) -> Element {
+    // Check if the paragraph has bold markers
+    if text.contains("**") {
+        // For simplicity, just strip the ** markers
+        let clean_text = text.replace("**", "");
+        rsx! {
+            p { "{clean_text}" }
+        }
+    } else {
+        rsx! {
+            p { "{text}" }
+        }
+    }
+}
+
 #[component]
 pub fn ArticleDetail(slug: String) -> Element {
     let articles_data = load_articles();
@@ -35,14 +51,29 @@ pub fn ArticleDetail(slug: String) -> Element {
                 section { class: "article-content-section",
                     div { class: "container",
                         div { class: "article-body glass-card",
-                            // Render content with basic line breaks
+                            // Render content with markdown-like formatting
                             for paragraph in article.content.split("\n\n") {
-                                if paragraph.starts_with("## ") {
+                                if paragraph.starts_with("### ") {
+                                    h3 { class: "article-h3", {paragraph.trim_start_matches("### ")} }
+                                } else if paragraph.starts_with("## ") {
                                     h2 { class: "article-h2", {paragraph.trim_start_matches("## ")} }
                                 } else if paragraph.starts_with("# ") {
                                     h2 { class: "article-h2", {paragraph.trim_start_matches("# ")} }
+                                } else if paragraph.starts_with("- ") || paragraph.starts_with("* ") {
+                                    // Render as a list
+                                    ul { class: "article-list",
+                                        for line in paragraph.lines() {
+                                            if line.starts_with("- ") || line.starts_with("* ") {
+                                                li { {line.trim_start_matches("- ").trim_start_matches("* ")} }
+                                            }
+                                        }
+                                    }
+                                } else if paragraph.starts_with("**") && paragraph.ends_with("**") {
+                                    // Bold standalone line (like "**How to avoid it:**")
+                                    p { class: "article-bold", {paragraph.trim_matches('*')} }
                                 } else if !paragraph.trim().is_empty() {
-                                    p { "{paragraph}" }
+                                    // Handle bold text within paragraph
+                                    {render_paragraph(paragraph)}
                                 }
                             }
                         }

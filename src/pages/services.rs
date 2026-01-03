@@ -23,7 +23,7 @@ pub fn Services() -> Element {
                         h2 { class: "service-detail-title", "Digital Marketing & Customer Systems" }
                     }
                     p { class: "service-detail-description",
-                        "A website is just the beginning. To grow, you need systems that capture leads, nurture relationships, and convert interest into revenue—without requiring you to manually manage every touchpoint."
+                        "A website is just the beginning. To grow, you need systems that capture leads, nurture relationships, and convert interest into revenue without requiring you to manually manage every touchpoint."
                     }
                     p { class: "service-detail-description",
                         "We build complete digital marketing infrastructures that work together seamlessly. From email campaigns to SMS outreach, from customer intake forms to membership management, we create the systems that turn visitors into customers and customers into repeat business."
@@ -68,7 +68,7 @@ pub fn Services() -> Element {
                         "Your website is often the first impression people have of your business. It should load fast, look professional, and be intuitive for visitors to navigate."
                     }
                     p { class: "service-detail-description",
-                        "We build websites that do exactly that. No bloated templates. No cookie-cutter designs. Every site is crafted with your specific goals in mind—whether that's generating leads, showcasing your work, or selling products online. User-friendly by default."
+                        "We build websites that do exactly that. No bloated templates. No cookie-cutter designs. Every site is crafted with your specific goals in mind, whether that's generating leads, showcasing your work, or selling products online. User-friendly by default."
                     }
                     div { class: "service-columns",
                         div { class: "service-column",
