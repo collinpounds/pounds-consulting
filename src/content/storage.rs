@@ -118,8 +118,8 @@ pub fn import_data(json: &str) -> Result<(), String> {
         articles: ArticlesData,
     }
 
-    let data: ImportData = serde_json::from_str(json)
-        .map_err(|e| format!("Invalid JSON: {}", e))?;
+    let data: ImportData =
+        serde_json::from_str(json).map_err(|e| format!("Invalid JSON: {}", e))?;
 
     save_settings(&data.settings);
     save_articles(&data.articles);

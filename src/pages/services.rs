@@ -1,5 +1,5 @@
-use dioxus::prelude::*;
 use crate::components::CtaSection;
+use dioxus::prelude::*;
 
 #[component]
 pub fn Services() -> Element {

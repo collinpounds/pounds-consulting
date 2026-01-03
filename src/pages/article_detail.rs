@@ -1,11 +1,13 @@
-use dioxus::prelude::*;
 use crate::content::{load_articles, ArticleStatus};
 use crate::Route;
+use dioxus::prelude::*;
 
 #[component]
 pub fn ArticleDetail(slug: String) -> Element {
     let articles_data = load_articles();
-    let article = articles_data.articles.iter()
+    let article = articles_data
+        .articles
+        .iter()
         .find(|a| a.slug == slug && matches!(a.status, ArticleStatus::Published));
 
     match article {

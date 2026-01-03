@@ -1,5 +1,5 @@
-use dioxus::prelude::*;
 use crate::Route;
+use dioxus::prelude::*;
 
 #[component]
 pub fn Footer() -> Element {

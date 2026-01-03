@@ -1,11 +1,11 @@
-mod login;
-mod dashboard;
-mod settings;
-mod articles;
 mod article_editor;
+mod articles;
+mod dashboard;
+mod login;
+mod settings;
 
-pub use login::AdminLogin;
-pub use dashboard::AdminDashboard;
-pub use settings::AdminSettings;
+pub use article_editor::{AdminArticleEdit, AdminArticleNew};
 pub use articles::AdminArticles;
-pub use article_editor::{AdminArticleNew, AdminArticleEdit};
+pub use dashboard::AdminDashboard;
+pub use login::AdminLogin;
+pub use settings::AdminSettings;

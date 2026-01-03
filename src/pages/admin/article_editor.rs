@@ -1,6 +1,8 @@
-use dioxus::prelude::*;
-use crate::content::{load_articles, save_articles, is_authenticated, set_authenticated, Article, ArticleStatus};
+use crate::content::{
+    is_authenticated, load_articles, save_articles, set_authenticated, Article, ArticleStatus,
+};
 use crate::Route;
+use dioxus::prelude::*;
 
 #[component]
 pub fn AdminArticleNew() -> Element {
@@ -32,7 +34,9 @@ fn ArticleEditorInner(article_id: Option<String>) -> Element {
     let initial_article = {
         let articles_data = load_articles();
         if let Some(ref id) = article_id {
-            articles_data.articles.iter()
+            articles_data
+                .articles
+                .iter()
                 .find(|a| &a.id == id)
                 .cloned()
                 .unwrap_or_else(Article::new)
@@ -55,7 +59,11 @@ fn ArticleEditorInner(article_id: Option<String>) -> Element {
         }
 
         // Find and update or add
-        if let Some(pos) = articles_data.articles.iter().position(|a| a.id == article().id) {
+        if let Some(pos) = articles_data
+            .articles
+            .iter()
+            .position(|a| a.id == article().id)
+        {
             articles_data.articles[pos] = article();
         } else {
             articles_data.articles.push(article());

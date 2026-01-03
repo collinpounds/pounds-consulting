@@ -1,6 +1,8 @@
-use dioxus::prelude::*;
-use crate::content::{load_articles, save_articles, is_authenticated, set_authenticated, ArticleStatus};
+use crate::content::{
+    is_authenticated, load_articles, save_articles, set_authenticated, ArticleStatus,
+};
 use crate::Route;
+use dioxus::prelude::*;
 
 #[component]
 pub fn AdminArticles() -> Element {

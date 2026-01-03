@@ -6,9 +6,8 @@ mod pages;
 
 use components::{Footer, Header};
 use pages::{
-    About, Contact, Home, Portfolio, Services,
-    Articles, ArticleDetail,
-    AdminLogin, AdminDashboard, AdminSettings, AdminArticles, AdminArticleNew, AdminArticleEdit
+    About, AdminArticleEdit, AdminArticleNew, AdminArticles, AdminDashboard, AdminLogin,
+    AdminSettings, ArticleDetail, Articles, Contact, Home, Portfolio, Services,
 };
 
 const CSS: Asset = asset!("/assets/main.css");

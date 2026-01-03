@@ -1,6 +1,6 @@
-use dioxus::prelude::*;
-use crate::Route;
 use crate::components::{CtaSection, ServiceCard};
+use crate::Route;
+use dioxus::prelude::*;
 
 #[component]
 pub fn Home() -> Element {

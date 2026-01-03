@@ -1,21 +1,20 @@
-use dioxus::prelude::*;
+use crate::components::CtaSection;
 use crate::content::{load_articles, ArticleStatus};
 use crate::Route;
-use crate::components::CtaSection;
+use dioxus::prelude::*;
 
 #[component]
 pub fn Articles() -> Element {
     let articles_data = load_articles();
-    let published: Vec<_> = articles_data.articles
+    let published: Vec<_> = articles_data
+        .articles
         .into_iter()
         .filter(|a| matches!(a.status, ArticleStatus::Published))
         .collect();
 
     // Get unique categories
     let categories: Vec<String> = {
-        let mut cats: Vec<String> = published.iter()
-            .map(|a| a.category.clone())
-            .collect();
+        let mut cats: Vec<String> = published.iter().map(|a| a.category.clone()).collect();
         cats.sort();
         cats.dedup();
         cats

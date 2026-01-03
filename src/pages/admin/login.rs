@@ -1,6 +1,6 @@
-use dioxus::prelude::*;
-use crate::content::{load_settings, verify_password, set_authenticated, is_authenticated};
+use crate::content::{is_authenticated, load_settings, set_authenticated, verify_password};
 use crate::Route;
+use dioxus::prelude::*;
 
 #[component]
 pub fn AdminLogin() -> Element {

@@ -1,6 +1,8 @@
-use dioxus::prelude::*;
-use crate::content::{load_settings, load_articles, is_authenticated, set_authenticated, ArticleStatus};
+use crate::content::{
+    is_authenticated, load_articles, load_settings, set_authenticated, ArticleStatus,
+};
 use crate::Route;
+use dioxus::prelude::*;
 
 #[component]
 pub fn AdminDashboard() -> Element {
@@ -16,15 +18,17 @@ pub fn AdminDashboard() -> Element {
     let settings = load_settings();
     let articles = load_articles();
 
-    let published_count = articles.articles.iter()
+    let published_count = articles
+        .articles
+        .iter()
         .filter(|a| matches!(a.status, ArticleStatus::Published))
         .count();
-    let draft_count = articles.articles.iter()
+    let draft_count = articles
+        .articles
+        .iter()
         .filter(|a| matches!(a.status, ArticleStatus::Draft))
         .count();
-    let enabled_pages = settings.pages.iter()
-        .filter(|p| p.enabled)
-        .count();
+    let enabled_pages = settings.pages.iter().filter(|p| p.enabled).count();
 
     let handle_logout = move |_| {
         set_authenticated(false);

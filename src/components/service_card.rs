@@ -1,11 +1,7 @@
 use dioxus::prelude::*;
 
 #[component]
-pub fn ServiceCard(
-    title: String,
-    description: String,
-    icon: String,
-) -> Element {
+pub fn ServiceCard(title: String, description: String, icon: String) -> Element {
     rsx! {
         div { class: "service-card",
             div { class: "service-icon", "{icon}" }

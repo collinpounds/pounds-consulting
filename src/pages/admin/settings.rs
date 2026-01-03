@@ -1,6 +1,8 @@
-use dioxus::prelude::*;
-use crate::content::{load_settings, save_settings, is_authenticated, set_authenticated, SiteSettings, PageConfig};
+use crate::content::{
+    is_authenticated, load_settings, save_settings, set_authenticated, PageConfig, SiteSettings,
+};
 use crate::Route;
+use dioxus::prelude::*;
 
 #[component]
 pub fn AdminSettings() -> Element {
