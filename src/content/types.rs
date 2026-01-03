@@ -53,6 +53,7 @@ pub struct Article {
 pub enum ArticleStatus {
     Draft,
     Published,
+    Trashed,
 }
 
 /// Container for all articles
