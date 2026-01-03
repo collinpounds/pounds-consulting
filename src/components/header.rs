@@ -11,12 +11,36 @@ pub fn Header() -> Element {
         std::mem::discriminant(&current_route) == std::mem::discriminant(route)
     };
 
-    let home_class = if is_active(&Route::Home {}) { "nav-link active" } else { "nav-link" };
-    let about_class = if is_active(&Route::About {}) { "nav-link active" } else { "nav-link" };
-    let services_class = if is_active(&Route::Services {}) { "nav-link active" } else { "nav-link" };
-    let portfolio_class = if is_active(&Route::Portfolio {}) { "nav-link active" } else { "nav-link" };
-    let articles_class = if is_active(&Route::Articles {}) { "nav-link active" } else { "nav-link" };
-    let contact_class = if is_active(&Route::Contact {}) { "nav-link nav-cta active" } else { "nav-link nav-cta" };
+    let home_class = if is_active(&Route::Home {}) {
+        "nav-link active"
+    } else {
+        "nav-link"
+    };
+    let about_class = if is_active(&Route::About {}) {
+        "nav-link active"
+    } else {
+        "nav-link"
+    };
+    let services_class = if is_active(&Route::Services {}) {
+        "nav-link active"
+    } else {
+        "nav-link"
+    };
+    let portfolio_class = if is_active(&Route::Portfolio {}) {
+        "nav-link active"
+    } else {
+        "nav-link"
+    };
+    let articles_class = if is_active(&Route::Articles {}) {
+        "nav-link active"
+    } else {
+        "nav-link"
+    };
+    let contact_class = if is_active(&Route::Contact {}) {
+        "nav-link nav-cta active"
+    } else {
+        "nav-link nav-cta"
+    };
 
     rsx! {
         header { class: "header",

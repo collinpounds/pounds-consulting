@@ -43,8 +43,8 @@ Collin has a network of brilliant friends and collaborators across every special
 - No project is out of reach
 
 **How to communicate this:**
-- "I have a network of brilliant people I can call"
-- "Need a designer? A security expert? I know the right person"
+- "We have a network of brilliant people we can call"
+- "Need a designer? A security expert? We know the right person"
 - "You get personal attention, backed by a team of experts when you need them"
 - "Whatever the challenge, we know someone who's solved it"
 
@@ -85,7 +85,7 @@ Collin has a network of brilliant friends and collaborators across every special
 - Lead with partnership angle, not services list
 
 ### About Page
-- Tell Collin's story briefly
+- Use "we" language to leave room for future team growth
 - Focus on relevant experience (Paytient, Club Car Wash, etc.)
 - Emphasize values: simplicity, ownership mentality, built to last
 
@@ -115,7 +115,8 @@ Collin has a network of brilliant friends and collaborators across every special
 ### Framework
 - Built with Dioxus (Rust-based WebAssembly framework)
 - CSS uses custom properties (CSS variables) for theming
-- Dark theme with gold (#C9A227) accent color
+- Dark theme with gold (#D4A017) accent color
+- Border radius set to 7px for a subtle, modern look
 
 ### Content Management
 - Admin panel at /admin for managing articles and settings

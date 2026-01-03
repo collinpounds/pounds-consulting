@@ -45,7 +45,7 @@ Output lands in `dist/`. Deploy anywhere static files are welcome.
 src/
 ├── main.rs              # Entry point + routing
 ├── components/          # Reusable UI pieces
-│   ├── header.rs
+│   ├── header.rs        # Nav with active route detection
 │   ├── footer.rs
 │   ├── cta_section.rs
 │   └── service_card.rs
@@ -53,6 +53,8 @@ src/
     ├── home.rs
     ├── about.rs
     ├── services.rs
+    ├── portfolio.rs
+    ├── articles.rs
     └── contact.rs
 
 assets/
@@ -61,7 +63,7 @@ assets/
 
 ## Design
 
-- **Colors**: Black (`#0D0D0D`) + Gold (`#C9A227`)
+- **Colors**: Black (`#1A1A1A`) + Gold (`#D4A017`)
 - **Style**: Glassmorphism with backdrop blur
 - **Fonts**: Montserrat, Open Sans, Inter
 - **Responsive**: Mobile-first, looks good everywhere
