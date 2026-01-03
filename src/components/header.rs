@@ -18,6 +18,7 @@ pub fn Header() -> Element {
                     Link { to: Route::About {}, class: "nav-link", "About" }
                     Link { to: Route::Services {}, class: "nav-link", "Services" }
                     Link { to: Route::Portfolio {}, class: "nav-link", "Portfolio" }
+                    Link { to: Route::Articles {}, class: "nav-link", "Articles" }
                     Link { to: Route::Contact {}, class: "nav-link nav-cta", "Contact" }
                 }
 
@@ -55,6 +56,12 @@ pub fn Header() -> Element {
                         class: "nav-link",
                         onclick: move |_| mobile_menu_open.set(false),
                         "Portfolio"
+                    }
+                    Link {
+                        to: Route::Articles {},
+                        class: "nav-link",
+                        onclick: move |_| mobile_menu_open.set(false),
+                        "Articles"
                     }
                     Link {
                         to: Route::Contact {},

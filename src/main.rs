@@ -1,16 +1,22 @@
 use dioxus::prelude::*;
 
 mod components;
+mod content;
 mod pages;
 
 use components::{Footer, Header};
-use pages::{About, Contact, Home, Portfolio, Services};
+use pages::{
+    About, Contact, Home, Portfolio, Services,
+    Articles, ArticleDetail,
+    AdminLogin, AdminDashboard, AdminSettings, AdminArticles, AdminArticleNew, AdminArticleEdit
+};
 
 const CSS: Asset = asset!("/assets/main.css");
 
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
-enum Route {
+pub enum Route {
+    // Public routes with layout
     #[layout(Layout)]
     #[route("/")]
     Home {},
@@ -22,10 +28,77 @@ enum Route {
     Portfolio {},
     #[route("/contact")]
     Contact {},
+    #[route("/articles")]
+    Articles {},
+    #[route("/articles/:slug")]
+    ArticleDetail { slug: String },
+    #[end_layout]
+
+    // Admin routes (no public layout)
+    #[route("/admin")]
+    AdminLogin {},
+    #[route("/admin/dashboard")]
+    AdminDashboard {},
+    #[route("/admin/settings")]
+    AdminSettings {},
+    #[route("/admin/articles")]
+    AdminArticles {},
+    #[route("/admin/articles/new")]
+    AdminArticleNew {},
+    #[route("/admin/articles/:id")]
+    AdminArticleEdit { id: String },
 }
 
 fn main() {
+    // Initialize storage with defaults
+    content::init_storage();
     dioxus::launch(App);
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// All routes in the sitemap must be defined and reachable
+    #[test]
+    fn test_all_sitemap_routes_are_valid() {
+        // Define expected routes (our sitemap)
+        let expected_routes = vec![
+            "/",
+            "/about",
+            "/services",
+            "/portfolio",
+            "/contact",
+            "/articles",
+        ];
+
+        // Verify each route can be parsed by the router
+        for path in &expected_routes {
+            let result: Result<Route, _> = path.parse();
+            assert!(
+                result.is_ok(),
+                "Route '{}' is not defined in the router",
+                path
+            );
+        }
+    }
+
+    /// Verify route enum has all expected variants
+    #[test]
+    fn test_route_variants_exist() {
+        // This test ensures the Route enum has all required variants
+        // If any variant is removed, this will fail to compile
+        let _routes = [
+            Route::Home {},
+            Route::About {},
+            Route::Services {},
+            Route::Portfolio {},
+            Route::Contact {},
+            Route::Articles {},
+            Route::AdminLogin {},
+            Route::AdminDashboard {},
+        ];
+    }
 }
 
 #[component]

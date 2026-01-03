@@ -36,6 +36,15 @@ jobs:
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
 
+      - name: Check formatting
+        run: cargo fmt --check
+
+      - name: Clippy lints
+        run: cargo clippy --target wasm32-unknown-unknown -- -D warnings
+
+      - name: Run tests
+        run: cargo test
+
       - name: Install Dioxus CLI
         run: cargo install dioxus-cli --locked
 
@@ -45,7 +54,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./target/dx/pounds-consulting/release/web/public
 
   deploy:
     environment:
