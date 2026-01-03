@@ -1,6 +1,4 @@
-use crate::content::{
-    is_authenticated, load_settings, save_settings, set_authenticated, PageConfig, SiteSettings,
-};
+use crate::content::{is_authenticated, load_settings, save_settings, set_authenticated};
 use crate::Route;
 use dioxus::prelude::*;
 

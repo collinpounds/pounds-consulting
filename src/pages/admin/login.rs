@@ -4,7 +4,7 @@ use dioxus::prelude::*;
 
 #[component]
 pub fn AdminLogin() -> Element {
-    let mut password = use_signal(|| String::new());
+    let mut password = use_signal(String::new);
     let mut error = use_signal(|| Option::<String>::None);
     let navigator = use_navigator();
 

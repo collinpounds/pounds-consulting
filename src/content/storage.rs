@@ -86,6 +86,7 @@ pub fn init_storage() {
 }
 
 /// Clear all site data (for reset)
+#[allow(dead_code)]
 pub fn clear_all_data() {
     if let Some(window) = window() {
         if let Ok(Some(storage)) = window.local_storage() {
@@ -97,6 +98,7 @@ pub fn clear_all_data() {
 }
 
 /// Export all data as JSON string
+#[allow(dead_code)]
 pub fn export_data() -> Option<String> {
     let settings = load_settings();
     let articles = load_articles();
@@ -111,6 +113,7 @@ pub fn export_data() -> Option<String> {
 }
 
 /// Import data from JSON string
+#[allow(dead_code)]
 pub fn import_data(json: &str) -> Result<(), String> {
     #[derive(serde::Deserialize)]
     struct ImportData {
