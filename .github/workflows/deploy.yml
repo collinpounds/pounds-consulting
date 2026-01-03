@@ -23,10 +23,22 @@ jobs:
       - name: Install Rust
         uses: dtolnay/rust-action@stable
         with:
+          toolchain: stable
           targets: wasm32-unknown-unknown
 
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
       - name: Install Dioxus CLI
-        run: cargo install dioxus-cli
+        run: cargo install dioxus-cli --locked
 
       - name: Build
         run: dx build --release

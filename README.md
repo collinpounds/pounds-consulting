@@ -1,81 +1,79 @@
-# Pounds Consulting Website
+# Pounds Consulting
 
-A modern, professional website for Pounds Consulting built with Rust and Dioxus. Features a clean glassmorphism design with a black and gold color scheme.
+> A consulting website built with Rust and WebAssembly. Because WordPress was too easy.
 
-## Prerequisites
+Yes, this is a brochure site compiled to the same technology that powers Figma, Google Earth, and AAA game engines. Is it overkill? Absolutely. Does it load faster than you can blink? Also yes.
 
-1. **Install Rust**: https://rustup.rs/
-2. **Install Dioxus CLI**:
-   ```bash
-   cargo binstall dioxus-cli
-   # or
-   cargo install dioxus-cli
-   ```
+**[poundsconsulting.net](https://poundsconsulting.net)**
 
-## Running the Project
+## Why WebAssembly for a Consulting Site?
 
-1. Navigate to the project directory:
-   ```bash
-   cd PoundsConsultingWebsite
-   ```
+1. **It's blazingly fast** - Near-native performance on every device
+2. **It proves we can** - If we'll over-engineer our own website, imagine what we'll do for your actual problems
+3. **It's a conversation starter** - You're reading this, aren't you?
 
-2. Start the development server:
-   ```bash
-   dx serve
-   ```
+## Clone It, Make It Yours
 
-3. Open your browser to `http://localhost:8080`
+This isn't just a website—it's a template. Fork it, gut it, rebuild it. The architecture is clean and the stack is modern.
 
-## Building for Production
+### Quick Start
+
+```bash
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Install Dioxus CLI
+cargo install dioxus-cli
+
+# Run it
+dx serve
+```
+
+Open `http://localhost:8080` and watch a consulting website load at the speed of light.
+
+### Build for Production
 
 ```bash
 dx build --release
 ```
 
-The built files will be in the `dist/` directory.
+Output lands in `dist/`. Deploy anywhere static files are welcome.
 
 ## Project Structure
 
 ```
-PoundsConsultingWebsite/
-├── Cargo.toml          # Rust dependencies
-├── Dioxus.toml         # Dioxus configuration
-├── index.html          # HTML template with SEO meta tags
-├── assets/
-│   └── main.css        # Styles with glassmorphism design
-└── src/
-    ├── main.rs         # App entry point with routing
-    ├── components/     # Reusable UI components
-    │   ├── mod.rs
-    │   ├── header.rs
-    │   ├── footer.rs
-    │   ├── cta_section.rs
-    │   └── service_card.rs
-    └── pages/          # Page components
-        ├── mod.rs
-        ├── home.rs
-        ├── about.rs
-        ├── services.rs
-        └── contact.rs
+src/
+├── main.rs              # Entry point + routing
+├── components/          # Reusable UI pieces
+│   ├── header.rs
+│   ├── footer.rs
+│   ├── cta_section.rs
+│   └── service_card.rs
+└── pages/               # The actual pages
+    ├── home.rs
+    ├── about.rs
+    ├── services.rs
+    └── contact.rs
+
+assets/
+└── main.css             # Glassmorphism + gold accents
 ```
 
-## Pages
+## Design
 
-- **Home** (`/`) - Hero, intro, services overview, why us section
-- **About** (`/about`) - Story, values, experience, background
-- **Services** (`/services`) - Detailed service offerings with pricing
-- **Contact** (`/contact`) - Contact form, FAQ, scheduling
+- **Colors**: Black (`#0D0D0D`) + Gold (`#C9A227`)
+- **Style**: Glassmorphism with backdrop blur
+- **Fonts**: Montserrat, Open Sans, Inter
+- **Responsive**: Mobile-first, looks good everywhere
 
-## Design Features
+## Customize
 
-- **Glassmorphism cards** with backdrop blur effects
-- **Responsive design** for mobile, tablet, and desktop
-- **Gold accent color** (#C9A227) on black (#0D0D0D) base
-- **Clean typography** using Montserrat, Open Sans, and Inter fonts
-- **Smooth animations** and hover effects
+| Want to change... | Edit this |
+|-------------------|-----------|
+| Colors | `assets/main.css` (`:root` variables) |
+| Content | `src/pages/*.rs` |
+| Fonts | `index.html` (Google Fonts link) |
 
-## Customization
+---
 
-- Colors: Edit CSS variables in `assets/main.css` under `:root`
-- Content: Modify the respective page files in `src/pages/`
-- Fonts: Update the Google Fonts link in `index.html`
+*Built with [Dioxus](https://dioxuslabs.com) + Rust. Deployed on GitHub Pages. Over-engineered with pride.*
