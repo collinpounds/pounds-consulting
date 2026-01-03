@@ -14,7 +14,7 @@ Yes, this is a brochure site compiled to the same technology that powers Figma, 
 
 ## Clone It, Make It Yours
 
-This isn't just a website—it's a template. Fork it, gut it, rebuild it. The architecture is clean and the stack is modern.
+This isn't just a website, it's a template. Fork it, change it, rebuild it. The architecture is clean and the stack is modern.
 
 ### Quick Start
 
@@ -56,7 +56,7 @@ src/
     └── contact.rs
 
 assets/
-└── main.css             # Glassmorphism + gold accents
+└── main.css             #  gold accents and design secret sauce
 ```
 
 ## Design

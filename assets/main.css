@@ -5,8 +5,8 @@
 :root {
     /* Color Palette - Dark Theme */
     --color-primary: #FAFAFA;
-    --color-secondary: #C9A227;
-    --color-accent: #D4AF37;
+    --color-secondary: #D4A017;
+    --color-accent: #E6B422;
     --color-background: #1A1A1A;
     --color-surface: #2A2A2A;
     --color-text-primary: #FAFAFA;
@@ -33,9 +33,9 @@
 
     /* Border Radius */
     --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
-    --radius-xl: 16px;
+    --radius-md: 7px;
+    --radius-lg: 7px;
+    --radius-xl: 7px;
 
     /* Transitions */
     --transition-fast: 150ms ease;
@@ -90,13 +90,22 @@ p {
 }
 
 a {
-    color: var(--color-secondary);
-    text-decoration: none;
-    transition: color var(--transition-fast);
+    color: #F5F5DC;
+    text-decoration: underline;
+    text-decoration-color: rgba(245, 245, 220, 0.5);
+    text-underline-offset: 3px;
+    transition: all var(--transition-fast);
 }
 
 a:hover {
     color: var(--color-accent);
+    text-decoration-color: var(--color-accent);
+}
+
+a:active,
+a:visited:active {
+    color: var(--color-secondary);
+    text-decoration-color: var(--color-secondary);
 }
 
 ul, ol {
@@ -917,12 +926,16 @@ main {
     color: var(--color-primary);
 }
 
-.contact-link {
-    color: var(--color-secondary);
+a.contact-link {
+    color: #F5F5DC !important;
+    text-decoration: underline !important;
+    text-decoration-color: rgba(245, 245, 220, 0.5) !important;
+    text-underline-offset: 3px;
 }
 
-.contact-link:hover {
-    color: var(--color-accent);
+a.contact-link:hover {
+    color: var(--color-accent) !important;
+    text-decoration-color: var(--color-accent) !important;
 }
 
 .contact-note {
@@ -936,14 +949,22 @@ main {
     margin-top: var(--spacing-xl);
 }
 
+.faq-section .section-title {
+    margin-bottom: var(--spacing-2xl);
+}
+
 .faq-title {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.faq-grid {
+    gap: var(--spacing-xl);
 }
 
 .faq-list {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
 }
 
 .faq-item {
@@ -953,7 +974,11 @@ main {
 .faq-question {
     color: var(--color-primary);
     font-size: 1rem;
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+    text-decoration: underline;
+    text-decoration-color: var(--color-secondary);
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
 }
 
 .faq-answer {
@@ -1069,9 +1094,17 @@ main {
 
 .footer-logo {
     display: inline-flex;
+    align-items: center;
     gap: 0.5rem;
     text-decoration: none;
+}
+
+.footer .footer-logo {
     margin-bottom: var(--spacing-sm);
+}
+
+.header .footer-logo {
+    margin-bottom: 0;
 }
 
 .footer-logo-image {
@@ -1245,6 +1278,17 @@ main {
 .portfolio-link {
     display: inline-block;
     margin-top: auto;
+    font-size: 0.9rem;
+}
+
+.portfolio-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.portfolio-actions .btn {
     font-size: 0.9rem;
 }
 
@@ -2505,6 +2549,14 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.skills-grid .skill-category {
+    width: 100%;
+    max-width: 320px;
 }
 
 .skill-category {

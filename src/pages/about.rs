@@ -126,16 +126,16 @@ pub fn About() -> Element {
                         }
                     }
 
-                    // Why I Do This
+                    // Why We Do This
                     div { class: "timeline-item",
                         div { class: "timeline-marker" }
                         div { class: "timeline-content glass-card",
                             div { class: "timeline-header",
-                                h3 { class: "timeline-title", "Why I Do This" }
+                                h3 { class: "timeline-title", "Why We Do This" }
                             }
                             ul { class: "timeline-list",
                                 li { "Too many businesses get overcharged for confusing technology" }
-                                li { "I like solving problems and explaining things in plain English" }
+                                li { "We like solving problems and explaining things in plain English" }
                                 li { "Small businesses deserve the same quality work as big companies" }
                                 li { "It's satisfying to build something that actually helps people" }
                             }
@@ -145,31 +145,31 @@ pub fn About() -> Element {
             }
         }
 
-        // How I Work Section
+        // How We Work Section
         section { class: "section philosophy-section",
             div { class: "container",
                 div { class: "philosophy-content glass-card",
-                    h2 { class: "philosophy-title", "How I Work" }
+                    h2 { class: "philosophy-title", "How We Work" }
                     div { class: "philosophy-grid",
                         div { class: "philosophy-item",
                             span { class: "philosophy-number", "01" }
-                            h3 { "I Listen First" }
-                            p { "Before talking technology, I want to understand your business. What are you trying to accomplish? What's getting in the way?" }
+                            h3 { "We Listen First" }
+                            p { "Before talking technology, we want to understand your business. What are you trying to accomplish? What's getting in the way?" }
                         }
                         div { class: "philosophy-item",
                             span { class: "philosophy-number", "02" }
-                            h3 { "I Explain Everything" }
-                            p { "No jargon. No confusing tech-speak. If you don't understand something, that's my fault, not yours." }
+                            h3 { "We Explain Everything" }
+                            p { "No jargon. No confusing tech-speak. If you don't understand something, that's our fault, not yours." }
                         }
                         div { class: "philosophy-item",
                             span { class: "philosophy-number", "03" }
-                            h3 { "I Keep It Simple" }
-                            p { "The best solution is usually the simplest one. I won't sell you something complicated when something simple will work." }
+                            h3 { "We Keep It Simple" }
+                            p { "The best solution is usually the simplest one. We won't sell you something complicated when something simple will work." }
                         }
                         div { class: "philosophy-item",
                             span { class: "philosophy-number", "04" }
-                            h3 { "I Know People" }
-                            p { "Need a designer? A security expert? I have a network of brilliant people I can call. Whatever the problem, we can figure it out." }
+                            h3 { "We Know People" }
+                            p { "Need a designer? A security expert? We have a network of brilliant people we can call. Whatever the problem, we can figure it out." }
                         }
                     }
                 }
@@ -179,7 +179,7 @@ pub fn About() -> Element {
         // CTA Section
         CtaSection {
             title: "Not Sure Where to Start?".to_string(),
-            description: "That's okay. Most people who call me aren't sure what they need yet. Let's just talk and figure it out together.".to_string(),
+            description: "That's okay. Most people who call us aren't sure what they need yet. Let's just talk and figure it out together.".to_string(),
             button_text: "Schedule a Free Call".to_string(),
             use_calendar_link: true
         }

@@ -45,8 +45,8 @@ pub fn Contact() -> Element {
                         }
                         div { class: "contact-item",
                             span { class: "contact-label", "Location" }
-                            span { class: "contact-value", "Columbia, Missouri" }
-                            span { class: "contact-note", "(serving clients nationwide)" }
+                            span { class: "contact-value", "Kansas City, Missouri" }
+                            span { class: "contact-note", }
                         }
                     }
                 }
