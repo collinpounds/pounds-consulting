@@ -46,7 +46,7 @@ jobs:
         run: cargo test
 
       - name: Install Dioxus CLI
-        run: cargo install dioxus-cli --locked
+        run: command -v dx || cargo install dioxus-cli --locked
 
       - name: Build
         run: dx build --release
