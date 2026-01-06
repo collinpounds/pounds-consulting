@@ -874,11 +874,20 @@ impl Article {
 
 /// Generate a simple unique ID
 fn generate_id() -> String {
-    use std::time::{SystemTime, UNIX_EPOCH};
-    let duration = SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .unwrap_or_default();
-    format!("{:x}", duration.as_millis())
+    #[cfg(target_arch = "wasm32")]
+    {
+        // Use JavaScript Date.now() for WASM
+        let now = js_sys::Date::now() as u64;
+        format!("{:x}", now)
+    }
+    #[cfg(not(target_arch = "wasm32"))]
+    {
+        use std::time::{SystemTime, UNIX_EPOCH};
+        let duration = SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .unwrap_or_default();
+        format!("{:x}", duration.as_millis())
+    }
 }
 
 /// Get today's date in YYYY-MM-DD format

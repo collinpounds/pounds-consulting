@@ -63,6 +63,9 @@ jobs:
       - name: Copy llms.txt for LLM discovery
         run: cp llms.txt ./target/dx/pounds-consulting/release/web/public/
 
+      - name: Copy portfolio assets (logos, screenshots)
+        run: mkdir -p ./target/dx/pounds-consulting/release/web/public/assets && cp -r assets/portfolio ./target/dx/pounds-consulting/release/web/public/assets/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
