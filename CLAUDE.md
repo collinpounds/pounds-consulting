@@ -113,15 +113,62 @@ Collin has a network of brilliant friends and collaborators across every special
 ## Technical Details
 
 ### Framework
-- Built with Dioxus (Rust-based WebAssembly framework)
+- Built with Dioxus 0.7 (Rust-based WebAssembly framework)
 - CSS uses custom properties (CSS variables) for theming
 - Dark theme with gold (#D4A017) accent color
 - Border radius set to 7px for a subtle, modern look
 
 ### Content Management
-- Admin panel at /admin for managing articles and settings
-- Articles stored in localStorage (client-side)
-- Settings control feature toggles and navigation
+- Full admin panel at /admin for managing articles and settings
+- Articles stored in localStorage (client-side, database-ready architecture)
+- Settings control feature toggles (discounts, navigation visibility)
+- Portfolio data defined in `src/content/types.rs` (PortfolioData::default)
+- Import/export functionality for backup and migration
+- Article editor with live preview, slug generation, and publish controls
+- The admin system is architected to easily swap localStorage for a database backend
+
+### SEO Implementation
+The site includes comprehensive SEO optimization:
+
+1. **Sitemap** (`sitemap.xml`)
+   - All main pages indexed
+   - Individual article pages with lastmod dates
+   - Individual portfolio case study pages
+   - Priority weighting (1.0 for home, 0.6 for articles/portfolio)
+
+2. **Robots.txt** (`robots.txt`)
+   - Allows all crawlers
+   - Points to sitemap location
+
+3. **LLMs.txt** (`llms.txt`)
+   - AI/LLM discovery file for emerging AI-powered search
+   - Describes services, contact info, and site structure
+
+4. **Schema.org Markup** (in `index.html`)
+   - LocalBusiness structured data
+   - Organization data with contact info
+   - Helps search engines understand the business
+
+5. **SPA Routing** (`404.html`)
+   - Custom 404 page that redirects to the SPA
+   - Preserves client-side routing on GitHub Pages
+
+### Portfolio System
+- Data-driven architecture following the Article pattern
+- `PortfolioProject` struct with: id, slug, title, project_type, description, long_description, external_url, before_url, logo, screenshot, video, tech_tags, scope
+- Individual case study pages at `/portfolio/:slug`
+- Logos stored in `assets/portfolio/`
+- Deploy workflow copies assets to build output
+
+### WASM Considerations
+- Time functions use `js_sys::Date::now()` for WASM compatibility
+- Conditional compilation with `#[cfg(target_arch = "wasm32")]`
+- Avoid `std::time::SystemTime` in WASM context
+
+### Development
+- Use `./dev.sh` instead of `dx serve` to auto-sync portfolio assets
+- Assets in `assets/portfolio/` need manual copying in dev mode
+- Production build handles this via deploy.yml workflow
 
 ## Example Rewrites
 

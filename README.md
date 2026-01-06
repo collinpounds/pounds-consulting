@@ -12,6 +12,36 @@ Yes, this is a brochure site compiled to the same technology that powers Figma, 
 2. **It proves we can** - If we'll over-engineer our own website, imagine what we'll do for your actual problems
 3. **It's a conversation starter** - You're reading this, aren't you?
 
+## Features
+
+### SEO Optimization
+- **Sitemap** (`sitemap.xml`) - All pages indexed for search engines
+- **Robots.txt** - Search engine crawling directives
+- **LLMs.txt** - AI/LLM discovery file for emerging AI search
+- **Schema.org Markup** - Structured data for rich search results (LocalBusiness, Organization)
+- **SPA 404 Routing** - Custom 404.html for GitHub Pages client-side routing
+- **Dynamic Meta Tags** - Per-page titles and descriptions
+
+### Portfolio Case Studies
+- Individual case study pages at `/portfolio/:slug`
+- Project logos extracted from client sites
+- Before/after comparison support
+- Tech stack tags and scope of work
+- Related projects section
+
+### Content Management
+- Full admin panel at `/admin` for managing articles and settings
+- localStorage-based article storage (database-ready architecture)
+- Feature toggles for discounts and navigation
+- Import/export functionality for settings and content
+- WYSIWYG article editor with preview
+
+### Design System
+- Dark theme with gold (#D4A017) accents
+- Glassmorphism with backdrop blur effects
+- Responsive mobile-first layout
+- Montserrat, Open Sans, Inter fonts
+
 ## Clone It, Make It Yours
 
 This isn't just a website, it's a template. Fork it, change it, rebuild it. The architecture is clean and the stack is modern.
@@ -22,11 +52,15 @@ This isn't just a website, it's a template. Fork it, change it, rebuild it. The 
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# Add WASM target
+rustup target add wasm32-unknown-unknown
+
 # Install Dioxus CLI
 cargo install dioxus-cli
 
-# Run it
-dx serve
+# Run it (use dev.sh to include portfolio assets)
+./dev.sh
+# Or just: dx serve
 ```
 
 Open `http://localhost:8080` and watch a consulting website load at the speed of light.
@@ -37,7 +71,7 @@ Open `http://localhost:8080` and watch a consulting website load at the speed of
 dx build --release
 ```
 
-Output lands in `dist/`. Deploy anywhere static files are welcome.
+Output lands in `target/dx/pounds-consulting/release/web/public/`. Deploy anywhere static files are welcome.
 
 ## Project Structure
 
@@ -49,16 +83,30 @@ src/
 │   ├── footer.rs
 │   ├── cta_section.rs
 │   └── service_card.rs
+├── content/             # Data layer
+│   ├── types.rs         # Article, Portfolio, Settings structs
+│   ├── storage.rs       # localStorage persistence
+│   └── mod.rs
 └── pages/               # The actual pages
     ├── home.rs
     ├── about.rs
     ├── services.rs
     ├── portfolio.rs
+    ├── portfolio_detail.rs  # Individual case studies
     ├── articles.rs
-    └── contact.rs
+    ├── article_detail.rs
+    ├── contact.rs
+    └── admin/           # Admin panel
 
 assets/
-└── main.css             #  gold accents and design secret sauce
+├── main.css             # Gold accents and design secret sauce
+└── portfolio/           # Project logos and screenshots
+
+# SEO files (root level, copied to build)
+├── sitemap.xml
+├── robots.txt
+├── llms.txt
+└── 404.html
 ```
 
 ## Design
@@ -74,7 +122,20 @@ assets/
 |-------------------|-----------|
 | Colors | `assets/main.css` (`:root` variables) |
 | Content | `src/pages/*.rs` |
+| Portfolio data | `src/content/types.rs` (PortfolioData::default) |
 | Fonts | `index.html` (Google Fonts link) |
+| SEO | `sitemap.xml`, `robots.txt`, `llms.txt` |
+
+## Deployment
+
+GitHub Pages deployment is configured via `.github/workflows/deploy.yml`:
+- Runs on push to `main`
+- Checks formatting (`cargo fmt`)
+- Runs Clippy lints
+- Runs tests
+- Builds with Dioxus CLI
+- Copies SEO files and portfolio assets
+- Deploys to GitHub Pages
 
 ---
 
