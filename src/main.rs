@@ -114,7 +114,7 @@ fn App() -> Element {
                         // Clear the stored path
                         let _ = storage.remove_item("spa-redirect-path");
                         // Navigate to the stored path
-                        if let Some(history) = window.history().ok() {
+                        if let Ok(history) = window.history() {
                             let _ = history.replace_state_with_url(
                                 &web_sys::wasm_bindgen::JsValue::NULL,
                                 "",
