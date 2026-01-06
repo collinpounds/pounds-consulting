@@ -17,7 +17,7 @@ pub fn Footer() -> Element {
                 }
 
                 div { class: "footer-nav",
-                    h4 { class: "footer-heading", "Navigation" }
+                    h2 { class: "footer-heading", "Navigation" }
                     Link { to: Route::Home {}, class: "footer-link", "Home" }
                     Link { to: Route::About {}, class: "footer-link", "About" }
                     Link { to: Route::Services {}, class: "footer-link", "Services" }
@@ -25,7 +25,7 @@ pub fn Footer() -> Element {
                 }
 
                 div { class: "footer-contact",
-                    h4 { class: "footer-heading", "Contact" }
+                    h2 { class: "footer-heading", "Contact" }
                     a {
                         href: "mailto:collin@poundsconsulting.net",
                         class: "footer-link",

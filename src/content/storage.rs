@@ -1,4 +1,4 @@
-use super::types::{ArticlesData, SiteSettings};
+use super::types::{ArticlesData, PortfolioData, SiteSettings};
 use web_sys::window;
 
 const SETTINGS_KEY: &str = "site_settings";
@@ -25,6 +25,11 @@ pub fn load_articles() -> ArticlesData {
 /// Save articles to localStorage
 pub fn save_articles(articles: &ArticlesData) -> bool {
     set_to_storage(ARTICLES_KEY, articles)
+}
+
+/// Load portfolio projects (static data, not persisted)
+pub fn load_portfolio() -> PortfolioData {
+    PortfolioData::default()
 }
 
 /// Check if user is authenticated

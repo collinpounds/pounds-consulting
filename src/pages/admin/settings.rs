@@ -243,6 +243,82 @@ pub fn AdminSettings() -> Element {
                     }
                 }
 
+                // Pricing & Discounts
+                div { class: "admin-section",
+                    h2 { "Pricing & Discounts" }
+                    div { class: "admin-form-card glass-card",
+                        // First Responder Discount Toggle
+                        div { class: "toggle-group",
+                            label { class: "toggle-label",
+                                input {
+                                    r#type: "checkbox",
+                                    class: "toggle-input",
+                                    checked: settings().discount.first_responder_enabled,
+                                    onchange: move |evt: FormEvent| {
+                                        settings.with_mut(|s| s.discount.first_responder_enabled = evt.checked());
+                                    }
+                                }
+                                span { class: "toggle-switch" }
+                                span { class: "toggle-text", "First Responder/Military Discount (50%)" }
+                            }
+                        }
+
+                        // Promo Discount Toggle
+                        div { class: "toggle-group",
+                            label { class: "toggle-label",
+                                input {
+                                    r#type: "checkbox",
+                                    class: "toggle-input",
+                                    checked: settings().discount.promo_discount.enabled,
+                                    onchange: move |evt: FormEvent| {
+                                        settings.with_mut(|s| s.discount.promo_discount.enabled = evt.checked());
+                                    }
+                                }
+                                span { class: "toggle-switch" }
+                                span { class: "toggle-text", "Holiday/Promotional Discount" }
+                            }
+                        }
+
+                        // Promo Discount Settings (shown when enabled)
+                        if settings().discount.promo_discount.enabled {
+                            div { class: "form-row promo-settings",
+                                div { class: "form-group",
+                                    label { class: "form-label", "Discount Percentage" }
+                                    input {
+                                        class: "form-input",
+                                        r#type: "number",
+                                        min: "1",
+                                        max: "50",
+                                        value: "{settings().discount.promo_discount.percentage}",
+                                        oninput: move |evt: FormEvent| {
+                                            if let Ok(val) = evt.value().parse::<u8>() {
+                                                settings.with_mut(|s| s.discount.promo_discount.percentage = val.clamp(1, 50));
+                                            }
+                                        }
+                                    }
+                                    p { class: "form-hint", "1-50%" }
+                                }
+                                div { class: "form-group",
+                                    label { class: "form-label", "Discount Label (optional)" }
+                                    input {
+                                        class: "form-input",
+                                        r#type: "text",
+                                        placeholder: "e.g., Holiday Special, New Year Sale",
+                                        value: "{settings().discount.promo_discount.label.clone().unwrap_or_default()}",
+                                        oninput: move |evt: FormEvent| {
+                                            let val = evt.value();
+                                            settings.with_mut(|s| {
+                                                s.discount.promo_discount.label = if val.is_empty() { None } else { Some(val) };
+                                            });
+                                        }
+                                    }
+                                    p { class: "form-hint", "Leave empty to show \"X% Off\"" }
+                                }
+                            }
+                        }
+                    }
+                }
+
                 // Page Management
                 div { class: "admin-section",
                     h2 { "Page Visibility" }

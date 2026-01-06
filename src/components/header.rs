@@ -61,6 +61,8 @@ pub fn Header() -> Element {
 
                 button {
                     class: "mobile-menu-toggle",
+                    "aria-label": "Toggle navigation menu",
+                    "aria-expanded": "{mobile_menu_open()}",
                     onclick: move |_| mobile_menu_open.set(!mobile_menu_open()),
                     span { class: "hamburger-line" }
                     span { class: "hamburger-line" }

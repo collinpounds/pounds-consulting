@@ -51,6 +51,18 @@ jobs:
       - name: Build
         run: dx build --release
 
+      - name: Copy 404.html for SPA routing
+        run: cp 404.html ./target/dx/pounds-consulting/release/web/public/
+
+      - name: Copy sitemap.xml for SEO
+        run: cp sitemap.xml ./target/dx/pounds-consulting/release/web/public/
+
+      - name: Copy robots.txt for SEO
+        run: cp robots.txt ./target/dx/pounds-consulting/release/web/public/
+
+      - name: Copy llms.txt for LLM discovery
+        run: cp llms.txt ./target/dx/pounds-consulting/release/web/public/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

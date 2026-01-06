@@ -5,6 +5,7 @@ mod articles;
 mod contact;
 mod home;
 mod portfolio;
+mod portfolio_detail;
 mod services;
 
 pub use about::About;
@@ -14,4 +15,5 @@ pub use articles::Articles;
 pub use contact::Contact;
 pub use home::Home;
 pub use portfolio::Portfolio;
+pub use portfolio_detail::PortfolioDetail;
 pub use services::Services;

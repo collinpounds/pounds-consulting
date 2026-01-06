@@ -1,15 +1,28 @@
 use crate::components::CtaSection;
+use crate::content::load_settings;
 use dioxus::prelude::*;
 
 #[component]
 pub fn Services() -> Element {
+    let settings = load_settings();
+    let discount = &settings.discount;
+
+    // Calculate discounted rate if promo is enabled
+    let base_rate: u32 = 71;
+    let discounted_rate = if discount.promo_discount.enabled {
+        let discount_amount = base_rate * discount.promo_discount.percentage as u32 / 100;
+        base_rate - discount_amount
+    } else {
+        base_rate
+    };
+
     rsx! {
         // Hero Section
         section { class: "hero hero-short",
             div { class: "hero-content",
                 h1 { class: "hero-title", "Services Built Around Your Needs" }
                 p { class: "hero-subtitle",
-                    "From website builds to complex technical strategy, we offer flexible consulting services designed to solve real problems not make expensive busywork."
+                    "From website builds to complex technical strategy, we offer flexible consulting services designed to solve real problems - not make expensive busywork."
                 }
             }
         }
@@ -182,18 +195,44 @@ pub fn Services() -> Element {
                 h2 { class: "section-title", "Simple, Transparent Pricing" }
                 div { class: "pricing-content glass-card",
                     p { class: "pricing-intro",
-                        "Initial conversations are always free. We want to understand a problem in its entirety before taking payment."
+                        "Initial conversations are always free. We want to understand a problem in its entirety before accepting payment."
                     }
+
+                    // Show discount badge if promo is enabled
+                    if discount.promo_discount.enabled {
+                        div { class: "discount-badge",
+                            {discount.promo_discount.label.clone().unwrap_or_else(|| format!("{}% Off", discount.promo_discount.percentage))}
+                        }
+                    }
+
                     div { class: "pricing-rate",
-                        span { class: "rate-amount", "$100" }
+                        if discount.promo_discount.enabled {
+                            span { class: "rate-original", "${base_rate}" }
+                            span { class: "rate-amount rate-discounted", "${discounted_rate}" }
+                        } else {
+                            span { class: "rate-amount", "${base_rate}" }
+                        }
                         span { class: "rate-period", "/hour" }
                     }
+
                     p { class: "pricing-description",
                         "No hidden fees. No surprise charges. You'll always know what you're paying for and why."
                     }
                     p { class: "pricing-description",
                         "For larger projects, we can provide fixed-price quotes after a few discovery conversations. Either way, you'll have complete clarity on costs before any work begins."
                     }
+
+                    // Book Time Button
+                    div { class: "pricing-actions",
+                        a {
+                            href: "https://calendar.app.google/NxuWY3RDGE5Miaan7",
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            class: "btn btn-primary btn-large",
+                            "Book Time"
+                        }
+                    }
+
                     div { class: "pricing-process",
                         h3 { class: "process-title", "What to Expect" }
                         div { class: "process-steps",
@@ -225,6 +264,31 @@ pub fn Services() -> Element {
                                     p { "Final handoff with documentation and training as needed" }
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+
+        // First Responder Discount Section
+        if discount.first_responder_enabled {
+            section { class: "section first-responder-section",
+                div { class: "container",
+                    div { class: "first-responder-card glass-card",
+                        div { class: "first-responder-badge", "🎖️" }
+                        h3 { class: "first-responder-title", "50% Off for Those Who Serve" }
+                        p { class: "first-responder-description",
+                            "We offer 50% off our hourly rate for those who serve our communities and country. Your service matters."
+                        }
+                        ul { class: "first-responder-list",
+                            li { "Military (Active Duty & Reserves)" }
+                            li { "Veterans" }
+                            li { "Law Enforcement" }
+                            li { "Fire Fighters" }
+                            li { "EMTs & Paramedics" }
+                        }
+                        p { class: "first-responder-cta",
+                            "Mention your service when you book and we'll apply the discount."
                         }
                     }
                 }

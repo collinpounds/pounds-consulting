@@ -7,6 +7,37 @@ pub struct SiteSettings {
     pub features: FeatureToggles,
     pub pages: Vec<PageConfig>,
     pub admin_password_hash: String,
+    #[serde(default)]
+    pub discount: DiscountSettings,
+}
+
+/// Settings for promotional and special discounts
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct DiscountSettings {
+    /// Holiday/promotional discount (admin-controlled)
+    pub promo_discount: PromoDiscount,
+    /// First responder/military discount visibility
+    pub first_responder_enabled: bool,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct PromoDiscount {
+    pub enabled: bool,
+    pub percentage: u8,
+    pub label: Option<String>,
+}
+
+impl Default for DiscountSettings {
+    fn default() -> Self {
+        Self {
+            promo_discount: PromoDiscount {
+                enabled: false,
+                percentage: 10,
+                label: None,
+            },
+            first_responder_enabled: true,
+        }
+    }
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
@@ -60,6 +91,30 @@ pub enum ArticleStatus {
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct ArticlesData {
     pub articles: Vec<Article>,
+}
+
+/// Portfolio project/case study
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct PortfolioProject {
+    pub id: String,
+    pub slug: String,
+    pub title: String,
+    pub project_type: String,
+    pub description: String,
+    pub long_description: String,
+    pub external_url: String,
+    pub before_url: Option<String>,
+    pub logo: Option<String>,
+    pub screenshot: Option<String>,
+    pub video: Option<String>,
+    pub tech_tags: Vec<String>,
+    pub scope: Vec<String>,
+}
+
+/// Container for all portfolio projects
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct PortfolioData {
+    pub projects: Vec<PortfolioProject>,
 }
 
 impl Default for SiteSettings {
@@ -124,6 +179,7 @@ impl Default for SiteSettings {
             ],
             // Default password: "admin" - users should change this
             admin_password_hash: "admin".to_string(),
+            discount: DiscountSettings::default(),
         }
     }
 }
@@ -392,6 +448,395 @@ For ongoing work, we offer monthly retainers. Fixed price, predictable costs.
 
 If this sounds like a good fit, let's have a conversation. No commitment, no sales pressure. Just a chance to see if working together makes sense."#.to_string(),
                     status: ArticleStatus::Published,
+                },
+            ],
+        }
+    }
+}
+
+impl Default for PortfolioData {
+    fn default() -> Self {
+        Self {
+            projects: vec![
+                PortfolioProject {
+                    id: "paytient".to_string(),
+                    slug: "paytient".to_string(),
+                    title: "Paytient".to_string(),
+                    project_type: "Product Development".to_string(),
+                    description: "Contributed to a healthcare fintech startup serving hundreds of thousands of users. Removed friction from the onboarding flow, redesigned the my.paytient.com landing page, and led a team of 6 engineers implementing multi-factor authentication.".to_string(),
+                    long_description: r#"## The Challenge
+
+Paytient is a healthcare fintech company that helps employees pay for medical expenses over time. With hundreds of thousands of users depending on the platform, every interaction matters.
+
+## What We Did
+
+### Onboarding Flow Optimization
+We identified friction points in the member onboarding process and redesigned the flow to reduce drop-off rates. By simplifying the steps and improving the UI, we helped more users successfully complete registration.
+
+### Landing Page Redesign
+The my.paytient.com member portal landing page needed a refresh. We designed and implemented a cleaner, more intuitive experience that better communicated available benefits and next steps.
+
+### Multi-Factor Authentication
+Security is critical for financial applications. We led a team of 6 engineers to implement MFA across the entire platform, protecting user accounts while maintaining a smooth experience.
+
+## Results
+
+- Improved onboarding completion rates
+- Better member engagement on the portal
+- Enterprise-grade security with MFA
+- Scalable architecture supporting continued growth"#.to_string(),
+                    external_url: "https://my.paytient.com".to_string(),
+                    before_url: None,
+                    logo: Some("assets/portfolio/paytient-logo.svg".to_string()),
+                    screenshot: None,
+                    video: None,
+                    tech_tags: vec!["React".to_string(), "UX".to_string(), "MFA".to_string(), "Team Lead".to_string()],
+                    scope: vec![
+                        "Streamlined onboarding by removing unnecessary friction step".to_string(),
+                        "Redesigned member landing page for better engagement".to_string(),
+                        "Led 6-person team implementing MFA across the platform".to_string(),
+                    ],
+                },
+                PortfolioProject {
+                    id: "club-car-wash".to_string(),
+                    slug: "club-car-wash".to_string(),
+                    title: "Club Car Wash".to_string(),
+                    project_type: "Website + Portal + Digital Marketing".to_string(),
+                    description: "Complete digital transformation for a growing regional car wash chain. Built and managed the public-facing website, developed an internal employee portal, and ran ongoing Google Ads campaigns to support new store openings.".to_string(),
+                    long_description: r#"## The Challenge
+
+Club Car Wash is a rapidly expanding car wash chain opening approximately 3 new stores per month. They needed a complete digital presence that could scale with their growth.
+
+## What We Did
+
+### Public Website
+Designed and developed a customer-facing website that showcases locations, membership options, and the Club Car Wash brand. The site is built for easy updates as new locations open.
+
+### Employee Portal
+Created an internal portal for employee operations, streamlining internal communication and processes across all locations.
+
+### Digital Marketing
+Managed Google Ads campaigns coordinated with new store openings, driving local awareness and membership sign-ups in each new market.
+
+## Results
+
+- Scalable website supporting rapid expansion
+- Centralized employee portal across all locations
+- Successful launch marketing for ~3 store openings per month
+- 1+ year of ongoing maintenance and support"#.to_string(),
+                    external_url: "https://clubcarwash.com".to_string(),
+                    before_url: None,
+                    logo: None,
+                    screenshot: None,
+                    video: None,
+                    tech_tags: vec!["React".to_string(), "Custom CMS".to_string(), "Google Ads".to_string()],
+                    scope: vec![
+                        "Public website design and development".to_string(),
+                        "Employee portal for internal operations".to_string(),
+                        "Google Ad campaign management (~3 store openings/month)".to_string(),
+                        "Ongoing maintenance and support for 1 year".to_string(),
+                    ],
+                },
+                PortfolioProject {
+                    id: "old-hawthorne".to_string(),
+                    slug: "old-hawthorne".to_string(),
+                    title: "Old Hawthorne Country Club".to_string(),
+                    project_type: "Website Consulting".to_string(),
+                    description: "Consulting work for a local country club community in Columbia, Missouri. Made targeted adjustments to improve the site's look and navigation, including replacing the dated beige wallpaper background with a cleaner design.".to_string(),
+                    long_description: r#"## The Challenge
+
+Old Hawthorne Country Club had an existing website that felt dated and didn't reflect the quality of the community. They needed targeted improvements without a complete rebuild.
+
+## What We Did
+
+### Visual Refresh
+The most obvious issue was a dated beige wallpaper background that made the site feel old. We replaced it with a cleaner, more modern design that better represents the club.
+
+### Navigation Improvements
+Reorganized the site navigation to make it easier for members and prospective members to find information about amenities, membership, and events.
+
+### UX Enhancements
+Made various usability improvements throughout the site to create a more polished experience.
+
+## Results
+
+- Modern, professional appearance
+- Improved navigation and usability
+- Better reflection of the club's quality"#.to_string(),
+                    external_url: "https://oldhawthorne.com".to_string(),
+                    before_url: None,
+                    logo: Some("assets/portfolio/old-hawthorne-logo.png".to_string()),
+                    screenshot: None,
+                    video: None,
+                    tech_tags: vec!["Consulting".to_string(), "UI Cleanup".to_string(), "UX".to_string()],
+                    scope: vec![
+                        "Replaced dated beige wallpaper background".to_string(),
+                        "Improved site navigation and layout".to_string(),
+                    ],
+                },
+                PortfolioProject {
+                    id: "gracie-humaita-columbia".to_string(),
+                    slug: "gracie-humaita-columbia".to_string(),
+                    title: "Gracie Humaita Columbia".to_string(),
+                    project_type: "Website + SMTP Integration".to_string(),
+                    description: "Website for a Brazilian Jiu-Jitsu academy with integrated email automation. Designed to showcase class schedules, instructor profiles, and drive new student sign-ups with automated follow-up.".to_string(),
+                    long_description: r#"## The Challenge
+
+Gracie Humaita Columbia is a Brazilian Jiu-Jitsu academy that needed a professional web presence to attract new students and communicate with their community.
+
+## What We Did
+
+### Website Design
+Created a mobile-first website that showcases the academy's programs, class schedules, and instructor profiles. The design reflects the Gracie Humaita brand while being accessible to beginners.
+
+### Lead Capture
+Built a lead capture system to collect information from prospective students interested in trying classes.
+
+### Email Automation
+Integrated SMTP-based email automation to automatically follow up with new leads, keeping them engaged until they come in for their first class.
+
+## Results
+
+- Professional web presence for the academy
+- Automated lead follow-up saving staff time
+- Mobile-friendly design for on-the-go access"#.to_string(),
+                    external_url: "https://graciehumaitacolumbia.com".to_string(),
+                    before_url: Some("https://web.archive.org/web/20190723164913/http://www.graciehumaitacolumbia.com/".to_string()),
+                    logo: Some("assets/portfolio/gracie-humaita-columbia-logo.png".to_string()),
+                    screenshot: None,
+                    video: None,
+                    tech_tags: vec!["Mobile-First".to_string(), "Lead Capture".to_string(), "SMTP".to_string()],
+                    scope: vec![
+                        "Automated email follow-up for new leads".to_string(),
+                        "Class schedule and instructor profiles".to_string(),
+                    ],
+                },
+                PortfolioProject {
+                    id: "att-indianapolis".to_string(),
+                    slug: "att-indianapolis".to_string(),
+                    title: "American Top Team Indianapolis".to_string(),
+                    project_type: "Website Replacement".to_string(),
+                    description: "Replaced a broken, outdated website for a martial arts training facility. Built a clean, professional site with focus on easy navigation for prospective students.".to_string(),
+                    long_description: r#"## The Challenge
+
+American Top Team Indianapolis had an old, broken website that wasn't functioning properly. Prospective students couldn't find information about classes or contact the gym.
+
+## What We Did
+
+### Complete Replacement
+Rather than trying to fix the broken site, we built a completely new website from scratch with modern technology and design.
+
+### Professional Design
+Created a clean, professional design that showcases the gym's programs and instructors. The site reflects ATT's brand while being welcoming to beginners.
+
+### SEO Optimization
+Built the site with SEO best practices to help the gym appear in local search results.
+
+## Results
+
+- Fully functional website replacing broken one
+- Professional appearance reflecting ATT brand
+- Easy navigation for prospective students
+- Improved local search visibility"#.to_string(),
+                    external_url: "https://attindianapolis.com".to_string(),
+                    before_url: Some("https://web.archive.org/web/20200530220933/http://www.attindianapolis.com/".to_string()),
+                    logo: Some("assets/portfolio/att-indianapolis-logo.png".to_string()),
+                    screenshot: None,
+                    video: None,
+                    tech_tags: vec!["Responsive".to_string(), "SEO".to_string()],
+                    scope: vec![
+                        "Replaced old broken website".to_string(),
+                        "Clean, professional design".to_string(),
+                    ],
+                },
+                PortfolioProject {
+                    id: "apex-earthworks".to_string(),
+                    slug: "apex-earthworks".to_string(),
+                    title: "APEX Earthworks".to_string(),
+                    project_type: "Website + Lead Generation".to_string(),
+                    description: "Business website for an earthwork and excavation company. Professional presentation with automated customer lead generation to capture and follow up with potential clients.".to_string(),
+                    long_description: r#"## The Challenge
+
+APEX Earthworks is an earthwork and excavation company that needed an online presence to attract commercial and residential clients.
+
+## What We Did
+
+### Professional Website
+Built a business website that showcases APEX's services, equipment, and past projects. The design conveys professionalism and capability.
+
+### Lead Generation
+Implemented a lead capture system with automated follow-up to ensure no potential client falls through the cracks.
+
+### Mobile Optimization
+Ensured the site works perfectly on mobile devices, since many potential clients search for services on their phones.
+
+## Results
+
+- Professional online presence
+- Automated lead capture and follow-up
+- Mobile-friendly experience"#.to_string(),
+                    external_url: "https://apexearthwork.com".to_string(),
+                    before_url: None,
+                    logo: Some("assets/portfolio/apex-earthworks-logo.png".to_string()),
+                    screenshot: None,
+                    video: None,
+                    tech_tags: vec!["Lead Gen Automation".to_string(), "Mobile".to_string()],
+                    scope: vec![
+                        "Automated lead capture and follow-up".to_string(),
+                        "Professional company showcase".to_string(),
+                    ],
+                },
+                PortfolioProject {
+                    id: "missouri-jiu-jitsu".to_string(),
+                    slug: "missouri-jiu-jitsu".to_string(),
+                    title: "Missouri Jiu Jitsu".to_string(),
+                    project_type: "Website Development".to_string(),
+                    description: "Demo website with a mock jiu-jitsu academy featuring class information, instructor bios, and signup flow automation.".to_string(),
+                    long_description: r#"## The Project
+
+Missouri Jiu Jitsu is a demo website showcasing our capabilities for martial arts academies. It demonstrates a complete solution including class schedules, instructor profiles, and member sign-up flows.
+
+## Features
+
+### Class Schedules
+Easy-to-read class schedule showing times, instructors, and skill levels for each class.
+
+### Instructor Bios
+Professional profiles for each instructor, highlighting their background and expertise.
+
+### Membership Inquiry
+Lead capture forms for prospective students to request information or schedule a trial class.
+
+## Technical Details
+
+- Responsive design for all devices
+- Clean, modern aesthetic
+- Fast loading times
+- Easy content management"#.to_string(),
+                    external_url: "https://missourijiujitsu.com".to_string(),
+                    before_url: None,
+                    logo: Some("assets/portfolio/missouri-jiu-jitsu-logo.png".to_string()),
+                    screenshot: None,
+                    video: None,
+                    tech_tags: vec!["Responsive".to_string(), "Forms".to_string()],
+                    scope: vec![
+                        "Class schedules and instructor bios".to_string(),
+                        "Membership inquiry forms".to_string(),
+                    ],
+                },
+                PortfolioProject {
+                    id: "delaware-krav-maga".to_string(),
+                    slug: "delaware-krav-maga".to_string(),
+                    title: "Delaware Krav Maga".to_string(),
+                    project_type: "Website Development".to_string(),
+                    description: "Professional website for a Krav Maga self-defense training center. Clear presentation of programs with strong calls-to-action for new students.".to_string(),
+                    long_description: r#"## The Challenge
+
+Delaware Krav Maga is a self-defense training center that needed a professional website to attract new students and communicate their unique approach to self-defense training.
+
+## What We Did
+
+### Program Showcase
+Built clear, compelling pages for each program offered, from beginner classes to advanced training.
+
+### Strong CTAs
+Designed the site with prominent calls-to-action throughout, making it easy for visitors to take the next step and sign up for classes.
+
+### Mobile-First Design
+Built with a mobile-first approach, ensuring the site looks and works great on phones where many prospective students first find the school.
+
+## Results
+
+- Professional online presence
+- Clear program information
+- Effective lead generation
+- Mobile-optimized experience"#.to_string(),
+                    external_url: "https://delawarekravmaga.com".to_string(),
+                    before_url: None,
+                    logo: Some("assets/portfolio/delaware-krav-maga-logo.png".to_string()),
+                    screenshot: None,
+                    video: None,
+                    tech_tags: vec!["Mobile-First".to_string(), "Lead Capture".to_string()],
+                    scope: vec![
+                        "Program showcase with clear CTAs".to_string(),
+                        "New student sign-up flow".to_string(),
+                    ],
+                },
+                PortfolioProject {
+                    id: "silo-wellness".to_string(),
+                    slug: "silo-wellness".to_string(),
+                    title: "Silo Wellness".to_string(),
+                    project_type: "Website Redesign".to_string(),
+                    description: "Website redesign for a wellness company offering healing retreats in Jamaica. Created an inviting, professional presence that communicates trust and tranquility to prospective guests.".to_string(),
+                    long_description: r#"## The Challenge
+
+Silo Wellness offers healing retreats in Jamaica, providing transformative wellness experiences. Their website needed to communicate trust, tranquility, and professionalism to prospective guests considering this significant investment in their wellbeing.
+
+## What We Did
+
+### Complete Redesign
+Redesigned the website from the ground up to create an inviting, professional experience that reflects the quality of the retreats.
+
+### Trust Building
+Incorporated elements that build trust: testimonials, clear information about what to expect, and professional photography showcasing the retreat experience.
+
+### Booking Flow
+Streamlined the inquiry and booking process to make it easy for interested visitors to take the next step.
+
+## Results
+
+- Professional, inviting web presence
+- Clear communication of retreat offerings
+- Streamlined booking inquiries
+- Improved trust signals throughout"#.to_string(),
+                    external_url: "https://silowellness.com".to_string(),
+                    before_url: None,
+                    logo: Some("assets/portfolio/silo-wellness-logo.png".to_string()),
+                    screenshot: None,
+                    video: None,
+                    tech_tags: vec!["Redesign".to_string(), "UX".to_string(), "Wellness".to_string()],
+                    scope: vec![
+                        "Complete website redesign".to_string(),
+                        "Healing retreat showcase".to_string(),
+                    ],
+                },
+                PortfolioProject {
+                    id: "toledo-aa".to_string(),
+                    slug: "toledo-aa".to_string(),
+                    title: "Toledo Area AA".to_string(),
+                    project_type: "Website Redesign".to_string(),
+                    description: "Website redesign for the Alcoholics Anonymous organization serving the Toledo region in Ohio. Built with accessibility and ease of use as top priorities to help those seeking support.".to_string(),
+                    long_description: r#"## The Challenge
+
+Toledo Area AA serves people seeking help with alcohol addiction in the Toledo, Ohio region. The website needed to be accessible, easy to use, and welcoming to people who may be in crisis.
+
+## What We Did
+
+### Accessibility Focus
+Built the site with accessibility as a top priority. Clear fonts, high contrast, and simple navigation ensure everyone can use the site regardless of ability.
+
+### Meeting Finder
+Created an easy-to-use meeting finder so visitors can quickly locate meetings near them by day, time, or location.
+
+### Resource Hub
+Organized resources and information in a clear, non-overwhelming way to help newcomers understand what to expect.
+
+## Results
+
+- Fully accessible website
+- Easy meeting finder functionality
+- Clear, welcoming design
+- Resources organized for newcomers"#.to_string(),
+                    external_url: "https://toledoaa.com".to_string(),
+                    before_url: None,
+                    logo: None,
+                    screenshot: None,
+                    video: None,
+                    tech_tags: vec!["Redesign".to_string(), "Accessibility".to_string(), "Community".to_string()],
+                    scope: vec![
+                        "Complete website redesign".to_string(),
+                        "Meeting finder and resources".to_string(),
+                    ],
                 },
             ],
         }

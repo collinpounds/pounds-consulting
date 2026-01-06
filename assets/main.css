@@ -2825,6 +2825,130 @@ a.contact-link:hover {
     margin: 0;
 }
 
+/* ===== FIRST RESPONDER DISCOUNT SECTION ===== */
+.first-responder-section {
+    padding: var(--spacing-lg) 0;
+}
+
+.first-responder-card {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    border: 2px solid var(--color-secondary);
+    background: linear-gradient(135deg, rgba(212, 160, 23, 0.08) 0%, rgba(42, 42, 42, 0.9) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.first-responder-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+}
+
+.first-responder-badge {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.first-responder-title {
+    color: var(--color-secondary);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-heading);
+}
+
+.first-responder-description {
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-lg);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.first-responder-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: 0;
+    margin-bottom: var(--spacing-lg);
+}
+
+.first-responder-list li {
+    background: rgba(212, 160, 23, 0.15);
+    color: var(--color-text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(212, 160, 23, 0.3);
+    transition: all var(--transition-fast);
+}
+
+.first-responder-list li:hover {
+    background: rgba(212, 160, 23, 0.25);
+    border-color: rgba(212, 160, 23, 0.5);
+}
+
+.first-responder-cta {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    font-style: italic;
+    margin: 0;
+}
+
+/* ===== DISCOUNT BADGE & PRICING ACTIONS ===== */
+.discount-badge {
+    display: inline-block;
+    background: var(--color-secondary);
+    color: var(--color-background);
+    padding: 0.35rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rate-original {
+    text-decoration: line-through;
+    color: var(--color-text-secondary);
+    font-size: 2rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-right: var(--spacing-sm);
+    opacity: 0.6;
+}
+
+.rate-discounted {
+    color: var(--color-accent);
+}
+
+.pricing-actions {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+/* Promo settings in admin */
+.promo-settings {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* Admin Responsive */
 @media (max-width: 1024px) {
     .articles-list-sidebar {
@@ -2859,5 +2983,266 @@ a.contact-link:hover {
 
     .articles-main {
         margin-left: 0 !important;
+    }
+}
+
+/* ===== PORTFOLIO CARD LOGO ===== */
+.portfolio-card-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem;
+}
+
+.portfolio-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.portfolio-header-text {
+    flex: 1;
+}
+
+/* ===== CASE STUDY PAGE ===== */
+.case-study-hero {
+    padding: var(--spacing-2xl) 0;
+    background: linear-gradient(135deg, var(--color-background) 0%, var(--color-surface) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.case-study-back-link {
+    display: inline-block;
+    color: var(--color-secondary);
+    text-decoration: none;
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.95rem;
+    transition: color var(--transition-fast);
+}
+
+.case-study-back-link:hover {
+    color: var(--color-accent);
+}
+
+.case-study-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.case-study-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+}
+
+.case-study-title-section {
+    flex: 1;
+}
+
+.case-study-type-badge {
+    display: inline-block;
+    background: rgba(212, 160, 23, 0.15);
+    color: var(--color-secondary);
+    padding: 0.35rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.case-study-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--color-primary);
+}
+
+.case-study-description {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+    max-width: 800px;
+}
+
+.case-study-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+/* Media Section */
+.case-study-media-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.case-study-media {
+    padding: var(--spacing-lg);
+    text-align: center;
+}
+
+.case-study-screenshot,
+.case-study-video {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.case-study-media-placeholder {
+    padding: var(--spacing-2xl);
+    color: var(--color-text-secondary);
+}
+
+.placeholder-icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Content Section */
+.case-study-content-section {
+    padding: var(--spacing-xl) 0 var(--spacing-2xl);
+}
+
+.case-study-body {
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.case-study-body p {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+}
+
+.case-study-h2 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    color: var(--color-primary);
+    margin: var(--spacing-xl) 0 var(--spacing-md);
+}
+
+.case-study-h3 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: var(--color-primary);
+    margin: var(--spacing-lg) 0 var(--spacing-sm);
+}
+
+.case-study-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-md) 0;
+}
+
+.case-study-list li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.case-study-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+}
+
+/* Scope Card */
+.case-study-scope {
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.case-study-scope h3 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.case-study-scope ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.case-study-scope li {
+    padding: var(--spacing-sm) 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--color-text-secondary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.case-study-scope li:last-child {
+    border-bottom: none;
+}
+
+.case-study-scope li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+}
+
+/* Action Buttons */
+.case-study-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+/* Related Projects */
+.related-projects {
+    background: var(--color-surface);
+    padding: var(--spacing-2xl) 0;
+}
+
+.related-projects .portfolio-grid {
+    max-width: 1000px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .case-study-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .case-study-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .case-study-title {
+        font-size: 2rem;
+    }
+
+    .case-study-actions {
+        flex-direction: column;
+    }
+
+    .case-study-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .portfolio-card-logo {
+        width: 50px;
+        height: 50px;
     }
 }

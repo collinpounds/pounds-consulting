@@ -1,0 +1,53 @@
+# Pounds Consulting
+
+> Missouri-based technical consulting firm specializing in website development, product strategy, and business solutions. We keep things simple, intuitive, and built to last.
+
+## About
+
+Pounds Consulting is a technical consulting firm based in Columbia, Missouri, founded by Collin Pounds. We help growing businesses with website development, digital marketing systems, technical strategy, and business solutions.
+
+## Services
+
+### Website Development
+Custom website design and development tailored to your brand. Mobile-responsive, SEO-optimized, fast-loading sites built to convert visitors into customers.
+
+### Digital Marketing & Customer Systems
+Email marketing, SMS outreach, lead capture, appointment scheduling, membership management, and marketing automation systems.
+
+### Technical Strategy & Advisory
+Technology assessments, vendor evaluations, product roadmapping, build vs. buy analysis, and architecture reviews.
+
+### Business Solutions & Integration
+Software integrations, workflow automation, data migrations, custom internal tools, and process optimization.
+
+## Pricing
+
+- **Hourly Rate:** $71/hour
+- **Initial Consultation:** Free 30-minute discovery call
+- **Fixed-Price Quotes:** Available for larger projects
+- **First Responder/Military Discount:** 50% off for Military, Veterans, Law Enforcement, Fire Fighters, and EMTs
+
+## Contact
+
+- **Email:** collin@poundsconsulting.net
+- **Location:** Columbia, Missouri
+- **Website:** https://poundsconsulting.net
+- **Book a Call:** https://calendar.app.google/NxuWY3RDGE5Miaan7
+
+## Portfolio
+
+Notable projects include:
+- Paytient (Healthcare fintech, React, MFA implementation)
+- Club Car Wash (Website, employee portal, Google Ads)
+- Silo Wellness (Website redesign, healing retreats in Jamaica)
+- Toledo Area AA (Website redesign, accessibility-focused)
+- Various martial arts and fitness websites with lead generation
+
+## Links
+
+- Home: https://poundsconsulting.net/
+- About: https://poundsconsulting.net/about
+- Services: https://poundsconsulting.net/services
+- Portfolio: https://poundsconsulting.net/portfolio
+- Articles: https://poundsconsulting.net/articles
+- Contact: https://poundsconsulting.net/contact

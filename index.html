@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Missouri-based technical consulting firm specializing in website development, product strategy, and business solutions. We keep things simple, intuitive, and built to last.">
     <meta name="keywords" content="technical consulting Missouri, website development Columbia MO, business technology solutions">
+    <link rel="canonical" href="https://poundsconsulting.net">
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
@@ -14,18 +15,58 @@
 
     <title>Pounds Consulting | Technical Solutions for Growing Businesses</title>
 
-    <!-- Fonts -->
+    <!-- Fonts - Preconnect to reduce latency -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Montserrat:wght@700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="assets/main.css">
+    <!-- Preload critical fonts for faster LCP -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w5aXp-p7K4KLg.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/opensans/v44/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSumu0SC55K5gw.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Load Google Fonts asynchronously to prevent render blocking -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Montserrat:wght@700&family=Open+Sans:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Montserrat:wght@700&family=Open+Sans:wght@400;500&display=swap"></noscript>
+
+    <!-- Critical CSS for above-the-fold content to reduce LCP -->
+    <style>
+        :root {
+            --color-primary: #FAFAFA;
+            --color-secondary: #D4A017;
+            --color-background: #1A1A1A;
+            --color-surface: #2A2A2A;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+        }
+        body {
+            margin: 0;
+            background-color: #1A1A1A;
+            color: #FAFAFA;
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+        }
+    </style>
+
+    <!-- Main styles loaded by Dioxus via asset! macro -->
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 
-    <!-- Schema.org JSON-LD -->
+    <!-- Schema.org JSON-LD - Organization -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -33,6 +74,7 @@
         "name": "Pounds Consulting",
         "description": "Technical consulting firm specializing in website development, product strategy, and business solutions.",
         "url": "https://poundsconsulting.net",
+        "logo": "https://poundsconsulting.net/assets/favicon.ico",
         "email": "collin@poundsconsulting.net",
         "address": {
             "@type": "PostalAddress",
@@ -41,12 +83,66 @@
             "postalCode": "65201",
             "addressCountry": "US"
         },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "38.9517",
+            "longitude": "-92.3341"
+        },
         "founder": {
             "@type": "Person",
             "name": "Collin Pounds"
         },
         "areaServed": "United States",
-        "priceRange": "$$"
+        "priceRange": "$$",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Technical Consulting Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Website Development",
+                        "description": "Custom website design and development with mobile-responsive layouts, SEO optimization, and fast load times."
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Digital Marketing & Customer Systems",
+                        "description": "Email marketing, SMS outreach, lead capture, appointment scheduling, and marketing automation systems."
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Technical Strategy & Advisory",
+                        "description": "Technology assessments, vendor evaluations, product roadmapping, and architecture reviews."
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Business Solutions & Integration",
+                        "description": "Software integrations, workflow automation, data migrations, and custom internal tools."
+                    }
+                }
+            ]
+        },
+        "sameAs": []
+    }
+    </script>
+
+    <!-- Schema.org JSON-LD - Website with Sitelinks Search Box potential -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Pounds Consulting",
+        "url": "https://poundsconsulting.net"
     }
     </script>
 </head>

@@ -7,7 +7,7 @@ mod pages;
 use components::{Footer, Header};
 use pages::{
     About, AdminArticleEdit, AdminArticleNew, AdminArticles, AdminDashboard, AdminLogin,
-    AdminSettings, ArticleDetail, Articles, Contact, Home, Portfolio, Services,
+    AdminSettings, ArticleDetail, Articles, Contact, Home, Portfolio, PortfolioDetail, Services,
 };
 
 const CSS: Asset = asset!("/assets/main.css");
@@ -25,6 +25,8 @@ pub enum Route {
     Services {},
     #[route("/portfolio")]
     Portfolio {},
+    #[route("/portfolio/:slug")]
+    PortfolioDetail { slug: String },
     #[route("/contact")]
     Contact {},
     #[route("/articles")]
@@ -102,6 +104,31 @@ mod tests {
 
 #[component]
 fn App() -> Element {
+    // Handle SPA redirect from 404.html
+    use_effect(|| {
+        #[cfg(target_arch = "wasm32")]
+        {
+            if let Some(window) = web_sys::window() {
+                if let Ok(Some(storage)) = window.session_storage() {
+                    if let Ok(Some(path)) = storage.get_item("spa-redirect-path") {
+                        // Clear the stored path
+                        let _ = storage.remove_item("spa-redirect-path");
+                        // Navigate to the stored path
+                        if let Some(history) = window.history().ok() {
+                            let _ = history.replace_state_with_url(
+                                &web_sys::wasm_bindgen::JsValue::NULL,
+                                "",
+                                Some(&path),
+                            );
+                            // Reload to let the router handle the new path
+                            let _ = window.location().reload();
+                        }
+                    }
+                }
+            }
+        }
+    });
+
     rsx! {
         document::Link { rel: "stylesheet", href: CSS }
         document::Link {

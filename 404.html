@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting... | Pounds Consulting</title>
+    <script>
+        // Single Page App redirect for GitHub Pages
+        // This script takes the current URL path and redirects to the root
+        // with the path stored in sessionStorage so the SPA router can handle it
+        (function() {
+            var path = window.location.pathname;
+            var search = window.location.search;
+            var hash = window.location.hash;
+
+            // Store the path for the SPA to pick up
+            sessionStorage.setItem('spa-redirect-path', path + search + hash);
+
+            // Redirect to the root
+            window.location.replace('/');
+        })();
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
