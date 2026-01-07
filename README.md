@@ -50,7 +50,7 @@ Yes, this is a brochure site compiled to the same technology that powers Figma, 
 
 ### Portfolio Case Studies
 - Individual case study pages at `/portfolio/:slug`
-- Project logos extracted from client sites
+- Project logos
 - Before/after comparison support
 - Tech stack tags and scope of work
 - Related projects section

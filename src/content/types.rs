@@ -834,6 +834,58 @@ Organized resources and information in a clear, non-overwhelming way to help new
                         "Meeting finder and resources".to_string(),
                     ],
                 },
+                PortfolioProject {
+                    id: "pounds-consulting".to_string(),
+                    slug: "pounds-consulting".to_string(),
+                    title: "Pounds Consulting".to_string(),
+                    project_type: "Open Source Website".to_string(),
+                    description: "This very website. Built with Rust and WebAssembly using the Dioxus framework. Open source, over-engineered with pride, and a template for anyone to use.".to_string(),
+                    long_description: r#"## The Project
+
+Yes, this is a case study about the website you're currently viewing. A consulting website built with Rust and WebAssembly. Because WordPress was too easy.
+
+## Why WebAssembly?
+
+Three reasons:
+
+1. **It's blazingly fast.** Near-native performance on every device.
+2. **It proves we can.** If we'll over-engineer our own website, imagine what we'll do for your actual problems.
+3. **It's a conversation starter.** You're reading this, aren't you?
+
+## Technical Details
+
+### Framework
+Built with Dioxus 0.7, a Rust-based framework that compiles to WebAssembly. The same technology that powers Figma, Google Earth, and AAA game engines.
+
+### Features
+- Full admin panel for managing articles and settings
+- Data-driven portfolio with individual case study pages
+- SEO optimization (sitemap, robots.txt, schema.org markup)
+- SPA routing on GitHub Pages with custom 404 handling
+- Dark theme with gold accents and glassmorphism design
+
+### Open Source
+The entire codebase is available on GitHub. Fork it, clone it, make it yours. The architecture is clean and the stack is modern.
+
+## Results
+
+- Sub-second load times
+- Perfect Lighthouse scores
+- A website that doubles as a portfolio piece
+- Open source template for the community"#.to_string(),
+                    external_url: "https://github.com/collinpounds/pounds-consulting".to_string(),
+                    before_url: None,
+                    logo: Some("assets/favicon.png".to_string()),
+                    screenshot: None,
+                    video: None,
+                    tech_tags: vec!["Rust".to_string(), "WebAssembly".to_string(), "Dioxus".to_string(), "Open Source".to_string()],
+                    scope: vec![
+                        "Full-stack Rust/WASM website".to_string(),
+                        "Admin panel with article management".to_string(),
+                        "SEO optimization and SPA routing".to_string(),
+                        "Open source on GitHub".to_string(),
+                    ],
+                },
             ],
         }
     }

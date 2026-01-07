@@ -14,6 +14,40 @@ pub fn About() -> Element {
             }
         }
 
+        // Personal Introduction
+        section { class: "section personal-section",
+            div { class: "container",
+                div { class: "personal-content glass-card",
+                    div { class: "personal-text",
+                        h2 { class: "personal-title", "Hi, I'm Collin" }
+                        p {
+                            "I started Pounds Consulting to help local businesses and small teams navigate the technical side of "
+                            "running a business. Whether it's your first website, a system to manage leads, or just figuring out "
+                            "what tools you actually need - I'm here to help you make sense of it all."
+                        }
+                        p {
+                            "My background includes building products at startups and working with enterprise clients, "
+                            "but what I enjoy most is working directly with people in my community. There's something rewarding about "
+                            "helping a local gym owner get their scheduling system working, or building a website for a business "
+                            "that's been relying on word-of-mouth for years."
+                        }
+                        p {
+                            "When I'm not building websites or automating workflows, you might find me hiking, dog-sitting, coaching swim lessons, "
+                            "or tinkering in my AI lab (a spare bedroom with a desk). I value delivering solid, quality work for my clients, "
+                            "keeping things simple, and being someone you'll want to work with again and again."
+                        }
+                        a {
+                            href: "https://github.com/collinpounds",
+                            class: "personal-github-link",
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            "See my work on GitHub →"
+                        }
+                    }
+                }
+            }
+        }
+
         // Experience Banner
         section { class: "section clients-section",
             div { class: "container",

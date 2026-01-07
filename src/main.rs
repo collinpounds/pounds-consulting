@@ -53,6 +53,8 @@ pub enum Route {
 fn main() {
     // Initialize storage with defaults
     content::init_storage();
+    // Apply saved theme on startup
+    content::apply_theme_to_dom(&content::load_theme());
     dioxus::launch(App);
 }
 

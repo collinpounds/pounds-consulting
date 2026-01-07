@@ -170,6 +170,21 @@ The site includes comprehensive SEO optimization:
 - Assets in `assets/portfolio/` need manual copying in dev mode
 - Production build handles this via deploy.yml workflow
 
+### Testing Before Commit
+Always run these before committing to catch CI failures early:
+
+```bash
+# Install Clippy if not already installed
+rustup component add clippy
+
+# Run checks (same as CI)
+cargo fmt --check       # Formatting
+cargo clippy            # Lints
+cargo test              # Tests
+```
+
+The GitHub Actions workflow runs all three, so running them locally prevents failed deployments.
+
 ## Example Rewrites
 
 ### Before (AI-sounding):

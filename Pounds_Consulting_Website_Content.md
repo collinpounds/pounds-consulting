@@ -736,7 +736,7 @@ Every project starts with a conversation. Let's talk about what you're building.
 
 **URL**: `poundsconsulting.net/contact`  
 **Meta Title**: Contact Pounds Consulting | Get in Touch  
-**Meta Description**: Ready to discuss your project? Contact Pounds Consulting for website development, technical strategy, or business solutions. Based in Columbia, Missouri.  
+**Meta Description**: Ready to discuss your project? Contact Pounds Consulting for web development, technical strategy, or business solutions. Based in Columbia, Missouri.  
 **Primary Keywords**: contact Pounds Consulting, hire technical consultant, Columbia MO consultant
 
 ---
