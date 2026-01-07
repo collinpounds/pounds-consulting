@@ -728,38 +728,34 @@ Lead capture forms for prospective students to request information or schedule a
                     id: "delaware-krav-maga".to_string(),
                     slug: "delaware-krav-maga".to_string(),
                     title: "Delaware Krav Maga".to_string(),
-                    project_type: "Website Development".to_string(),
-                    description: "Professional website for a Krav Maga self-defense training center. Clear presentation of programs with strong calls-to-action for new students.".to_string(),
+                    project_type: "Landing Page + Lead Capture".to_string(),
+                    description: "Simple landing page with automated lead capture for a Krav Maga instructor's self-defense training service.".to_string(),
                     long_description: r#"## The Challenge
 
-Delaware Krav Maga is a self-defense training center that needed a professional website to attract new students and communicate their unique approach to self-defense training.
+A Krav Maga instructor needed a simple, effective way to capture leads for his self-defense training service. No complex website needed, just a clean landing page that converts visitors into inquiries.
 
 ## What We Did
 
-### Program Showcase
-Built clear, compelling pages for each program offered, from beginner classes to advanced training.
+### Landing Page
+Built a focused, single-page site that communicates the value of the training and drives visitors to take action.
 
-### Strong CTAs
-Designed the site with prominent calls-to-action throughout, making it easy for visitors to take the next step and sign up for classes.
-
-### Mobile-First Design
-Built with a mobile-first approach, ensuring the site looks and works great on phones where many prospective students first find the school.
+### Automated Lead Capture
+Set up an automated form that captures prospect information and delivers it directly to the instructor, no manual follow-up required.
 
 ## Results
 
-- Professional online presence
-- Clear program information
-- Effective lead generation
-- Mobile-optimized experience"#.to_string(),
+- Clean, professional landing page
+- Automated lead capture and delivery
+- Simple, low-maintenance solution"#.to_string(),
                     external_url: "https://delawarekravmaga.com".to_string(),
                     before_url: None,
                     logo: Some("assets/portfolio/delaware-krav-maga-logo.png".to_string()),
                     screenshot: None,
                     video: None,
-                    tech_tags: vec!["Mobile-First".to_string(), "Lead Capture".to_string()],
+                    tech_tags: vec!["Landing Page".to_string(), "Lead Capture".to_string(), "Automation".to_string()],
                     scope: vec![
-                        "Program showcase with clear CTAs".to_string(),
-                        "New student sign-up flow".to_string(),
+                        "Landing page design".to_string(),
+                        "Automated lead capture form".to_string(),
                     ],
                 },
                 PortfolioProject {

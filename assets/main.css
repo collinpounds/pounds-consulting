@@ -2988,13 +2988,13 @@ a.contact-link:hover {
 
 /* ===== PORTFOLIO CARD LOGO ===== */
 .portfolio-card-logo {
-    width: 60px;
-    height: 60px;
+    width: 180px;
+    height: 180px;
     object-fit: contain;
     margin-right: var(--spacing-md);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     background: rgba(255, 255, 255, 0.05);
-    padding: 0.5rem;
+    padding: 1rem;
 }
 
 .portfolio-header {
@@ -3242,7 +3242,7 @@ a.contact-link:hover {
     }
 
     .portfolio-card-logo {
-        width: 50px;
-        height: 50px;
+        width: 120px;
+        height: 120px;
     }
 }

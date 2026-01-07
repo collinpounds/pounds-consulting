@@ -22,6 +22,32 @@ Yes, this is a brochure site compiled to the same technology that powers Figma, 
 - **SPA 404 Routing** - Custom 404.html for GitHub Pages client-side routing
 - **Dynamic Meta Tags** - Per-page titles and descriptions
 
+**Sitemap Structure:**
+```
+/                              # Home
+/about                         # About
+/services                      # Services
+/portfolio                     # Portfolio listing
+├── /portfolio/paytient
+├── /portfolio/club-car-wash
+├── /portfolio/old-hawthorne
+├── /portfolio/gracie-humaita-columbia
+├── /portfolio/att-indianapolis
+├── /portfolio/apex-earthworks
+├── /portfolio/missouri-jiu-jitsu
+├── /portfolio/delaware-krav-maga
+├── /portfolio/silo-wellness
+└── /portfolio/toledo-aa
+/articles                      # Articles listing
+├── /articles/do-you-need-custom-website
+├── /articles/red-flags-hiring-developer
+├── /articles/questions-before-building-app
+├── /articles/why-software-projects-fail
+├── /articles/true-cost-free-website-builders
+└── /articles/what-to-expect-working-with-us
+/contact                       # Contact
+```
+
 ### Portfolio Case Studies
 - Individual case study pages at `/portfolio/:slug`
 - Project logos extracted from client sites

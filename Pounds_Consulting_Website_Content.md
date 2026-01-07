@@ -20,7 +20,7 @@
 - **Accent/CTA**: Inter (600 weight)
 
 ### Design Notes
-- Clean, minimal layouts with generous white space
+- Clean, minimal layouts with tasteful white space
 - Gold used sparingly for CTAs, accents, and key highlights
 - Black for headers and navigation
 - Subtle shadows and clean lines
@@ -32,12 +32,33 @@
 
 ```
 poundsconsulting.net/
-├── index.html (Home)
-├── about/
-├── services/
-├── portfolio/
-├── contact/
-└── blog/ (future)
+├── /                              # Home
+├── /about                         # About
+├── /services                      # Services
+├── /portfolio                     # Portfolio listing
+│   ├── /portfolio/paytient
+│   ├── /portfolio/club-car-wash
+│   ├── /portfolio/old-hawthorne
+│   ├── /portfolio/gracie-humaita-columbia
+│   ├── /portfolio/att-indianapolis
+│   ├── /portfolio/apex-earthworks
+│   ├── /portfolio/missouri-jiu-jitsu
+│   ├── /portfolio/delaware-krav-maga
+│   ├── /portfolio/silo-wellness
+│   └── /portfolio/toledo-aa
+├── /articles                      # Articles listing
+│   ├── /articles/do-you-need-custom-website
+│   ├── /articles/red-flags-hiring-developer
+│   ├── /articles/questions-before-building-app
+│   ├── /articles/why-software-projects-fail
+│   ├── /articles/true-cost-free-website-builders
+│   └── /articles/what-to-expect-working-with-us
+├── /contact                       # Contact
+└── /admin                         # Admin panel (protected)
+    ├── /admin/dashboard
+    ├── /admin/settings
+    ├── /admin/articles
+    └── /admin/articles/:id
 ```
 
 ---
@@ -455,12 +476,38 @@ A selection of projects we've delivered. Real clients, real problems, real resul
 
 ---
 
-## Project 1: Club Car Wash
+## Project 1: Paytient
+
+### H3
+Paytient
+
+**Project Type**: Product Development
+
+**Overview**
+Healthcare fintech product development at the intersection of healthcare and finance. Worked on core product features serving hundreds of thousands of users in a HIPAA-compliant environment.
+
+**Tech Stack**
+- React
+- React Native
+- Fraud Detection API Integration
+- MFA Implementation
+
+**Scope**
+- Product technical support and management
+- Identity verification platform evaluation (Plaid, Persona, Alloy)
+- UX improvements reducing onboarding time by 17%
+- Technical implementations in compliance-heavy environment
+
+**Link**: paytient.com
+
+---
+
+## Project 2: Club Car Wash
 
 ### H3
 Club Car Wash
 
-**Project Type**: Website Development, Employee Portal, Digital Marketing
+**Project Type**: Website + Portal + Digital Marketing
 
 **Overview**
 Complete digital transformation for a growing regional car wash chain. Built and managed the public-facing website, developed an internal employee portal, and ran ongoing Google Ads campaigns to support new store openings.
@@ -480,12 +527,12 @@ Complete digital transformation for a growing regional car wash chain. Built and
 
 ---
 
-## Project 2: Old Hawthorne
+## Project 3: Old Hawthorne
 
 ### H3
 Old Hawthorne Country Club
 
-**Project Type**: Website Development
+**Project Type**: Website Consulting
 
 **Overview**
 Professional website for an upscale country club community in Columbia, Missouri. Clean, elegant design reflecting the club's brand with member-focused functionality.
@@ -504,36 +551,38 @@ Professional website for an upscale country club community in Columbia, Missouri
 
 ---
 
-## Project 3: Gracie Humaita Columbia
+## Project 4: Gracie Humaita Columbia
 
 ### H3
 Gracie Humaita Columbia
 
-**Project Type**: Website Development
+**Project Type**: Website + SMTP Integration
 
 **Overview**
-Website for a Brazilian Jiu-Jitsu academy. Designed to showcase class schedules, instructor profiles, and drive new student sign-ups.
+Website for a Brazilian Jiu-Jitsu academy. Designed to showcase class schedules, instructor profiles, and drive new student sign-ups with integrated email marketing.
 
 **Tech Stack**
 - Modern web stack
 - Mobile-first design
 - Lead capture forms
+- SMTP integration
 
 **Scope**
 - Website design and development
 - Class schedule integration
 - Contact and inquiry forms
+- Email marketing setup
 
 **Link**: graciehumaitacolumbia.com
 
 ---
 
-## Project 4: ATT Indianapolis
+## Project 5: American Top Team Indianapolis
 
 ### H3
-ATT Indianapolis
+American Top Team Indianapolis
 
-**Project Type**: Website Development
+**Project Type**: Website Replacement
 
 **Overview**
 Professional website build for a martial arts training facility. Focus on clean presentation and easy navigation for prospective students.
@@ -552,12 +601,12 @@ Professional website build for a martial arts training facility. Focus on clean 
 
 ---
 
-## Project 5: Apex Earthwork
+## Project 6: APEX Earthworks
 
 ### H3
-Apex Earthwork
+APEX Earthworks
 
-**Project Type**: Website Development
+**Project Type**: Website + Lead Generation
 
 **Overview**
 Business website for an earthwork and excavation company. Professional presentation designed to generate leads and showcase capabilities.
@@ -576,15 +625,15 @@ Business website for an earthwork and excavation company. Professional presentat
 
 ---
 
-## Project 6: Missouri Jiu Jitsu
+## Project 7: Missouri Jiu Jitsu
 
 ### H3
 Missouri Jiu Jitsu
 
-**Project Type**: Website Development
+**Project Type**: Website Development (Demo)
 
 **Overview**
-Website for a jiu-jitsu academy featuring class information, instructor bios, and membership inquiry functionality.
+Demo website for a jiu-jitsu academy featuring class information, instructor bios, and membership inquiry functionality.
 
 **Tech Stack**
 - Responsive web design
@@ -596,31 +645,77 @@ Website for a jiu-jitsu academy featuring class information, instructor bios, an
 - Mobile optimization
 - Inquiry form setup
 
-**Link**: missourijiujitsu.com
-
 ---
 
-## Project 7: Delaware Krav Maga
+## Project 8: Delaware Krav Maga
 
 ### H3
 Delaware Krav Maga
 
-**Project Type**: Website Development
+**Project Type**: Landing Page + Lead Capture
 
 **Overview**
-Professional website for a Krav Maga self-defense training center. Clear presentation of programs with strong calls-to-action for new students.
+Simple landing page with automated lead capture for a Krav Maga instructor's self-defense training service. No complex website needed, just a clean page that converts visitors into inquiries.
 
 **Tech Stack**
-- Modern web stack
-- Mobile-first approach
-- Lead capture integration
+- Landing page design
+- Lead capture forms
+- Automation integration
 
 **Scope**
-- Website design and development
-- Program page structure
-- Contact and trial class forms
+- Landing page design
+- Automated lead capture form
 
 **Link**: delawarekravmaga.com
+
+---
+
+## Project 9: Silo Wellness
+
+### H3
+Silo Wellness
+
+**Project Type**: Website Redesign
+
+**Overview**
+Website redesign for a wellness retreat center. Modern, calming design with focus on booking conversions and program information.
+
+**Tech Stack**
+- Modern web technologies
+- Mobile-responsive
+- Booking integration
+
+**Scope**
+- Complete website redesign
+- Retreat program pages
+- Booking system integration
+
+**Link**: silowellness.com
+
+---
+
+## Project 10: Toledo Area AA
+
+### H3
+Toledo Area AA
+
+**Project Type**: Website Redesign
+
+**Overview**
+Website redesign for Toledo Area Alcoholics Anonymous. Focus on accessibility, meeting finder functionality, and resource availability.
+
+**Tech Stack**
+- Accessible web design
+- Meeting finder integration
+- Mobile-responsive
+
+**Scope**
+- Full website redesign
+- Meeting schedule integration
+- Accessibility improvements
+- Resource pages
+
+**Link**: toledoaa.org
 
 ---
 
@@ -767,26 +862,31 @@ If you'd rather jump straight to a call, pick a time that works for you.
 | About | 550 | Get in Touch |
 | Services | 900 | Start a Conversation |
 | Portfolio | 650 | Start Your Project |
+| Portfolio Detail (x10) | 150 each | View Site |
+| Articles | 200 | Read Article |
+| Article Detail (x6) | 500 each | Contact |
 | Contact | 300 | Send Message / Schedule |
 
-**Total Site Content**: ~2,850 words
+**Total Site Content**: ~7,000+ words (including articles and case studies)
 
 ---
 
 # Future Content Opportunities
 
-## Blog Topics (when ready to expand)
-1. "How to Choose the Right Website Platform for Your Business"
-2. "5 Signs Your Business Website Needs an Update"
-3. "What to Look for When Hiring a Technical Consultant"
-4. "Build vs. Buy: Making Smart Software Decisions"
-5. "Why Your Business Needs a Real Website (Not Just Social Media)"
+## Published Articles
+1. "Do You Actually Need a Custom Website?"
+2. "Red Flags When Hiring a Developer"
+3. "5 Questions to Answer Before Building an App"
+4. "Why Most Software Projects Fail"
+5. "The True Cost of 'Free' Website Builders"
+6. "What to Expect When Working With Us"
 
-## Additional Pages (Phase 2)
-- `/resources` — Guides, checklists, or tools
-- `/blog` — Thought leadership and SEO content
+## Future Content Opportunities
+- Additional case studies as projects complete
+- Technical deep-dives on specific solutions
+- Industry-specific guides (healthcare, finance, small business)
 
 ---
 
 *Document prepared for Pounds Consulting website development.*
-*Last updated: December 2025*
+*Last updated: January 2026*
