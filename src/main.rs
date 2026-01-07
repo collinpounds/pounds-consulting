@@ -105,24 +105,17 @@ mod tests {
 #[component]
 fn App() -> Element {
     // Handle SPA redirect from 404.html
-    use_effect(|| {
+    let navigator = use_navigator();
+    use_effect(move || {
         #[cfg(target_arch = "wasm32")]
         {
             if let Some(window) = web_sys::window() {
                 if let Ok(Some(storage)) = window.session_storage() {
                     if let Ok(Some(path)) = storage.get_item("spa-redirect-path") {
-                        // Clear the stored path
+                        // Clear the stored path immediately to prevent loops
                         let _ = storage.remove_item("spa-redirect-path");
-                        // Navigate to the stored path
-                        if let Ok(history) = window.history() {
-                            let _ = history.replace_state_with_url(
-                                &web_sys::wasm_bindgen::JsValue::NULL,
-                                "",
-                                Some(&path),
-                            );
-                            // Reload to let the router handle the new path
-                            let _ = window.location().reload();
-                        }
+                        // Use the router to navigate instead of reload
+                        navigator.push(path);
                     }
                 }
             }
