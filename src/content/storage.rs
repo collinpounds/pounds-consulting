@@ -293,3 +293,178 @@ pub fn import_data(json: &str) -> Result<(), String> {
 
     Ok(())
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    // ==================== ThemeConfig Tests ====================
+
+    #[test]
+    fn test_theme_config_default_is_gold() {
+        let default = ThemeConfig::default();
+        let gold = ThemeConfig::default_gold();
+
+        assert_eq!(default, gold);
+        assert_eq!(default.name, "Default Gold");
+    }
+
+    #[test]
+    fn test_all_presets_have_valid_hex_colors() {
+        for preset in ThemeConfig::all_presets() {
+            // All color fields should be valid hex colors
+            assert!(
+                preset.primary.starts_with('#') && preset.primary.len() == 7,
+                "Invalid primary color in {}: {}",
+                preset.name,
+                preset.primary
+            );
+            assert!(
+                preset.secondary.starts_with('#') && preset.secondary.len() == 7,
+                "Invalid secondary color in {}: {}",
+                preset.name,
+                preset.secondary
+            );
+            assert!(
+                preset.accent.starts_with('#') && preset.accent.len() == 7,
+                "Invalid accent color in {}: {}",
+                preset.name,
+                preset.accent
+            );
+            assert!(
+                preset.background.starts_with('#') && preset.background.len() == 7,
+                "Invalid background color in {}: {}",
+                preset.name,
+                preset.background
+            );
+            assert!(
+                preset.surface.starts_with('#') && preset.surface.len() == 7,
+                "Invalid surface color in {}: {}",
+                preset.name,
+                preset.surface
+            );
+            assert!(
+                preset.text_primary.starts_with('#') && preset.text_primary.len() == 7,
+                "Invalid text_primary color in {}: {}",
+                preset.name,
+                preset.text_primary
+            );
+            assert!(
+                preset.text_secondary.starts_with('#') && preset.text_secondary.len() == 7,
+                "Invalid text_secondary color in {}: {}",
+                preset.name,
+                preset.text_secondary
+            );
+            assert!(
+                preset.border.starts_with('#') && preset.border.len() == 7,
+                "Invalid border color in {}: {}",
+                preset.name,
+                preset.border
+            );
+        }
+    }
+
+    #[test]
+    fn test_all_presets_have_unique_names() {
+        let presets = ThemeConfig::all_presets();
+        let names: Vec<&str> = presets.iter().map(|p| p.name.as_str()).collect();
+
+        for (i, name) in names.iter().enumerate() {
+            for (j, other) in names.iter().enumerate() {
+                if i != j {
+                    assert_ne!(name, other, "Duplicate preset name: {}", name);
+                }
+            }
+        }
+    }
+
+    #[test]
+    fn test_all_presets_count() {
+        let presets = ThemeConfig::all_presets();
+        assert_eq!(presets.len(), 6); // gold, metallic, blue, emerald, crimson, monochrome
+    }
+
+    #[test]
+    fn test_theme_config_roundtrip() {
+        for preset in ThemeConfig::all_presets() {
+            let json = serde_json::to_string(&preset).unwrap();
+            let deserialized: ThemeConfig = serde_json::from_str(&json).unwrap();
+            assert_eq!(preset, deserialized, "Roundtrip failed for {}", preset.name);
+        }
+    }
+
+    #[test]
+    fn test_preset_constructors_return_correct_names() {
+        assert_eq!(ThemeConfig::default_gold().name, "Default Gold");
+        assert_eq!(ThemeConfig::metallic_dark().name, "Metallic Dark");
+        assert_eq!(ThemeConfig::blue_steel().name, "Blue Steel");
+        assert_eq!(ThemeConfig::emerald().name, "Emerald");
+        assert_eq!(ThemeConfig::crimson().name, "Crimson");
+        assert_eq!(ThemeConfig::monochrome().name, "Monochrome");
+    }
+
+    #[test]
+    fn test_dark_themes_have_dark_backgrounds() {
+        // All themes should have dark backgrounds (low RGB values)
+        for preset in ThemeConfig::all_presets() {
+            let bg = &preset.background;
+            // Parse hex to check it's dark (first digit after # should be 0-2)
+            let r = u8::from_str_radix(&bg[1..3], 16).unwrap();
+            let g = u8::from_str_radix(&bg[3..5], 16).unwrap();
+            let b = u8::from_str_radix(&bg[5..7], 16).unwrap();
+
+            // For dark theme, RGB values should be low (< 50)
+            assert!(
+                r < 50 && g < 50 && b < 50,
+                "Background {} in {} is not dark enough",
+                bg,
+                preset.name
+            );
+        }
+    }
+
+    #[test]
+    fn test_light_text_on_dark_backgrounds() {
+        // Text primary should be light for contrast
+        for preset in ThemeConfig::all_presets() {
+            let text = &preset.text_primary;
+            let r = u8::from_str_radix(&text[1..3], 16).unwrap();
+            let g = u8::from_str_radix(&text[3..5], 16).unwrap();
+            let b = u8::from_str_radix(&text[5..7], 16).unwrap();
+
+            // For light text, RGB values should be high (> 200)
+            assert!(
+                r > 200 && g > 200 && b > 200,
+                "Text primary {} in {} is not light enough for dark backgrounds",
+                text,
+                preset.name
+            );
+        }
+    }
+
+    // ==================== Password Verification Tests ====================
+
+    #[test]
+    fn test_verify_password_correct() {
+        let settings = SiteSettings::default();
+        // Default password is "admin"
+        assert!(verify_password("admin", &settings));
+    }
+
+    #[test]
+    fn test_verify_password_incorrect() {
+        let settings = SiteSettings::default();
+        assert!(!verify_password("wrong", &settings));
+        assert!(!verify_password("", &settings));
+        assert!(!verify_password("Admin", &settings)); // Case sensitive
+    }
+
+    #[test]
+    fn test_verify_password_custom() {
+        let mut settings = SiteSettings::default();
+        settings.admin_password_hash = "custom_password".to_string();
+
+        assert!(verify_password("custom_password", &settings));
+        assert!(!verify_password("admin", &settings));
+    }
+}
