@@ -943,3 +943,315 @@ fn chrono_today() -> String {
     // Simple date - in a real app you'd use chrono crate
     "2024-01-01".to_string()
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    // ==================== Article::generate_slug() tests ====================
+
+    #[test]
+    fn test_generate_slug_basic() {
+        assert_eq!(Article::generate_slug("Hello World"), "hello-world");
+    }
+
+    #[test]
+    fn test_generate_slug_with_special_characters() {
+        assert_eq!(
+            Article::generate_slug("What's New in 2024?"),
+            "what-s-new-in-2024"
+        );
+    }
+
+    #[test]
+    fn test_generate_slug_with_multiple_spaces() {
+        assert_eq!(
+            Article::generate_slug("Too   Many    Spaces"),
+            "too-many-spaces"
+        );
+    }
+
+    #[test]
+    fn test_generate_slug_with_leading_trailing_spaces() {
+        assert_eq!(Article::generate_slug("  Trim Me  "), "trim-me");
+    }
+
+    #[test]
+    fn test_generate_slug_empty_string() {
+        assert_eq!(Article::generate_slug(""), "");
+    }
+
+    #[test]
+    fn test_generate_slug_only_special_characters() {
+        assert_eq!(Article::generate_slug("!@#$%^&*()"), "");
+    }
+
+    #[test]
+    fn test_generate_slug_numbers() {
+        assert_eq!(Article::generate_slug("5 Tips for 2024"), "5-tips-for-2024");
+    }
+
+    #[test]
+    fn test_generate_slug_already_lowercase() {
+        assert_eq!(Article::generate_slug("already-a-slug"), "already-a-slug");
+    }
+
+    #[test]
+    fn test_generate_slug_mixed_case() {
+        assert_eq!(Article::generate_slug("MiXeD CaSe"), "mixed-case");
+    }
+
+    #[test]
+    fn test_generate_slug_unicode_preserved() {
+        // Unicode alphanumeric characters are preserved by is_alphanumeric()
+        assert_eq!(Article::generate_slug("Café Résumé"), "café-résumé");
+    }
+
+    #[test]
+    fn test_generate_slug_punctuation() {
+        assert_eq!(
+            Article::generate_slug("Hello, World! How are you?"),
+            "hello-world-how-are-you"
+        );
+    }
+
+    // ==================== Serde Serialization Roundtrip Tests ====================
+
+    #[test]
+    fn test_article_status_serialization() {
+        // Test each status variant serializes correctly
+        let draft = ArticleStatus::Draft;
+        let published = ArticleStatus::Published;
+        let trashed = ArticleStatus::Trashed;
+
+        assert_eq!(serde_json::to_string(&draft).unwrap(), "\"draft\"");
+        assert_eq!(serde_json::to_string(&published).unwrap(), "\"published\"");
+        assert_eq!(serde_json::to_string(&trashed).unwrap(), "\"trashed\"");
+    }
+
+    #[test]
+    fn test_article_status_deserialization() {
+        let draft: ArticleStatus = serde_json::from_str("\"draft\"").unwrap();
+        let published: ArticleStatus = serde_json::from_str("\"published\"").unwrap();
+        let trashed: ArticleStatus = serde_json::from_str("\"trashed\"").unwrap();
+
+        assert_eq!(draft, ArticleStatus::Draft);
+        assert_eq!(published, ArticleStatus::Published);
+        assert_eq!(trashed, ArticleStatus::Trashed);
+    }
+
+    #[test]
+    fn test_article_roundtrip() {
+        let article = Article {
+            id: "test-123".to_string(),
+            title: "Test Article".to_string(),
+            slug: "test-article".to_string(),
+            date: "2024-01-15".to_string(),
+            category: "Testing".to_string(),
+            excerpt: "A test excerpt".to_string(),
+            content: "Full content here".to_string(),
+            status: ArticleStatus::Published,
+        };
+
+        let json = serde_json::to_string(&article).unwrap();
+        let deserialized: Article = serde_json::from_str(&json).unwrap();
+
+        assert_eq!(article, deserialized);
+    }
+
+    #[test]
+    fn test_portfolio_project_roundtrip() {
+        let project = PortfolioProject {
+            id: "test-project".to_string(),
+            slug: "test-project".to_string(),
+            title: "Test Project".to_string(),
+            project_type: "Website".to_string(),
+            description: "A test project".to_string(),
+            long_description: "Longer description".to_string(),
+            external_url: "https://example.com".to_string(),
+            before_url: Some("https://archive.org/example".to_string()),
+            logo: Some("logo.png".to_string()),
+            screenshot: None,
+            video: None,
+            tech_tags: vec!["Rust".to_string(), "WASM".to_string()],
+            scope: vec!["Design".to_string(), "Development".to_string()],
+        };
+
+        let json = serde_json::to_string(&project).unwrap();
+        let deserialized: PortfolioProject = serde_json::from_str(&json).unwrap();
+
+        assert_eq!(project, deserialized);
+    }
+
+    #[test]
+    fn test_site_settings_roundtrip() {
+        let settings = SiteSettings::default();
+        let json = serde_json::to_string(&settings).unwrap();
+        let deserialized: SiteSettings = serde_json::from_str(&json).unwrap();
+
+        assert_eq!(settings, deserialized);
+    }
+
+    #[test]
+    fn test_discount_settings_roundtrip() {
+        let discount = DiscountSettings {
+            promo_discount: PromoDiscount {
+                enabled: true,
+                percentage: 25,
+                label: Some("Holiday Sale".to_string()),
+            },
+            first_responder_enabled: false,
+        };
+
+        let json = serde_json::to_string(&discount).unwrap();
+        let deserialized: DiscountSettings = serde_json::from_str(&json).unwrap();
+
+        assert_eq!(discount, deserialized);
+    }
+
+    // ==================== Default Implementation Tests ====================
+
+    #[test]
+    fn test_discount_settings_default() {
+        let default = DiscountSettings::default();
+
+        assert!(!default.promo_discount.enabled);
+        assert_eq!(default.promo_discount.percentage, 10);
+        assert!(default.promo_discount.label.is_none());
+        assert!(default.first_responder_enabled);
+    }
+
+    #[test]
+    fn test_site_settings_default_has_all_pages() {
+        let settings = SiteSettings::default();
+
+        // Verify all expected pages exist
+        let page_ids: Vec<&str> = settings.pages.iter().map(|p| p.id.as_str()).collect();
+        assert!(page_ids.contains(&"home"));
+        assert!(page_ids.contains(&"about"));
+        assert!(page_ids.contains(&"services"));
+        assert!(page_ids.contains(&"portfolio"));
+        assert!(page_ids.contains(&"articles"));
+        assert!(page_ids.contains(&"contact"));
+    }
+
+    #[test]
+    fn test_site_settings_default_feature_toggles() {
+        let settings = SiteSettings::default();
+
+        assert!(settings.features.portfolio);
+        assert!(settings.features.services);
+        assert!(settings.features.articles);
+        assert!(settings.features.contact);
+        assert!(!settings.features.testimonials); // Testimonials disabled by default
+    }
+
+    #[test]
+    fn test_site_settings_default_brand() {
+        let settings = SiteSettings::default();
+
+        assert_eq!(settings.brand.name, "Pounds Consulting");
+        assert!(!settings.brand.tagline.is_empty());
+        assert!(settings.brand.primary_color.starts_with('#'));
+        assert!(settings.brand.accent_color.starts_with('#'));
+    }
+
+    #[test]
+    fn test_articles_data_default_has_articles() {
+        let articles = ArticlesData::default();
+
+        assert!(!articles.articles.is_empty());
+        // All default articles should be published
+        for article in &articles.articles {
+            assert_eq!(article.status, ArticleStatus::Published);
+        }
+    }
+
+    #[test]
+    fn test_portfolio_data_default_has_projects() {
+        let portfolio = PortfolioData::default();
+
+        assert!(!portfolio.projects.is_empty());
+        // Every project should have required fields
+        for project in &portfolio.projects {
+            assert!(!project.id.is_empty());
+            assert!(!project.slug.is_empty());
+            assert!(!project.title.is_empty());
+            assert!(!project.external_url.is_empty());
+        }
+    }
+
+    #[test]
+    fn test_page_config_order_is_sequential() {
+        let settings = SiteSettings::default();
+        let mut orders: Vec<u32> = settings.pages.iter().map(|p| p.order).collect();
+        orders.sort();
+
+        // Orders should be 1, 2, 3, 4, 5, 6
+        let expected: Vec<u32> = (1..=settings.pages.len() as u32).collect();
+        assert_eq!(orders, expected);
+    }
+
+    // ==================== Article::new() Tests ====================
+
+    #[test]
+    fn test_article_new_has_empty_fields() {
+        let article = Article::new();
+
+        assert!(article.title.is_empty());
+        assert!(article.slug.is_empty());
+        assert!(article.excerpt.is_empty());
+        assert!(article.content.is_empty());
+        assert_eq!(article.status, ArticleStatus::Draft);
+    }
+
+    #[test]
+    fn test_article_new_has_default_category() {
+        let article = Article::new();
+        assert_eq!(article.category, "General");
+    }
+
+    #[test]
+    fn test_article_new_generates_id() {
+        let article = Article::new();
+        assert!(!article.id.is_empty());
+    }
+
+    // ==================== Edge Cases ====================
+
+    #[test]
+    fn test_portfolio_project_optional_fields() {
+        let project = PortfolioProject {
+            id: "minimal".to_string(),
+            slug: "minimal".to_string(),
+            title: "Minimal".to_string(),
+            project_type: "Test".to_string(),
+            description: "Desc".to_string(),
+            long_description: "Long".to_string(),
+            external_url: "https://example.com".to_string(),
+            before_url: None,
+            logo: None,
+            screenshot: None,
+            video: None,
+            tech_tags: vec![],
+            scope: vec![],
+        };
+
+        // Should serialize and deserialize correctly with None values
+        let json = serde_json::to_string(&project).unwrap();
+        let deserialized: PortfolioProject = serde_json::from_str(&json).unwrap();
+
+        assert_eq!(project, deserialized);
+        assert!(deserialized.before_url.is_none());
+        assert!(deserialized.logo.is_none());
+    }
+
+    #[test]
+    fn test_articles_data_empty() {
+        let empty = ArticlesData { articles: vec![] };
+        let json = serde_json::to_string(&empty).unwrap();
+        let deserialized: ArticlesData = serde_json::from_str(&json).unwrap();
+
+        assert!(deserialized.articles.is_empty());
+    }
+}
