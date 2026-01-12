@@ -102,6 +102,149 @@ mod tests {
             Route::AdminDashboard {},
         ];
     }
+
+    // ==================== Dynamic Route Tests ====================
+
+    #[test]
+    fn test_portfolio_detail_route_parsing() {
+        let route: Result<Route, _> = "/portfolio/paytient".parse();
+        assert!(route.is_ok());
+
+        if let Ok(Route::PortfolioDetail { slug }) = route {
+            assert_eq!(slug, "paytient");
+        } else {
+            panic!("Expected PortfolioDetail route");
+        }
+    }
+
+    #[test]
+    fn test_portfolio_detail_with_hyphenated_slug() {
+        let route: Result<Route, _> = "/portfolio/club-car-wash".parse();
+        assert!(route.is_ok());
+
+        if let Ok(Route::PortfolioDetail { slug }) = route {
+            assert_eq!(slug, "club-car-wash");
+        } else {
+            panic!("Expected PortfolioDetail route");
+        }
+    }
+
+    #[test]
+    fn test_article_detail_route_parsing() {
+        let route: Result<Route, _> = "/articles/do-you-need-custom-website".parse();
+        assert!(route.is_ok());
+
+        if let Ok(Route::ArticleDetail { slug }) = route {
+            assert_eq!(slug, "do-you-need-custom-website");
+        } else {
+            panic!("Expected ArticleDetail route");
+        }
+    }
+
+    // ==================== Admin Route Tests ====================
+
+    #[test]
+    fn test_admin_routes_are_valid() {
+        let admin_routes = vec![
+            "/admin",
+            "/admin/dashboard",
+            "/admin/settings",
+            "/admin/articles",
+            "/admin/articles/new",
+        ];
+
+        for path in &admin_routes {
+            let result: Result<Route, _> = path.parse();
+            assert!(
+                result.is_ok(),
+                "Admin route '{}' is not defined in the router",
+                path
+            );
+        }
+    }
+
+    #[test]
+    fn test_admin_article_edit_route() {
+        let route: Result<Route, _> = "/admin/articles/test-article-id".parse();
+        assert!(route.is_ok());
+
+        if let Ok(Route::AdminArticleEdit { id }) = route {
+            assert_eq!(id, "test-article-id");
+        } else {
+            panic!("Expected AdminArticleEdit route");
+        }
+    }
+
+    #[test]
+    fn test_all_admin_route_variants_exist() {
+        // Compile-time check that admin routes exist
+        let _routes = [
+            Route::AdminLogin {},
+            Route::AdminDashboard {},
+            Route::AdminSettings {},
+            Route::AdminArticles {},
+            Route::AdminArticleNew {},
+            Route::AdminArticleEdit {
+                id: "test".to_string(),
+            },
+        ];
+    }
+
+    // ==================== Route Negative Tests ====================
+
+    #[test]
+    fn test_invalid_routes() {
+        let invalid_routes = vec![
+            "/nonexistent",
+            "/admin/invalid",
+            "/portfolio/detail/extra", // Too many segments
+        ];
+
+        for path in &invalid_routes {
+            let result: Result<Route, _> = path.parse();
+            assert!(result.is_err(), "Route '{}' should not be valid", path);
+        }
+    }
+
+    // ==================== Route Display/ToString Tests ====================
+
+    #[test]
+    fn test_route_display() {
+        // Routes should display as their path
+        assert_eq!(Route::Home {}.to_string(), "/");
+        assert_eq!(Route::About {}.to_string(), "/about");
+        assert_eq!(Route::Services {}.to_string(), "/services");
+        assert_eq!(Route::Portfolio {}.to_string(), "/portfolio");
+        assert_eq!(Route::Contact {}.to_string(), "/contact");
+        assert_eq!(Route::Articles {}.to_string(), "/articles");
+    }
+
+    #[test]
+    fn test_dynamic_route_display() {
+        let portfolio = Route::PortfolioDetail {
+            slug: "test-project".to_string(),
+        };
+        assert_eq!(portfolio.to_string(), "/portfolio/test-project");
+
+        let article = Route::ArticleDetail {
+            slug: "my-article".to_string(),
+        };
+        assert_eq!(article.to_string(), "/articles/my-article");
+    }
+
+    #[test]
+    fn test_admin_route_display() {
+        assert_eq!(Route::AdminLogin {}.to_string(), "/admin");
+        assert_eq!(Route::AdminDashboard {}.to_string(), "/admin/dashboard");
+        assert_eq!(Route::AdminSettings {}.to_string(), "/admin/settings");
+        assert_eq!(Route::AdminArticles {}.to_string(), "/admin/articles");
+        assert_eq!(Route::AdminArticleNew {}.to_string(), "/admin/articles/new");
+
+        let edit = Route::AdminArticleEdit {
+            id: "abc123".to_string(),
+        };
+        assert_eq!(edit.to_string(), "/admin/articles/abc123");
+    }
 }
 
 #[component]
