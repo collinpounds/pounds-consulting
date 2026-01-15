@@ -21,6 +21,70 @@ fn process_bold_markers(text: &str) -> String {
     result
 }
 
+/// Represents a content block in an article
+enum ContentBlock {
+    H2(String),
+    H3(String),
+    Paragraph(String),
+    List(Vec<String>),
+    BoldLine(String),
+}
+
+/// Parse article content into structured blocks
+fn parse_content(content: &str) -> Vec<ContentBlock> {
+    let mut blocks = Vec::new();
+
+    for paragraph in content.split("\n\n") {
+        if paragraph.starts_with("### ") {
+            // Handle h3 headings (may have body text on next line)
+            let lines: Vec<&str> = paragraph.lines().collect();
+            let heading = lines[0].trim_start_matches("### ");
+            blocks.push(ContentBlock::H3(process_bold_markers(heading)));
+            // Add remaining lines as paragraphs
+            for line in lines.iter().skip(1) {
+                if !line.trim().is_empty() {
+                    blocks.push(ContentBlock::Paragraph(process_bold_markers(line)));
+                }
+            }
+        } else if paragraph.starts_with("## ") {
+            let lines: Vec<&str> = paragraph.lines().collect();
+            let heading = lines[0].trim_start_matches("## ");
+            blocks.push(ContentBlock::H2(process_bold_markers(heading)));
+            for line in lines.iter().skip(1) {
+                if !line.trim().is_empty() {
+                    blocks.push(ContentBlock::Paragraph(process_bold_markers(line)));
+                }
+            }
+        } else if paragraph.starts_with("# ") {
+            let lines: Vec<&str> = paragraph.lines().collect();
+            let heading = lines[0].trim_start_matches("# ");
+            blocks.push(ContentBlock::H2(process_bold_markers(heading)));
+            for line in lines.iter().skip(1) {
+                if !line.trim().is_empty() {
+                    blocks.push(ContentBlock::Paragraph(process_bold_markers(line)));
+                }
+            }
+        } else if paragraph.starts_with("- ") || paragraph.starts_with("* ") {
+            let items: Vec<String> = paragraph
+                .lines()
+                .filter(|line| line.starts_with("- ") || line.starts_with("* "))
+                .map(|line| {
+                    process_bold_markers(line.trim_start_matches("- ").trim_start_matches("* "))
+                })
+                .collect();
+            blocks.push(ContentBlock::List(items));
+        } else if paragraph.starts_with("**") && paragraph.ends_with("**") {
+            blocks.push(ContentBlock::BoldLine(
+                paragraph.trim_matches('*').to_string(),
+            ));
+        } else if !paragraph.trim().is_empty() {
+            blocks.push(ContentBlock::Paragraph(process_bold_markers(paragraph)));
+        }
+    }
+
+    blocks
+}
+
 #[component]
 pub fn ArticleDetail(slug: String) -> Element {
     let articles_data = load_articles();
@@ -31,6 +95,8 @@ pub fn ArticleDetail(slug: String) -> Element {
 
     match article {
         Some(article) => {
+            let content_blocks = parse_content(&article.content);
+
             rsx! {
                 // Article Header
                 section { class: "article-hero",
@@ -54,39 +120,27 @@ pub fn ArticleDetail(slug: String) -> Element {
                 section { class: "article-content-section",
                     div { class: "container",
                         div { class: "article-body glass-card",
-                            // Render content with markdown-like formatting
-                            for paragraph in article.content.split("\n\n") {
-                                if paragraph.starts_with("### ") {
-                                    h3 { class: "article-h3",
-                                        dangerous_inner_html: "{process_bold_markers(paragraph.trim_start_matches(\"### \"))}"
-                                    }
-                                } else if paragraph.starts_with("## ") {
-                                    h2 { class: "article-h2",
-                                        dangerous_inner_html: "{process_bold_markers(paragraph.trim_start_matches(\"## \"))}"
-                                    }
-                                } else if paragraph.starts_with("# ") {
-                                    h2 { class: "article-h2",
-                                        dangerous_inner_html: "{process_bold_markers(paragraph.trim_start_matches(\"# \"))}"
-                                    }
-                                } else if paragraph.starts_with("- ") || paragraph.starts_with("* ") {
-                                    // Render as a list
-                                    ul { class: "article-list",
-                                        for line in paragraph.lines() {
-                                            if line.starts_with("- ") || line.starts_with("* ") {
-                                                li {
-                                                    dangerous_inner_html: "{process_bold_markers(line.trim_start_matches(\"- \").trim_start_matches(\"* \"))}"
-                                                }
+                            for (i, block) in content_blocks.iter().enumerate() {
+                                match block {
+                                    ContentBlock::H2(text) => rsx! {
+                                        h2 { key: "{i}", class: "article-h2", dangerous_inner_html: "{text}" }
+                                    },
+                                    ContentBlock::H3(text) => rsx! {
+                                        h3 { key: "{i}", class: "article-h3", dangerous_inner_html: "{text}" }
+                                    },
+                                    ContentBlock::Paragraph(text) => rsx! {
+                                        p { key: "{i}", dangerous_inner_html: "{text}" }
+                                    },
+                                    ContentBlock::List(items) => rsx! {
+                                        ul { key: "{i}", class: "article-list",
+                                            for (j, item) in items.iter().enumerate() {
+                                                li { key: "{j}", dangerous_inner_html: "{item}" }
                                             }
                                         }
-                                    }
-                                } else if paragraph.starts_with("**") && paragraph.ends_with("**") {
-                                    // Bold standalone line (like "**How to avoid it:**")
-                                    p { class: "article-bold",
-                                        dangerous_inner_html: "{paragraph.trim_matches('*')}"
-                                    }
-                                } else if !paragraph.trim().is_empty() {
-                                    // Handle bold text and links within paragraph
-                                    p { dangerous_inner_html: "{process_bold_markers(paragraph)}" }
+                                    },
+                                    ContentBlock::BoldLine(text) => rsx! {
+                                        p { key: "{i}", class: "article-bold", dangerous_inner_html: "{text}" }
+                                    },
                                 }
                             }
                         }
