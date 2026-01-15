@@ -6,6 +6,7 @@ mod contact;
 mod home;
 mod portfolio;
 mod portfolio_detail;
+mod service_detail;
 mod services;
 
 pub use about::About;
@@ -16,4 +17,5 @@ pub use contact::Contact;
 pub use home::Home;
 pub use portfolio::Portfolio;
 pub use portfolio_detail::PortfolioDetail;
+pub use service_detail::ServiceDetail;
 pub use services::Services;

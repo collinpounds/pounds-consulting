@@ -7,7 +7,8 @@ mod pages;
 use components::{Footer, Header};
 use pages::{
     About, AdminArticleEdit, AdminArticleNew, AdminArticles, AdminDashboard, AdminLogin,
-    AdminSettings, ArticleDetail, Articles, Contact, Home, Portfolio, PortfolioDetail, Services,
+    AdminSettings, ArticleDetail, Articles, Contact, Home, Portfolio, PortfolioDetail,
+    ServiceDetail, Services,
 };
 
 const CSS: Asset = asset!("/assets/main.css");
@@ -23,6 +24,8 @@ pub enum Route {
     About {},
     #[route("/services")]
     Services {},
+    #[route("/services/:slug")]
+    ServiceDetail { slug: String },
     #[route("/portfolio")]
     Portfolio {},
     #[route("/portfolio/:slug")]
@@ -95,6 +98,9 @@ mod tests {
             Route::Home {},
             Route::About {},
             Route::Services {},
+            Route::ServiceDetail {
+                slug: "test".to_string(),
+            },
             Route::Portfolio {},
             Route::Contact {},
             Route::Articles {},
@@ -104,6 +110,18 @@ mod tests {
     }
 
     // ==================== Dynamic Route Tests ====================
+
+    #[test]
+    fn test_service_detail_route_parsing() {
+        let route: Result<Route, _> = "/services/ai-consulting".parse();
+        assert!(route.is_ok());
+
+        if let Ok(Route::ServiceDetail { slug }) = route {
+            assert_eq!(slug, "ai-consulting");
+        } else {
+            panic!("Expected ServiceDetail route");
+        }
+    }
 
     #[test]
     fn test_portfolio_detail_route_parsing() {

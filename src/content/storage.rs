@@ -1,4 +1,4 @@
-use super::types::{ArticlesData, PortfolioData, SiteSettings};
+use super::types::{ArticlesData, PortfolioData, ServicesData, SiteSettings};
 use serde::{Deserialize, Serialize};
 use web_sys::wasm_bindgen::JsCast;
 use web_sys::window;
@@ -181,6 +181,11 @@ pub fn save_articles(articles: &ArticlesData) -> bool {
 /// Load portfolio projects (static data, not persisted)
 pub fn load_portfolio() -> PortfolioData {
     PortfolioData::default()
+}
+
+/// Load services (static data, not persisted)
+pub fn load_services() -> ServicesData {
+    ServicesData::default()
 }
 
 /// Check if user is authenticated

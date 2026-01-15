@@ -1,11 +1,13 @@
-use crate::components::CtaSection;
-use crate::content::load_settings;
+use crate::components::{parse_icon_name, CtaSection, Icon, IconName};
+use crate::content::{load_services, load_settings};
+use crate::Route;
 use dioxus::prelude::*;
 
 #[component]
 pub fn Services() -> Element {
     let settings = load_settings();
     let discount = &settings.discount;
+    let services_data = load_services();
 
     // Calculate discounted rate if promo is enabled
     let base_rate: u32 = 71;
@@ -17,91 +19,63 @@ pub fn Services() -> Element {
     };
 
     rsx! {
-        // Hero Section
-        section { class: "hero hero-short",
+        // Hero Section with animated background
+        section { class: "hero hero-services",
+            div { class: "hero-bg-animation" }
             div { class: "hero-content",
-                h1 { class: "hero-title", "Services Built Around Your Needs" }
+                h1 { class: "hero-title hero-title-animated", "Technical Solutions for Every Challenge" }
                 p { class: "hero-subtitle",
-                    "From website builds to complex technical strategy, we offer flexible consulting services designed to solve real problems - not make expensive busywork."
+                    "From AI strategy to web development, mobile apps to business automation. Whatever technical problem you're facing, we can help solve it."
+                }
+                a {
+                    href: "https://calendar.app.google/NxuWY3RDGE5Miaan7",
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    class: "btn btn-primary btn-large btn-pulse",
+                    "Book a Free Discovery Call"
                 }
             }
         }
 
-        // Digital Marketing
-        section { class: "section service-detail-section",
+        // Services Grid Section
+        section { class: "section services-grid-section",
             div { class: "container",
-                div { class: "service-detail glass-card",
-                    div { class: "service-detail-header",
-                        span { class: "service-icon-large", "📱" }
-                        h2 { class: "service-detail-title", "Digital Marketing & Customer Systems" }
-                    }
-                    p { class: "service-detail-description",
-                        "A website is just the beginning. To grow, you need systems that capture leads, nurture relationships, and convert interest into revenue without requiring you to manually manage every touchpoint."
-                    }
-                    p { class: "service-detail-description",
-                        "We build complete digital marketing infrastructures that work together seamlessly. From email campaigns to SMS outreach, from customer intake forms to membership management, we create the systems that turn visitors into customers and customers into repeat business."
-                    }
-                    div { class: "service-columns",
-                        div { class: "service-column",
-                            h3 { class: "service-column-title", "What's Included" }
-                            ul { class: "service-list",
-                                li { "Email marketing setup and campaign management" }
-                                li { "SMS and phone outreach systems" }
-                                li { "Customer intake and lead capture forms" }
-                                li { "Appointment scheduling and booking systems" }
-                                li { "Membership and subscription management" }
-                                li { "Marketing automation and drip campaigns" }
-                                li { "CRM integration and customer data management" }
-                                li { "Analytics and conversion tracking" }
-                            }
-                        }
-                        div { class: "service-column",
-                            h3 { class: "service-column-title", "Good Fit For" }
-                            ul { class: "service-list",
-                                li { "Businesses ready to move beyond word-of-mouth marketing" }
-                                li { "Service companies that need appointment scheduling" }
-                                li { "Organizations with membership or subscription models" }
-                                li { "Anyone who wants their marketing to run while they sleep" }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+                div { class: "services-grid",
+                    for (i, service) in services_data.services.iter().enumerate() {
+                        Link {
+                            key: "{service.id}",
+                            to: Route::ServiceDetail { slug: service.slug.clone() },
+                            class: "service-card-link",
+                            style: "--animation-delay: {i * 100}ms",
 
-        // Website Development
-        section { class: "section service-detail-section",
-            div { class: "container",
-                div { class: "service-detail glass-card",
-                    div { class: "service-detail-header",
-                        span { class: "service-icon-large", "🌐" }
-                        h2 { class: "service-detail-title", "Website Development" }
-                    }
-                    p { class: "service-detail-description",
-                        "Your website is often the first impression people have of your business. It should load fast, look professional, and be intuitive for visitors to navigate."
-                    }
-                    p { class: "service-detail-description",
-                        "We build websites that do exactly that. No bloated templates. No cookie-cutter designs. Every site is crafted with your specific goals in mind, whether that's generating leads, showcasing your work, or selling products online. User-friendly by default."
-                    }
-                    div { class: "service-columns",
-                        div { class: "service-column",
-                            h3 { class: "service-column-title", "What's Included" }
-                            ul { class: "service-list",
-                                li { "Custom design tailored to your brand and audience" }
-                                li { "Mobile-responsive development (looks great on any device)" }
-                                li { "Search engine optimization (SEO) foundations built in" }
-                                li { "Fast load times and clean code" }
-                                li { "Content management training so you can make updates yourself" }
-                                li { "Support after launch" }
-                            }
-                        }
-                        div { class: "service-column",
-                            h3 { class: "service-column-title", "Good Fit For" }
-                            ul { class: "service-list",
-                                li { "Businesses launching their first professional website" }
-                                li { "Companies with outdated sites that need a refresh" }
-                                li { "Organizations that have outgrown DIY website builders" }
-                                li { "Anyone who wants a site that actually converts visitors" }
+                            div {
+                                class: "service-card-new glass-card",
+                                style: "--service-accent: {service.accent_color}",
+
+                                div { class: "service-card-accent-bar" }
+
+                                div { class: "service-card-header",
+                                    span { class: "service-card-icon",
+                                        if let Some(icon_name) = parse_icon_name(&service.icon) {
+                                            Icon { name: icon_name, size: 32, color: "var(--service-accent, var(--color-secondary))".to_string() }
+                                        }
+                                    }
+                                    h3 { class: "service-card-title", "{service.title}" }
+                                }
+
+                                p { class: "service-card-tagline", "{service.tagline}" }
+
+                                p { class: "service-card-description",
+                                    {service.description.chars().take(150).collect::<String>()}
+                                    if service.description.len() > 150 { "..." }
+                                }
+
+                                div { class: "service-card-footer",
+                                    span { class: "service-card-cta", "Learn More" }
+                                    span { class: "service-card-arrow",
+                                        Icon { name: IconName::ArrowRight, size: 20, color: "var(--service-accent, var(--color-secondary))".to_string() }
+                                    }
+                                }
                             }
                         }
                     }
@@ -109,81 +83,42 @@ pub fn Services() -> Element {
             }
         }
 
-        // Technical Strategy
-        section { class: "section service-detail-section",
+        // Why Choose Us Section
+        section { class: "section why-choose-section",
             div { class: "container",
-                div { class: "service-detail glass-card",
-                    div { class: "service-detail-header",
-                        span { class: "service-icon-large", "🎯" }
-                        h2 { class: "service-detail-title", "Technical Strategy & Advisory" }
-                    }
-                    p { class: "service-detail-description",
-                        "Not every problem needs code. Sometimes you need someone who can help you think through options, evaluate vendors, or figure out the right approach before you invest significant time and money."
-                    }
-                    p { class: "service-detail-description",
-                        "That's where technical advisory comes in. We work alongside you to clarify requirements, assess solutions, and build a roadmap that makes sense for your budget and goals."
-                    }
-                    div { class: "service-columns",
-                        div { class: "service-column",
-                            h3 { class: "service-column-title", "What's Included" }
-                            ul { class: "service-list",
-                                li { "Technology assessments and vendor evaluations" }
-                                li { "Product roadmapping and feature prioritization" }
-                                li { "Build vs. buy analysis" }
-                                li { "Technical due diligence for partnerships or acquisitions" }
-                                li { "Architecture reviews and recommendations" }
-                                li { "Documentation and knowledge transfer" }
-                            }
+                h2 { class: "section-title", "Why Work With Us" }
+                div { class: "why-choose-grid centered-grid",
+                    div { class: "why-card glass-card",
+                        style: "--animation-delay: 0ms",
+                        div { class: "why-icon",
+                            Icon { name: IconName::Target, size: 40, color: "var(--color-secondary)".to_string() }
                         }
-                        div { class: "service-column",
-                            h3 { class: "service-column-title", "Good Fit For" }
-                            ul { class: "service-list",
-                                li { "Startups planning their technical foundation" }
-                                li { "Businesses evaluating new software platforms" }
-                                li { "Teams that need an outside perspective on technical decisions" }
-                                li { "Organizations preparing for growth or major changes" }
-                            }
+                        h3 { "One Point of Contact" }
+                        p { "No account managers or layers of bureaucracy. You work directly with me, someone who understands both the business and technical sides." }
+                    }
+                    div { class: "why-card glass-card",
+                        style: "--animation-delay: 100ms",
+                        div { class: "why-icon",
+                            Icon { name: IconName::Users, size: 40, color: "var(--color-secondary)".to_string() }
                         }
+                        h3 { "Network of Experts" }
+                        p { "Need a designer? A security specialist? A data scientist? I have a network of brilliant people I can bring in for any challenge." }
                     }
-                }
-            }
-        }
-
-        // Business Solutions
-        section { class: "section service-detail-section",
-            div { class: "container",
-                div { class: "service-detail glass-card",
-                    div { class: "service-detail-header",
-                        span { class: "service-icon-large", "⚡" }
-                        h2 { class: "service-detail-title", "Business Solutions & Integration" }
-                    }
-                    p { class: "service-detail-description",
-                        "Technology is supposed to make your work easier. When systems don't talk to each other, processes require too many manual steps, or data lives in too many places, it creates friction that slows everything down."
-                    }
-                    p { class: "service-detail-description",
-                        "We help businesses simplify operations by connecting systems, automating workflows, and building intuitive solutions for problems off-the-shelf software can't solve."
-                    }
-                    div { class: "service-columns",
-                        div { class: "service-column",
-                            h3 { class: "service-column-title", "What's Included" }
-                            ul { class: "service-list",
-                                li { "Software integrations and API connections" }
-                                li { "Workflow automation (reduce manual data entry and repetitive tasks)" }
-                                li { "Data migrations and system transitions" }
-                                li { "Custom internal tools and dashboards" }
-                                li { "Process documentation and optimization" }
-                                li { "Ongoing support and maintenance" }
-                            }
+                    div { class: "why-card glass-card",
+                        style: "--animation-delay: 200ms",
+                        div { class: "why-icon",
+                            Icon { name: IconName::MessageCircle, size: 40, color: "var(--color-secondary)".to_string() }
                         }
-                        div { class: "service-column",
-                            h3 { class: "service-column-title", "Good Fit For" }
-                            ul { class: "service-list",
-                                li { "Businesses running multiple disconnected software systems" }
-                                li { "Teams drowning in manual processes and spreadsheets" }
-                                li { "Organizations migrating from legacy systems" }
-                                li { "Anyone who's said \"there has to be a better way to do this\"" }
-                            }
+                        h3 { "Honest Advice" }
+                        p { "Sometimes the answer is 'you don't need this' or 'use a cheaper solution.' I'll tell you the truth, even when it means less work for me." }
+                    }
+                    div { class: "why-card glass-card",
+                        style: "--animation-delay: 300ms",
+                        div { class: "why-icon",
+                            Icon { name: IconName::Zap, size: 40, color: "var(--color-secondary)".to_string() }
                         }
+                        h3 { "Fast Response" }
+                        p { "Emails answered within one business day. Usually faster. No waiting weeks for a callback or getting lost in a ticketing system." }
                     }
                 }
             }
@@ -275,7 +210,9 @@ pub fn Services() -> Element {
             section { class: "section first-responder-section",
                 div { class: "container",
                     div { class: "first-responder-card glass-card",
-                        div { class: "first-responder-badge", "🎖️" }
+                        div { class: "first-responder-badge",
+                            Icon { name: IconName::Award, size: 48, color: "var(--color-secondary)".to_string() }
+                        }
                         h3 { class: "first-responder-title", "50% Off for Those Who Serve" }
                         p { class: "first-responder-description",
                             "We offer 50% off our hourly rate for those who serve our communities and country. Your service matters."

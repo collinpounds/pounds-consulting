@@ -93,6 +93,35 @@ pub struct ArticlesData {
     pub articles: Vec<Article>,
 }
 
+/// Service offering
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct Service {
+    pub id: String,
+    pub slug: String,
+    pub title: String,
+    pub icon: String,
+    pub tagline: String,
+    pub description: String,
+    pub long_description: String,
+    pub features: Vec<String>,
+    pub personas: Vec<Persona>,
+    pub accent_color: String,
+}
+
+/// Target persona for a service
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct Persona {
+    pub title: String,
+    pub icon: String,
+    pub description: String,
+}
+
+/// Container for all services
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct ServicesData {
+    pub services: Vec<Service>,
+}
+
 /// Portfolio project/case study
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct PortfolioProject {
@@ -885,6 +914,426 @@ The entire codebase is available on GitHub. Fork it, clone it, make it yours. Th
                         "SEO optimization and SPA routing".to_string(),
                         "Open source on GitHub".to_string(),
                     ],
+                },
+            ],
+        }
+    }
+}
+
+impl Default for ServicesData {
+    fn default() -> Self {
+        Self {
+            services: vec![
+                Service {
+                    id: "ai-consulting".to_string(),
+                    slug: "ai-consulting".to_string(),
+                    title: "AI Consulting".to_string(),
+                    icon: "brain".to_string(),
+                    tagline: "Navigate the AI revolution with confidence".to_string(),
+                    description: "AI is changing everything. The question isn't whether to use it, but how to use it well. With a Computer Science degree and hands-on experience with the latest in AI, LLMs, and SLMs, I help businesses cut through the hype and find practical applications that actually deliver value.".to_string(),
+                    long_description: r#"## The Challenge
+
+Every business is being told they need AI. But most AI projects fail because they start with the technology instead of the problem. The hype is real, but so is the opportunity if you approach it correctly.
+
+## What We Do
+
+### AI Strategy & Assessment
+We evaluate your business processes to identify where AI can genuinely help versus where it's just expensive novelty. Not every problem needs machine learning.
+
+### LLM Implementation
+Large Language Models like GPT-4, Claude, and open-source alternatives are powerful tools. We help you integrate them into your workflows, whether that's customer service, content generation, or internal knowledge management.
+
+### Small Language Models (SLMs)
+Sometimes you don't need a massive model. SLMs can run locally, cost less, and handle specific tasks better than general-purpose giants. We help you choose the right tool for the job.
+
+### Custom AI Solutions
+When off-the-shelf doesn't cut it, we build custom solutions tailored to your specific needs. From fine-tuning models to building complete AI-powered applications.
+
+## The Approach
+
+I stay current on the latest developments in AI because this field moves fast. What was cutting-edge six months ago might be obsolete today. You get someone who understands both the fundamentals (thanks to that CS degree) and the bleeding edge."#.to_string(),
+                    features: vec![
+                        "AI strategy and roadmap development".to_string(),
+                        "LLM integration (GPT, Claude, Llama, Mistral)".to_string(),
+                        "Small Language Model deployment".to_string(),
+                        "Custom AI application development".to_string(),
+                        "AI workflow automation".to_string(),
+                        "Model selection and evaluation".to_string(),
+                        "Prompt engineering and optimization".to_string(),
+                        "AI security and privacy consulting".to_string(),
+                    ],
+                    personas: vec![
+                        Persona {
+                            title: "Business Owner".to_string(),
+                            icon: "briefcase".to_string(),
+                            description: "You keep hearing about AI but aren't sure where to start or what's actually useful versus hype".to_string(),
+                        },
+                        Persona {
+                            title: "Tech Leader".to_string(),
+                            icon: "code".to_string(),
+                            description: "You need to implement AI features but want guidance on architecture and model selection".to_string(),
+                        },
+                        Persona {
+                            title: "Operations Manager".to_string(),
+                            icon: "settings".to_string(),
+                            description: "You have repetitive processes that could benefit from intelligent automation".to_string(),
+                        },
+                    ],
+                    accent_color: "#8B5CF6".to_string(), // Purple for AI
+                },
+                Service {
+                    id: "web-development".to_string(),
+                    slug: "web-development".to_string(),
+                    title: "Web Development".to_string(),
+                    icon: "globe".to_string(),
+                    tagline: "Fast, professional websites that convert".to_string(),
+                    description: "Your website is often the first impression people have of your business. It should load fast, look professional, and convert visitors into customers. No bloated templates. No cookie-cutter designs.".to_string(),
+                    long_description: r#"## The Challenge
+
+Your website is working against you. Maybe it's slow, outdated, or just doesn't represent what your business has become. Every day it stays that way, you're losing potential customers who click away before they even learn what you do.
+
+## What We Build
+
+### Custom Websites
+Every site is crafted with your specific goals in mind. Not adapted from a template. Not forced into a framework. Built from scratch to do exactly what you need.
+
+### E-commerce Solutions
+Sell products online with a checkout experience that doesn't lose customers. Payment processing, inventory management, and customer accounts that just work.
+
+### Web Applications
+When you need your website to DO something, not just display information. Customer portals, booking systems, calculators, dashboards.
+
+### Performance Optimization
+Slow sites kill conversions. We build fast by default and can speed up existing sites that have gotten bloated.
+
+## Why It Matters
+
+A 1-second delay in page load can cost 7% of conversions. Mobile users expect pages to load in under 3 seconds. Your competitors are already fast. Are you?"#.to_string(),
+                    features: vec![
+                        "Custom design tailored to your brand".to_string(),
+                        "Mobile-responsive development".to_string(),
+                        "Search engine optimization (SEO) built-in".to_string(),
+                        "Fast load times and clean code".to_string(),
+                        "E-commerce and payment integration".to_string(),
+                        "Content management training".to_string(),
+                        "Ongoing support and maintenance".to_string(),
+                        "Analytics and conversion tracking".to_string(),
+                    ],
+                    personas: vec![
+                        Persona {
+                            title: "New Business".to_string(),
+                            icon: "rocket".to_string(),
+                            description: "You're launching and need a professional web presence that makes you look established".to_string(),
+                        },
+                        Persona {
+                            title: "Growing Company".to_string(),
+                            icon: "trending-up".to_string(),
+                            description: "Your current site doesn't reflect how far you've come and it's time for an upgrade".to_string(),
+                        },
+                        Persona {
+                            title: "E-commerce Seller".to_string(),
+                            icon: "shopping-cart".to_string(),
+                            description: "You want to sell online without the limitations of marketplace platforms".to_string(),
+                        },
+                    ],
+                    accent_color: "#3B82F6".to_string(), // Blue for Web
+                },
+                Service {
+                    id: "mobile-app-development".to_string(),
+                    slug: "mobile-app-development".to_string(),
+                    title: "Mobile App Development".to_string(),
+                    icon: "smartphone".to_string(),
+                    tagline: "Native and cross-platform apps that users love".to_string(),
+                    description: "Sometimes a website isn't enough. When you need to be in your customers' pockets, we build mobile apps that feel native, perform smoothly, and solve real problems.".to_string(),
+                    long_description: r#"## The Challenge
+
+You have an idea for an app. Maybe customers keep asking for one. Maybe your competitors have one and you don't. But mobile development is complex, expensive, and full of pitfalls. Most app projects fail.
+
+## What We Build
+
+### Native iOS & Android
+When performance and platform integration matter most. Native apps feel right because they're built specifically for each platform.
+
+### Cross-Platform Apps
+One codebase, multiple platforms. Modern frameworks like React Native and Flutter deliver near-native performance at lower cost.
+
+### Progressive Web Apps (PWAs)
+Sometimes you don't need the App Store. PWAs install from the browser, work offline, and cost a fraction of native development.
+
+### App Modernization
+Have an existing app that's showing its age? We update, optimize, and sometimes rebuild apps to meet modern standards.
+
+## The Reality Check
+
+Before we build anything, we help you answer the hard questions: Do you actually need an app? Who will download it? How will they find it? What problem does it solve that a website can't? Many businesses discover they need something simpler. We'd rather tell you that upfront than take your money for something that won't succeed."#.to_string(),
+                    features: vec![
+                        "iOS and Android native development".to_string(),
+                        "React Native cross-platform apps".to_string(),
+                        "Progressive Web App (PWA) development".to_string(),
+                        "App Store submission and optimization".to_string(),
+                        "Push notifications and engagement".to_string(),
+                        "Offline functionality".to_string(),
+                        "Backend API development".to_string(),
+                        "App analytics and crash reporting".to_string(),
+                    ],
+                    personas: vec![
+                        Persona {
+                            title: "Startup Founder".to_string(),
+                            icon: "lightbulb".to_string(),
+                            description: "You have an app idea and need someone to help you build the MVP without burning through your runway".to_string(),
+                        },
+                        Persona {
+                            title: "Enterprise Leader".to_string(),
+                            icon: "building".to_string(),
+                            description: "Your team needs a mobile tool to work more efficiently in the field".to_string(),
+                        },
+                        Persona {
+                            title: "Service Business".to_string(),
+                            icon: "wrench".to_string(),
+                            description: "Your customers want to book, track, or interact with you from their phones".to_string(),
+                        },
+                    ],
+                    accent_color: "#10B981".to_string(), // Green for Mobile
+                },
+                Service {
+                    id: "product-management".to_string(),
+                    slug: "product-management".to_string(),
+                    title: "Product Management".to_string(),
+                    icon: "target".to_string(),
+                    tagline: "From idea to shipped product, strategically".to_string(),
+                    description: "Having a great idea isn't enough. Someone needs to define what gets built, prioritize ruthlessly, and make sure the end result actually solves the problem. That's product management.".to_string(),
+                    long_description: r#"## The Challenge
+
+Your development team is busy, but are they building the right things? Features ship, but customers aren't happier. The roadmap keeps changing. Nobody agrees on what "done" looks like.
+
+## What We Do
+
+### Product Strategy
+Define what your product should become. Who is it for? What problem does it solve? How does it fit into the market? These questions need clear answers before anyone writes code.
+
+### Roadmap Development
+Prioritize ruthlessly. There are always more ideas than resources. We help you figure out what to build first, what to save for later, and what to kill.
+
+### User Research
+Talk to actual users. Watch them use your product. Understand their real problems, not what you assume they are. Then build solutions that actually help.
+
+### Feature Definition
+Turn vague ideas into clear specifications. What exactly should this feature do? How should it work? What does success look like? We write the specs that developers can actually build from.
+
+### Launch Planning
+Getting to launch is half the battle. We help plan releases, coordinate teams, and make sure what ships actually matches what was promised.
+
+## The Value
+
+Good product management is the difference between building something people want and building something nobody uses. It's not about more features. It's about the right features, built well, shipped on time."#.to_string(),
+                    features: vec![
+                        "Product strategy and vision".to_string(),
+                        "Roadmap planning and prioritization".to_string(),
+                        "User research and interviews".to_string(),
+                        "Feature specification writing".to_string(),
+                        "Sprint planning and backlog grooming".to_string(),
+                        "Stakeholder management".to_string(),
+                        "Launch planning and coordination".to_string(),
+                        "Metrics definition and tracking".to_string(),
+                    ],
+                    personas: vec![
+                        Persona {
+                            title: "Startup Without PM".to_string(),
+                            icon: "seedling".to_string(),
+                            description: "You have engineers but no one dedicated to figuring out what to build next".to_string(),
+                        },
+                        Persona {
+                            title: "Overwhelmed Founder".to_string(),
+                            icon: "layers".to_string(),
+                            description: "You're doing product management plus everything else and something has to give".to_string(),
+                        },
+                        Persona {
+                            title: "Scaling Team".to_string(),
+                            icon: "bar-chart".to_string(),
+                            description: "Your team is growing and the informal processes that worked before are breaking down".to_string(),
+                        },
+                    ],
+                    accent_color: "#F59E0B".to_string(), // Amber for Product
+                },
+                Service {
+                    id: "digital-marketing".to_string(),
+                    slug: "digital-marketing".to_string(),
+                    title: "Digital Marketing & Customer Systems".to_string(),
+                    icon: "megaphone".to_string(),
+                    tagline: "Turn visitors into customers, automatically".to_string(),
+                    description: "A website is just the beginning. To grow, you need systems that capture leads, nurture relationships, and convert interest into revenue without requiring you to manually manage every touchpoint.".to_string(),
+                    long_description: r#"## The Challenge
+
+You're getting traffic but not customers. Leads come in but fall through the cracks. You know you should be doing email marketing but who has the time? Every potential customer requires manual follow-up.
+
+## What We Build
+
+### Email Marketing Systems
+Set up campaigns that run themselves. Welcome sequences for new subscribers. Follow-up sequences for leads. Re-engagement for dormant customers. We build the system once, and it works forever.
+
+### SMS & Phone Outreach
+Sometimes email isn't enough. We set up text message campaigns and automated phone systems that keep you connected without the manual effort.
+
+### Customer Intake
+Forms that capture the right information and route it to the right people. No more lost leads. No more incomplete data. No more manual data entry.
+
+### Marketing Automation
+When a lead downloads your ebook, they get an email. When they visit your pricing page three times, your sales team gets alerted. Automation that actually makes sense.
+
+### CRM Integration
+Your customer data should live in one place. We connect your marketing systems to your CRM so nothing falls through the cracks.
+
+## The Result
+
+Marketing that works while you sleep. Leads that get followed up automatically. Customers who feel cared for without requiring your constant attention."#.to_string(),
+                    features: vec![
+                        "Email marketing setup and campaigns".to_string(),
+                        "SMS and phone outreach systems".to_string(),
+                        "Customer intake and lead capture".to_string(),
+                        "Appointment scheduling systems".to_string(),
+                        "Membership and subscription management".to_string(),
+                        "Marketing automation workflows".to_string(),
+                        "CRM integration".to_string(),
+                        "Analytics and conversion tracking".to_string(),
+                    ],
+                    personas: vec![
+                        Persona {
+                            title: "Growing Business".to_string(),
+                            icon: "seedling".to_string(),
+                            description: "You've been relying on word-of-mouth and it's time to build a real marketing engine".to_string(),
+                        },
+                        Persona {
+                            title: "Service Provider".to_string(),
+                            icon: "calendar".to_string(),
+                            description: "You need appointment scheduling and automated reminders to reduce no-shows".to_string(),
+                        },
+                        Persona {
+                            title: "Membership Business".to_string(),
+                            icon: "ticket".to_string(),
+                            description: "You have recurring customers who need to be managed and retained".to_string(),
+                        },
+                    ],
+                    accent_color: "#EC4899".to_string(), // Pink for Marketing
+                },
+                Service {
+                    id: "technical-strategy".to_string(),
+                    slug: "technical-strategy".to_string(),
+                    title: "Technical Strategy & Advisory".to_string(),
+                    icon: "compass".to_string(),
+                    tagline: "Make smart decisions before spending money".to_string(),
+                    description: "Not every problem needs code. Sometimes you need someone who can help you think through options, evaluate vendors, or figure out the right approach before you invest significant time and money.".to_string(),
+                    long_description: r#"## The Challenge
+
+You're about to make a big technical decision. Maybe it's choosing between platforms. Maybe it's deciding whether to build or buy. Maybe it's evaluating a vendor's claims. Get it wrong and you waste months and thousands of dollars.
+
+## What We Provide
+
+### Technology Assessment
+What do you actually need? We cut through the marketing speak and evaluate technologies based on your real requirements, not theoretical capabilities.
+
+### Vendor Evaluation
+Sales teams are trained to tell you what you want to hear. We help you ask the right questions, evaluate responses critically, and negotiate from a position of knowledge.
+
+### Build vs Buy Analysis
+Sometimes custom development is the answer. Sometimes off-the-shelf is better. Sometimes it's a combination. We help you figure out which.
+
+### Architecture Review
+Have a technical plan? We'll review it. We've seen what works and what doesn't. A few hours of review can save months of rework.
+
+### Due Diligence
+Acquiring a company? Partnering with a tech firm? We assess their technical assets, team capabilities, and technology debt so you know what you're getting into.
+
+## The Value
+
+One good decision saves more money than a hundred lines of code. We help you make good decisions."#.to_string(),
+                    features: vec![
+                        "Technology assessments".to_string(),
+                        "Vendor evaluation and selection".to_string(),
+                        "Build vs buy analysis".to_string(),
+                        "Architecture reviews".to_string(),
+                        "Technical due diligence".to_string(),
+                        "Product roadmapping".to_string(),
+                        "Team capability assessment".to_string(),
+                        "Documentation and knowledge transfer".to_string(),
+                    ],
+                    personas: vec![
+                        Persona {
+                            title: "Non-Technical Founder".to_string(),
+                            icon: "graduation-cap".to_string(),
+                            description: "You need technical guidance but aren't ready for a full-time CTO".to_string(),
+                        },
+                        Persona {
+                            title: "Decision Maker".to_string(),
+                            icon: "scale".to_string(),
+                            description: "You're evaluating vendors or platforms and want an unbiased opinion".to_string(),
+                        },
+                        Persona {
+                            title: "Acquiring Company".to_string(),
+                            icon: "handshake".to_string(),
+                            description: "You need technical due diligence before making an investment".to_string(),
+                        },
+                    ],
+                    accent_color: "#6366F1".to_string(), // Indigo for Strategy
+                },
+                Service {
+                    id: "business-solutions".to_string(),
+                    slug: "business-solutions".to_string(),
+                    title: "Business Solutions & Integration".to_string(),
+                    icon: "zap".to_string(),
+                    tagline: "Connect your systems, automate your workflows".to_string(),
+                    description: "Technology is supposed to make your work easier. When systems don't talk to each other, processes require too many manual steps, or data lives in too many places, it creates friction that slows everything down.".to_string(),
+                    long_description: r#"## The Challenge
+
+You have five different systems and none of them talk to each other. Data gets entered multiple times. Reports require exporting from three different tools. Simple tasks take way more steps than they should.
+
+## What We Do
+
+### System Integration
+Connect your tools. When a sale happens in your e-commerce platform, your inventory updates, your accounting software records it, and your shipping system creates a label. Automatically.
+
+### Workflow Automation
+Those repetitive tasks you do every day? We can probably automate them. Data entry, report generation, notification sending, file management. If a human is doing something a computer could do, let's fix that.
+
+### Custom Internal Tools
+Sometimes you need something that doesn't exist. A dashboard for your specific data. A tool for your specific workflow. A calculator for your specific formulas. We build internal tools that solve your exact problems.
+
+### Data Migration
+Moving from one system to another is painful. We handle the migration so your data arrives clean, complete, and correctly mapped.
+
+### Process Optimization
+Sometimes the problem isn't technology. Sometimes the process itself needs work. We help you figure out what's actually slowing you down and fix it.
+
+## The Result
+
+Less manual work. Fewer errors. Faster operations. Systems that actually help instead of getting in the way."#.to_string(),
+                    features: vec![
+                        "Software integrations and APIs".to_string(),
+                        "Workflow automation".to_string(),
+                        "Data migrations".to_string(),
+                        "Custom internal tools".to_string(),
+                        "Dashboard development".to_string(),
+                        "Process optimization".to_string(),
+                        "System documentation".to_string(),
+                        "Ongoing support and maintenance".to_string(),
+                    ],
+                    personas: vec![
+                        Persona {
+                            title: "Operations Manager".to_string(),
+                            icon: "refresh-cw".to_string(),
+                            description: "You're drowning in manual processes and disconnected systems".to_string(),
+                        },
+                        Persona {
+                            title: "Growing Company".to_string(),
+                            icon: "trending-up".to_string(),
+                            description: "The scrappy processes that worked when you were small are breaking now".to_string(),
+                        },
+                        Persona {
+                            title: "Data-Driven Business".to_string(),
+                            icon: "bar-chart".to_string(),
+                            description: "You have data everywhere but no single source of truth".to_string(),
+                        },
+                    ],
+                    accent_color: "#14B8A6".to_string(), // Teal for Integration
                 },
             ],
         }
