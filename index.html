@@ -23,9 +23,9 @@
     <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w5aXp-p7K4KLg.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://fonts.gstatic.com/s/opensans/v44/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSumu0SC55K5gw.woff2" as="font" type="font/woff2" crossorigin>
 
-    <!-- Load Google Fonts asynchronously to prevent render blocking -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Montserrat:wght@700&family=Open+Sans:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Montserrat:wght@700&family=Open+Sans:wght@400;500&display=swap"></noscript>
+    <!-- Load Google Fonts with display=optional to prevent CLS from font swapping -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Montserrat:wght@700&family=Open+Sans:wght@400;500&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Montserrat:wght@700&family=Open+Sans:wght@400;500&display=optional"></noscript>
 
     <!-- Critical CSS for above-the-fold content to reduce LCP -->
     <style>
