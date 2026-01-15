@@ -21,20 +21,20 @@ pub fn About() -> Element {
                     div { class: "personal-text",
                         h2 { class: "personal-title", "Hi, I'm Collin" }
                         p {
-                            "I started Pounds Consulting to help local businesses and small teams navigate the technical side of "
-                            "running a business. Whether it's your first website, a system to manage leads, or just figuring out "
-                            "what tools you actually need - I'm here to help you make sense of it all."
+                            "I started Pounds Consulting because too many businesses get overcharged for confusing technology. "
+                            "Whether it's your first website, a system to capture leads, or figuring out which tools you actually need, "
+                            "I'm here to help you make sense of it all."
                         }
                         p {
-                            "My background includes building products at startups and working with enterprise clients, "
-                            "but what I enjoy most is working directly with people in my community. There's something rewarding about "
+                            "My background includes building products at Paytient (a healthcare fintech startup serving hundreds of thousands of users), "
+                            "running digital marketing for Club Car Wash during their rapid expansion, and implementing enterprise integrations "
+                            "for clients like Hyatt and Commerce Bank. I have a Computer Science degree and stay current with AI/ML developments "
+                            "by building with tools like Claude and Llama in my spare time."
+                        }
+                        p {
+                            "But what I enjoy most is working directly with people in my community. There's something rewarding about "
                             "helping a local gym owner get their scheduling system working, or building a website for a business "
-                            "that's been relying on word-of-mouth for years."
-                        }
-                        p {
-                            "When I'm not building websites or automating workflows, you might find me hiking, dog-sitting, coaching swim lessons, "
-                            "or tinkering in my AI lab (a spare bedroom with a desk). I value delivering solid, quality work for my clients, "
-                            "keeping things simple, and being someone you'll want to work with again and again."
+                            "that's been growing through word-of-mouth for years and is finally ready to scale."
                         }
                         a {
                             href: "https://github.com/collinpounds",
@@ -52,16 +52,16 @@ pub fn About() -> Element {
         section { class: "section clients-section",
             div { class: "container",
                 div { class: "clients-banner glass-card",
-                    h3 { class: "clients-title", "From Local Shops to Large Companies" }
-                    p { class: "clients-subtitle", "We've built solutions for businesses of all sizes" }
+                    h3 { class: "clients-title", "Experience Across Industries" }
+                    p { class: "clients-subtitle", "From local businesses to venture-backed startups" }
                     div { class: "clients-logos",
-                        span { class: "client-name", "Country Clubs" }
+                        span { class: "client-name", "Healthcare Fintech" }
                         span { class: "client-divider", "•" }
-                        span { class: "client-name", "Martial Arts Academies" }
+                        span { class: "client-name", "Regional Retail" }
                         span { class: "client-divider", "•" }
-                        span { class: "client-name", "Regional Chains" }
+                        span { class: "client-name", "Professional Services" }
                         span { class: "client-divider", "•" }
-                        span { class: "client-name", "Healthcare Startups" }
+                        span { class: "client-name", "Local Small Business" }
                     }
                 }
             }
@@ -149,13 +149,13 @@ pub fn About() -> Element {
                         div { class: "timeline-content glass-card",
                             div { class: "timeline-header",
                                 h3 { class: "timeline-title", "Before Going Independent" }
-                                span { class: "timeline-company", "5+ Years in Tech" }
+                                span { class: "timeline-company", "5+ Years Building Software" }
                             }
                             ul { class: "timeline-list",
-                                li { "Worked at a healthcare startup used by hundreds of thousands of people" }
-                                li { "Built integrations for companies like Hyatt and Commerce Bank" }
-                                li { "Created websites and ran ad campaigns for a regional car wash chain" }
-                                li { "Learned what works (and what doesn't) at scale" }
+                                li { "Paytient: Healthcare fintech serving 300,000+ users. Led MFA implementation, redesigned member portal" }
+                                li { "Club Car Wash: Built website and employee portal, ran Google Ads for ~3 store openings/month" }
+                                li { "Enterprise clients: Integrations for Hyatt, Commerce Bank, and others" }
+                                li { "Learned what works at scale, and how to keep things simple" }
                             }
                         }
                     }

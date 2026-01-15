@@ -2,20 +2,20 @@ use crate::content::{load_articles, ArticleStatus};
 use crate::Route;
 use dioxus::prelude::*;
 
-/// Render a paragraph, handling inline **bold** text
-fn render_paragraph(text: &str) -> Element {
-    // Check if the paragraph has bold markers
-    if text.contains("**") {
-        // For simplicity, just strip the ** markers
-        let clean_text = text.replace("**", "");
-        rsx! {
-            p { "{clean_text}" }
-        }
-    } else {
-        rsx! {
-            p { "{text}" }
-        }
+/// Convert **bold** markers to <strong> tags for HTML rendering
+fn process_bold_markers(text: &str) -> String {
+    let mut result = text.to_string();
+    while let (Some(start), Some(end)) = (result.find("**"), result[result.find("**").unwrap_or(0) + 2..].find("**")) {
+        let end_pos = start + 2 + end + 2;
+        let bold_text = &result[start + 2..start + 2 + end];
+        result = format!(
+            "{}<strong>{}</strong>{}",
+            &result[..start],
+            bold_text,
+            &result[end_pos..]
+        );
     }
+    result
 }
 
 #[component]
@@ -54,26 +54,36 @@ pub fn ArticleDetail(slug: String) -> Element {
                             // Render content with markdown-like formatting
                             for paragraph in article.content.split("\n\n") {
                                 if paragraph.starts_with("### ") {
-                                    h3 { class: "article-h3", {paragraph.trim_start_matches("### ")} }
+                                    h3 { class: "article-h3",
+                                        dangerous_inner_html: "{process_bold_markers(paragraph.trim_start_matches(\"### \"))}"
+                                    }
                                 } else if paragraph.starts_with("## ") {
-                                    h2 { class: "article-h2", {paragraph.trim_start_matches("## ")} }
+                                    h2 { class: "article-h2",
+                                        dangerous_inner_html: "{process_bold_markers(paragraph.trim_start_matches(\"## \"))}"
+                                    }
                                 } else if paragraph.starts_with("# ") {
-                                    h2 { class: "article-h2", {paragraph.trim_start_matches("# ")} }
+                                    h2 { class: "article-h2",
+                                        dangerous_inner_html: "{process_bold_markers(paragraph.trim_start_matches(\"# \"))}"
+                                    }
                                 } else if paragraph.starts_with("- ") || paragraph.starts_with("* ") {
                                     // Render as a list
                                     ul { class: "article-list",
                                         for line in paragraph.lines() {
                                             if line.starts_with("- ") || line.starts_with("* ") {
-                                                li { {line.trim_start_matches("- ").trim_start_matches("* ")} }
+                                                li {
+                                                    dangerous_inner_html: "{process_bold_markers(line.trim_start_matches(\"- \").trim_start_matches(\"* \"))}"
+                                                }
                                             }
                                         }
                                     }
                                 } else if paragraph.starts_with("**") && paragraph.ends_with("**") {
                                     // Bold standalone line (like "**How to avoid it:**")
-                                    p { class: "article-bold", {paragraph.trim_matches('*')} }
+                                    p { class: "article-bold",
+                                        dangerous_inner_html: "{paragraph.trim_matches('*')}"
+                                    }
                                 } else if !paragraph.trim().is_empty() {
-                                    // Handle bold text within paragraph
-                                    {render_paragraph(paragraph)}
+                                    // Handle bold text and links within paragraph
+                                    p { dangerous_inner_html: "{process_bold_markers(paragraph)}" }
                                 }
                             }
                         }

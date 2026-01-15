@@ -228,7 +228,7 @@ impl Default for ArticlesData {
 
 ## When a Template Works Fine
 
-If your business fits a common pattern (local service business, restaurant, small retail shop) a template will probably work. Squarespace, Wix, and similar tools have gotten pretty good. You can have a professional-looking site up in a weekend for under $200/year.
+If your business fits a common pattern (local service business, restaurant, small retail shop) a template will probably work. <a href="https://squarespace.com" target="_blank" rel="noopener noreferrer">Squarespace</a>, <a href="https://wix.com" target="_blank" rel="noopener noreferrer">Wix</a>, and similar tools have gotten pretty good. You can have a professional-looking site up in a weekend for under $200/year.
 
 Templates work when:
 - Your site mostly shows information (hours, location, services, contact)
@@ -242,7 +242,7 @@ Custom makes sense when:
 - You need your website to DO something specific (booking systems, customer portals, calculators)
 - You're integrating with other software your business uses
 - Your business model doesn't fit standard templates
-- Speed and performance are critical to your revenue
+- Speed and performance are critical to your revenue (according to <a href="https://web.dev" target="_blank" rel="noopener noreferrer">Google's web.dev</a>, a 1-second delay can cost 7% in conversions)
 - You need to stand out in a crowded market
 
 ## The Middle Ground
@@ -318,7 +318,7 @@ Not "what would be cool to have" but what actual problem are real people experie
 
 ## 3. How Will People Find It?
 
-This is where most apps die. Building it is the easy part. Getting people to actually download and use it is hard. What's your plan? Be specific.
+This is where most apps die. Building it is the easy part. Getting people to actually download and use it is hard. The <a href="https://developer.apple.com/app-store/" target="_blank" rel="noopener noreferrer">App Store</a> has over 2 million apps. What's your plan to stand out? Be specific.
 
 ## 4. What's the Simplest Version That Solves the Problem?
 
@@ -929,54 +929,54 @@ impl Default for ServicesData {
                     slug: "ai-consulting".to_string(),
                     title: "AI Consulting".to_string(),
                     icon: "brain".to_string(),
-                    tagline: "Navigate the AI revolution with confidence".to_string(),
-                    description: "AI is changing everything. The question isn't whether to use it, but how to use it well. With a Computer Science degree and hands-on experience with the latest in AI, LLMs, and SLMs, I help businesses cut through the hype and find practical applications that actually deliver value.".to_string(),
-                    long_description: r#"## The Challenge
+                    tagline: "Turn AI potential into measurable business results".to_string(),
+                    description: "According to McKinsey, companies using AI effectively see a 20% increase in cash flow. But most AI projects fail because they start with technology instead of business problems. With a Computer Science degree and hands-on experience implementing solutions with Claude, Llama, and custom models, I help businesses cut through the noise and deploy AI that actually delivers ROI.".to_string(),
+                    long_description: r#"## The $15.7 Trillion Opportunity
 
-Every business is being told they need AI. But most AI projects fail because they start with the technology instead of the problem. The hype is real, but so is the opportunity if you approach it correctly.
+According to PwC, AI will contribute $15.7 trillion to the global economy by 2030. But here's what the headlines don't tell you: 85% of AI projects fail to deliver expected results. The difference between success and failure isn't the technology. It's the strategy.
 
-## What We Do
+## How We Can Help
 
 ### AI Strategy & Assessment
-We evaluate your business processes to identify where AI can genuinely help versus where it's just expensive novelty. Not every problem needs machine learning.
+Before writing a single line of code, we map your business processes to identify where AI creates genuine value versus expensive novelty. Using frameworks developed by leading consulting firms like <a href="https://ey.com" target="_blank" rel="noopener noreferrer">Ernst & Young</a>, we build business cases that your stakeholders can actually approve.
 
 ### LLM Implementation
-Large Language Models like GPT-4, Claude, and open-source alternatives are powerful tools. We help you integrate them into your workflows, whether that's customer service, content generation, or internal knowledge management.
+Large Language Models have matured rapidly. <a href="https://anthropic.com" target="_blank" rel="noopener noreferrer">Anthropic's Claude</a> excels at nuanced reasoning. Open-source models from <a href="https://huggingface.co" target="_blank" rel="noopener noreferrer">Hugging Face</a> offer flexibility and cost control. <a href="https://ai.google" target="_blank" rel="noopener noreferrer">Google's Gemini</a> integrates seamlessly with existing Google infrastructure. We help you choose the right model for your specific use case and budget.
 
 ### Small Language Models (SLMs)
-Sometimes you don't need a massive model. SLMs can run locally, cost less, and handle specific tasks better than general-purpose giants. We help you choose the right tool for the job.
+Sometimes smaller is better. SLMs can run on your own infrastructure, keeping sensitive data in-house while reducing API costs by 90% or more. Companies like <a href="https://onefootprint.com" target="_blank" rel="noopener noreferrer">Footprint</a> are pioneering privacy-first AI approaches that we can help you implement.
 
 ### Custom AI Solutions
-When off-the-shelf doesn't cut it, we build custom solutions tailored to your specific needs. From fine-tuning models to building complete AI-powered applications.
+When off-the-shelf doesn't cut it, we build custom solutions. Fine-tuned models. RAG systems for your proprietary data. AI-powered applications that give you a competitive edge. Research from <a href="https://hai.stanford.edu" target="_blank" rel="noopener noreferrer">Stanford HAI</a> informs our approach to responsible AI development.
 
-## The Approach
+## Why Work With Us
 
-I stay current on the latest developments in AI because this field moves fast. What was cutting-edge six months ago might be obsolete today. You get someone who understands both the fundamentals (thanks to that CS degree) and the bleeding edge."#.to_string(),
+I've spent years at the intersection of computer science theory and practical business application. You get someone who can explain transformer architectures to your engineering team and ROI projections to your board. No translation needed."#.to_string(),
                     features: vec![
-                        "AI strategy and roadmap development".to_string(),
-                        "LLM integration (GPT, Claude, Llama, Mistral)".to_string(),
-                        "Small Language Model deployment".to_string(),
+                        "AI strategy aligned with business objectives".to_string(),
+                        "LLM integration (Claude, Llama, Gemini, Mistral)".to_string(),
+                        "Small Language Model deployment for cost control".to_string(),
                         "Custom AI application development".to_string(),
-                        "AI workflow automation".to_string(),
-                        "Model selection and evaluation".to_string(),
+                        "RAG systems for proprietary data".to_string(),
+                        "Model selection and total cost analysis".to_string(),
                         "Prompt engineering and optimization".to_string(),
-                        "AI security and privacy consulting".to_string(),
+                        "AI security, privacy, and compliance consulting".to_string(),
                     ],
                     personas: vec![
                         Persona {
                             title: "Business Owner".to_string(),
                             icon: "briefcase".to_string(),
-                            description: "You keep hearing about AI but aren't sure where to start or what's actually useful versus hype".to_string(),
+                            description: "You want AI that delivers ROI, not just impressive demos that go nowhere".to_string(),
                         },
                         Persona {
                             title: "Tech Leader".to_string(),
                             icon: "code".to_string(),
-                            description: "You need to implement AI features but want guidance on architecture and model selection".to_string(),
+                            description: "You need to implement AI features and want guidance on architecture, model selection, and scaling".to_string(),
                         },
                         Persona {
                             title: "Operations Manager".to_string(),
                             icon: "settings".to_string(),
-                            description: "You have repetitive processes that could benefit from intelligent automation".to_string(),
+                            description: "You have repetitive processes costing thousands in labor that AI could handle in seconds".to_string(),
                         },
                     ],
                     accent_color: "#8B5CF6".to_string(), // Purple for AI
@@ -986,54 +986,58 @@ I stay current on the latest developments in AI because this field moves fast. W
                     slug: "web-development".to_string(),
                     title: "Web Development".to_string(),
                     icon: "globe".to_string(),
-                    tagline: "Fast, professional websites that convert".to_string(),
-                    description: "Your website is often the first impression people have of your business. It should load fast, look professional, and convert visitors into customers. No bloated templates. No cookie-cutter designs.".to_string(),
-                    long_description: r#"## The Challenge
+                    tagline: "Websites that load fast, rank high, and convert visitors into customers".to_string(),
+                    description: "Google research shows 53% of mobile users abandon sites that take over 3 seconds to load. Your website isn't just a digital brochure. It's a 24/7 sales machine that should be working while you sleep. We build sites that meet Google's Core Web Vitals standards, rank in search results, and turn visitors into paying customers.".to_string(),
+                    long_description: r#"## Every Second Costs You Money
 
-Your website is working against you. Maybe it's slow, outdated, or just doesn't represent what your business has become. Every day it stays that way, you're losing potential customers who click away before they even learn what you do.
+According to Google/SOASTA research, a 1-second delay in page load decreases conversions by 7%. If your site generates $100,000 annually, a slow site could be costing you $7,000 or more. And that's before considering the visitors who never found you because slow sites rank lower in search results.
 
-## What We Build
+## How We Can Help
 
 ### Custom Websites
-Every site is crafted with your specific goals in mind. Not adapted from a template. Not forced into a framework. Built from scratch to do exactly what you need.
+
+Every site we build starts with your business goals, not a template. We follow web standards from the <a href="https://w3.org" target="_blank" rel="noopener noreferrer">W3C</a> and build with performance best practices from <a href="https://web.dev" target="_blank" rel="noopener noreferrer">web.dev</a>. The result is a site that's fast, accessible, and built to last.
 
 ### E-commerce Solutions
-Sell products online with a checkout experience that doesn't lose customers. Payment processing, inventory management, and customer accounts that just work.
+
+Sell products online with a checkout experience optimized for conversion. We integrate with <a href="https://stripe.com" target="_blank" rel="noopener noreferrer">Stripe</a> for secure payment processing and build inventory systems that scale with your business. No 15% marketplace fees. No platform limitations.
 
 ### Web Applications
-When you need your website to DO something, not just display information. Customer portals, booking systems, calculators, dashboards.
+
+When you need your website to DO something. Customer portals that reduce support tickets. Booking systems that fill your calendar. Dashboards that surface insights from your data. We build tools that make your business more efficient.
 
 ### Performance Optimization
-Slow sites kill conversions. We build fast by default and can speed up existing sites that have gotten bloated.
 
-## Why It Matters
+Already have a site that's slow? We audit against <a href="https://developers.google.com/search/docs/appearance/core-web-vitals" target="_blank" rel="noopener noreferrer">Google's Core Web Vitals</a>, identify bottlenecks, and implement fixes. Most sites see 40-60% improvement in load times.
 
-A 1-second delay in page load can cost 7% of conversions. Mobile users expect pages to load in under 3 seconds. Your competitors are already fast. Are you?"#.to_string(),
+## Built to Web Standards
+
+We build according to specifications from <a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer">MDN Web Docs</a> and W3C standards. This means your site works across browsers, meets accessibility requirements, and won't break when the next browser update drops."#.to_string(),
                     features: vec![
-                        "Custom design tailored to your brand".to_string(),
-                        "Mobile-responsive development".to_string(),
-                        "Search engine optimization (SEO) built-in".to_string(),
-                        "Fast load times and clean code".to_string(),
-                        "E-commerce and payment integration".to_string(),
-                        "Content management training".to_string(),
-                        "Ongoing support and maintenance".to_string(),
-                        "Analytics and conversion tracking".to_string(),
+                        "Custom design tailored to your brand and goals".to_string(),
+                        "Mobile-first responsive development".to_string(),
+                        "SEO built-in from day one, not bolted on later".to_string(),
+                        "Core Web Vitals optimization for Google ranking".to_string(),
+                        "E-commerce with Stripe payment integration".to_string(),
+                        "Content management you can actually use".to_string(),
+                        "Ongoing support and maintenance plans".to_string(),
+                        "Analytics and conversion tracking setup".to_string(),
                     ],
                     personas: vec![
                         Persona {
                             title: "New Business".to_string(),
                             icon: "rocket".to_string(),
-                            description: "You're launching and need a professional web presence that makes you look established".to_string(),
+                            description: "You're launching and need a professional web presence that makes you look established from day one".to_string(),
                         },
                         Persona {
                             title: "Growing Company".to_string(),
                             icon: "trending-up".to_string(),
-                            description: "Your current site doesn't reflect how far you've come and it's time for an upgrade".to_string(),
+                            description: "Your current site doesn't reflect how far you've come, and it's costing you credibility with prospects".to_string(),
                         },
                         Persona {
                             title: "E-commerce Seller".to_string(),
                             icon: "shopping-cart".to_string(),
-                            description: "You want to sell online without the limitations of marketplace platforms".to_string(),
+                            description: "You want to own your customer relationships instead of paying 15% to marketplaces".to_string(),
                         },
                     ],
                     accent_color: "#3B82F6".to_string(), // Blue for Web
@@ -1043,54 +1047,58 @@ A 1-second delay in page load can cost 7% of conversions. Mobile users expect pa
                     slug: "mobile-app-development".to_string(),
                     title: "Mobile App Development".to_string(),
                     icon: "smartphone".to_string(),
-                    tagline: "Native and cross-platform apps that users love".to_string(),
-                    description: "Sometimes a website isn't enough. When you need to be in your customers' pockets, we build mobile apps that feel native, perform smoothly, and solve real problems.".to_string(),
-                    long_description: r#"## The Challenge
+                    tagline: "Native and cross-platform apps built for performance and user retention".to_string(),
+                    description: "Mobile apps have 3x higher conversion rates than mobile web, according to Criteo research. But building an app that users actually keep on their phones requires more than code. It requires understanding platform guidelines, user expectations, and the economics of app store distribution. We build apps that get downloaded, used, and recommended.".to_string(),
+                    long_description: r#"## Mobile is Where Your Customers Are
 
-You have an idea for an app. Maybe customers keep asking for one. Maybe your competitors have one and you don't. But mobile development is complex, expensive, and full of pitfalls. Most app projects fail.
+Statista reports mobile devices account for over 60% of web traffic. But here's what matters more: users spend 90% of their mobile time in apps, not browsers. If your competitors have an app and you don't, you're invisible during most of your customers' screen time.
 
-## What We Build
+## How We Can Help
 
 ### Native iOS & Android
-When performance and platform integration matter most. Native apps feel right because they're built specifically for each platform.
+
+Following <a href="https://developer.apple.com/design/human-interface-guidelines" target="_blank" rel="noopener noreferrer">Apple's Human Interface Guidelines</a> and <a href="https://developer.android.com" target="_blank" rel="noopener noreferrer">Google's Material Design</a> principles, we build apps that feel right on each platform. Native apps access device features, perform faster, and create better user experiences.
 
 ### Cross-Platform Apps
-One codebase, multiple platforms. Modern frameworks like React Native and Flutter deliver near-native performance at lower cost.
+
+Why build twice when you can build once? <a href="https://reactnative.dev" target="_blank" rel="noopener noreferrer">React Native</a> and <a href="https://flutter.dev" target="_blank" rel="noopener noreferrer">Flutter</a> let us deploy to both iOS and Android from a single codebase, cutting development time by 30-40% without sacrificing quality.
 
 ### Progressive Web Apps (PWAs)
-Sometimes you don't need the App Store. PWAs install from the browser, work offline, and cost a fraction of native development.
+
+Not every app needs the App Store. PWAs install from the browser, work offline, and avoid the 15-30% app store commission. For the right use case, PWAs deliver 80% of native functionality at 20% of the cost.
 
 ### App Modernization
-Have an existing app that's showing its age? We update, optimize, and sometimes rebuild apps to meet modern standards.
 
-## The Reality Check
+Have an existing app built on outdated technology? We modernize apps to meet current platform requirements, improve performance, and prepare for future updates.
 
-Before we build anything, we help you answer the hard questions: Do you actually need an app? Who will download it? How will they find it? What problem does it solve that a website can't? Many businesses discover they need something simpler. We'd rather tell you that upfront than take your money for something that won't succeed."#.to_string(),
+## The Honest Conversation
+
+Before we build anything, we help you answer the hard questions: Do you actually need an app? What problem does it solve that a website can't? How will users discover it? Many businesses discover they need something simpler. We'd rather tell you that upfront than take your money for something that won't succeed."#.to_string(),
                     features: vec![
-                        "iOS and Android native development".to_string(),
-                        "React Native cross-platform apps".to_string(),
-                        "Progressive Web App (PWA) development".to_string(),
-                        "App Store submission and optimization".to_string(),
-                        "Push notifications and engagement".to_string(),
-                        "Offline functionality".to_string(),
-                        "Backend API development".to_string(),
-                        "App analytics and crash reporting".to_string(),
+                        "iOS development following Apple HIG standards".to_string(),
+                        "Android development with Material Design".to_string(),
+                        "React Native and Flutter cross-platform apps".to_string(),
+                        "App Store optimization and submission".to_string(),
+                        "Push notifications for user engagement".to_string(),
+                        "Offline-first architecture".to_string(),
+                        "Backend API development and integration".to_string(),
+                        "Analytics, crash reporting, and user insights".to_string(),
                     ],
                     personas: vec![
                         Persona {
                             title: "Startup Founder".to_string(),
                             icon: "lightbulb".to_string(),
-                            description: "You have an app idea and need someone to help you build the MVP without burning through your runway".to_string(),
+                            description: "You have an app idea and need to build an MVP that validates the concept without burning your runway".to_string(),
                         },
                         Persona {
                             title: "Enterprise Leader".to_string(),
                             icon: "building".to_string(),
-                            description: "Your team needs a mobile tool to work more efficiently in the field".to_string(),
+                            description: "Your field teams need mobile tools that work offline and sync when connected".to_string(),
                         },
                         Persona {
                             title: "Service Business".to_string(),
                             icon: "wrench".to_string(),
-                            description: "Your customers want to book, track, or interact with you from their phones".to_string(),
+                            description: "Your customers expect to book, pay, and communicate with you from their phones".to_string(),
                         },
                     ],
                     accent_color: "#10B981".to_string(), // Green for Mobile
@@ -1100,57 +1108,62 @@ Before we build anything, we help you answer the hard questions: Do you actually
                     slug: "product-management".to_string(),
                     title: "Product Management".to_string(),
                     icon: "target".to_string(),
-                    tagline: "From idea to shipped product, strategically".to_string(),
-                    description: "Having a great idea isn't enough. Someone needs to define what gets built, prioritize ruthlessly, and make sure the end result actually solves the problem. That's product management.".to_string(),
-                    long_description: r#"## The Challenge
+                    tagline: "Build products people actually want, on time and on budget".to_string(),
+                    description: "According to Gartner, 45% of product launches miss their target dates, and 80% of new products fail within their first year. The difference between success and failure isn't luck or even engineering talent. It's disciplined product management: knowing what to build, when to ship, and how to iterate based on real user feedback.".to_string(),
+                    long_description: r#"## The $10 Million Decision Problem
 
-Your development team is busy, but are they building the right things? Features ship, but customers aren't happier. The roadmap keeps changing. Nobody agrees on what "done" looks like.
+Every feature you build costs money. Every feature you don't build has opportunity cost. Without clear product direction, teams waste months building things nobody asked for while ignoring the features that would actually move the needle. The best companies in the world understand this.
 
-## What We Do
+## How We Can Help
 
 ### Product Strategy
-Define what your product should become. Who is it for? What problem does it solve? How does it fit into the market? These questions need clear answers before anyone writes code.
+
+<a href="https://tesla.com" target="_blank" rel="noopener noreferrer">Tesla</a> didn't become the world's most valuable automaker by building better cars. They redefined what a car could be: software-defined, constantly improving, directly sold. <a href="https://spacex.com" target="_blank" rel="noopener noreferrer">SpaceX</a> revolutionized aerospace not through incremental improvements but by questioning every assumption about rocket design. We bring that same first-principles thinking to your product strategy.
 
 ### Roadmap Development
-Prioritize ruthlessly. There are always more ideas than resources. We help you figure out what to build first, what to save for later, and what to kill.
+
+<a href="https://boringcompany.com" target="_blank" rel="noopener noreferrer">The Boring Company</a> started with the goal of reducing tunnel costs by 10x. Every decision flows from that single metric. Your roadmap needs the same clarity. We help you identify your "one metric that matters" and ruthlessly prioritize everything against it.
 
 ### User Research
-Talk to actual users. Watch them use your product. Understand their real problems, not what you assume they are. Then build solutions that actually help.
+
+The best product teams at companies like <a href="https://gartner.com" target="_blank" rel="noopener noreferrer">Gartner</a> and <a href="https://forrester.com" target="_blank" rel="noopener noreferrer">Forrester</a> don't guess what users want. They watch users struggle. They count support tickets. They measure where people drop off. We set up the systems to capture this intelligence and turn it into roadmap decisions.
 
 ### Feature Definition
-Turn vague ideas into clear specifications. What exactly should this feature do? How should it work? What does success look like? We write the specs that developers can actually build from.
+
+Vague requirements lead to vague products. We write specifications that answer every question before engineering starts. What does this feature do? What doesn't it do? How do we know if it worked? Clear specs mean faster builds and fewer rewrites.
 
 ### Launch Planning
-Getting to launch is half the battle. We help plan releases, coordinate teams, and make sure what ships actually matches what was promised.
 
-## The Value
+Shipping isn't the finish line. It's the starting line. We plan launches that include measurement, iteration, and clear success criteria so you know within weeks (not months) whether a feature is working.
 
-Good product management is the difference between building something people want and building something nobody uses. It's not about more features. It's about the right features, built well, shipped on time."#.to_string(),
+## Why This Matters
+
+Good product management pays for itself many times over. Skip features that won't move metrics. Ship faster by eliminating ambiguity. Build confidence with stakeholders through clear communication. The best engineering team in the world can't save a product nobody wants."#.to_string(),
                     features: vec![
-                        "Product strategy and vision".to_string(),
-                        "Roadmap planning and prioritization".to_string(),
-                        "User research and interviews".to_string(),
-                        "Feature specification writing".to_string(),
-                        "Sprint planning and backlog grooming".to_string(),
-                        "Stakeholder management".to_string(),
-                        "Launch planning and coordination".to_string(),
-                        "Metrics definition and tracking".to_string(),
+                        "Product strategy and vision development".to_string(),
+                        "Roadmap planning and ruthless prioritization".to_string(),
+                        "User research, interviews, and feedback loops".to_string(),
+                        "Feature specifications that engineers love".to_string(),
+                        "Sprint planning and backlog management".to_string(),
+                        "Cross-functional stakeholder alignment".to_string(),
+                        "Go-to-market planning and launch coordination".to_string(),
+                        "Metrics definition, tracking, and iteration".to_string(),
                     ],
                     personas: vec![
                         Persona {
                             title: "Startup Without PM".to_string(),
                             icon: "seedling".to_string(),
-                            description: "You have engineers but no one dedicated to figuring out what to build next".to_string(),
+                            description: "You have engineers shipping code, but nobody dedicated to making sure it's the right code".to_string(),
                         },
                         Persona {
                             title: "Overwhelmed Founder".to_string(),
                             icon: "layers".to_string(),
-                            description: "You're doing product management plus everything else and something has to give".to_string(),
+                            description: "You're doing product, sales, ops, and everything else, and product is the thing that keeps slipping".to_string(),
                         },
                         Persona {
                             title: "Scaling Team".to_string(),
                             icon: "bar-chart".to_string(),
-                            description: "Your team is growing and the informal processes that worked before are breaking down".to_string(),
+                            description: "The informal processes that worked with 5 people are failing with 20, and features keep missing targets".to_string(),
                         },
                     ],
                     accent_color: "#F59E0B".to_string(), // Amber for Product
@@ -1160,57 +1173,62 @@ Good product management is the difference between building something people want
                     slug: "digital-marketing".to_string(),
                     title: "Digital Marketing & Customer Systems".to_string(),
                     icon: "megaphone".to_string(),
-                    tagline: "Turn visitors into customers, automatically".to_string(),
-                    description: "A website is just the beginning. To grow, you need systems that capture leads, nurture relationships, and convert interest into revenue without requiring you to manually manage every touchpoint.".to_string(),
-                    long_description: r#"## The Challenge
+                    tagline: "Turn website visitors into customers while you sleep".to_string(),
+                    description: "According to HubSpot, companies that automate lead management see a 10% or greater increase in revenue within 6-9 months. But most small businesses are still doing marketing manually, if at all. We build systems that capture leads, nurture relationships, and convert interest into revenue automatically.".to_string(),
+                    long_description: r#"## The Leaky Bucket Problem
 
-You're getting traffic but not customers. Leads come in but fall through the cracks. You know you should be doing email marketing but who has the time? Every potential customer requires manual follow-up.
+You're paying for traffic. Visitors come to your site, look around, and leave. Forever. Without a system to capture their information and follow up, you're filling a bucket with a hole in the bottom. The math is brutal: most websites convert less than 3% of visitors. That means 97% of your marketing spend walks out the door.
 
-## What We Build
+## How We Can Help
 
 ### Email Marketing Systems
-Set up campaigns that run themselves. Welcome sequences for new subscribers. Follow-up sequences for leads. Re-engagement for dormant customers. We build the system once, and it works forever.
+
+Email marketing delivers $42 for every $1 spent, according to DMA research. But only if you actually do it. We set up systems using platforms like <a href="https://mailchimp.com" target="_blank" rel="noopener noreferrer">Mailchimp</a> for growing businesses or <a href="https://klaviyo.com" target="_blank" rel="noopener noreferrer">Klaviyo</a> for e-commerce that run automatically. Welcome sequences. Abandoned cart reminders. Re-engagement campaigns. Set it up once, let it work forever.
 
 ### SMS & Phone Outreach
-Sometimes email isn't enough. We set up text message campaigns and automated phone systems that keep you connected without the manual effort.
 
-### Customer Intake
-Forms that capture the right information and route it to the right people. No more lost leads. No more incomplete data. No more manual data entry.
+Text messages have a 98% open rate (vs 20% for email). For time-sensitive offers or appointment reminders, nothing beats SMS. We integrate with <a href="https://twilio.com" target="_blank" rel="noopener noreferrer">Twilio</a> to build automated text campaigns that feel personal.
+
+### Customer Intake & Lead Capture
+
+Every form on your site should capture exactly what you need, route it to the right person, and trigger the right follow-up. No more leads disappearing into an unmonitored inbox. No more calling people back three days later.
 
 ### Marketing Automation
-When a lead downloads your ebook, they get an email. When they visit your pricing page three times, your sales team gets alerted. Automation that actually makes sense.
 
-### CRM Integration
-Your customer data should live in one place. We connect your marketing systems to your CRM so nothing falls through the cracks.
+When someone downloads your pricing guide, they should get a sequence of helpful emails. When they visit your pricing page three times, your sales team should get notified. We build intelligent workflows using <a href="https://hubspot.com" target="_blank" rel="noopener noreferrer">HubSpot</a> and similar platforms that respond to customer behavior in real-time.
 
-## The Result
+### Analytics & Tracking
 
-Marketing that works while you sleep. Leads that get followed up automatically. Customers who feel cared for without requiring your constant attention."#.to_string(),
+If you can't measure it, you can't improve it. We set up <a href="https://analytics.google.com" target="_blank" rel="noopener noreferrer">Google Analytics</a> tracking that actually answers your questions: Where are leads coming from? What's working? Where are people dropping off? Data-driven decisions, not guesswork.
+
+## The Compounding Effect
+
+Marketing automation isn't a one-time win. It's a compounding asset. Every email sequence you build keeps working. Every lead capture form keeps collecting. Every automation keeps running. The businesses that build these systems early create an advantage that compounds over time."#.to_string(),
                     features: vec![
-                        "Email marketing setup and campaigns".to_string(),
-                        "SMS and phone outreach systems".to_string(),
-                        "Customer intake and lead capture".to_string(),
-                        "Appointment scheduling systems".to_string(),
+                        "Email marketing setup with Mailchimp or Klaviyo".to_string(),
+                        "SMS campaigns and automated text sequences".to_string(),
+                        "Lead capture forms that actually convert".to_string(),
+                        "Appointment scheduling with automated reminders".to_string(),
                         "Membership and subscription management".to_string(),
                         "Marketing automation workflows".to_string(),
-                        "CRM integration".to_string(),
-                        "Analytics and conversion tracking".to_string(),
+                        "CRM integration and lead routing".to_string(),
+                        "Google Analytics setup and conversion tracking".to_string(),
                     ],
                     personas: vec![
                         Persona {
                             title: "Growing Business".to_string(),
                             icon: "seedling".to_string(),
-                            description: "You've been relying on word-of-mouth and it's time to build a real marketing engine".to_string(),
+                            description: "You've been growing through word-of-mouth and referrals, but you're ready for predictable, scalable growth".to_string(),
                         },
                         Persona {
                             title: "Service Provider".to_string(),
                             icon: "calendar".to_string(),
-                            description: "You need appointment scheduling and automated reminders to reduce no-shows".to_string(),
+                            description: "No-shows and manual scheduling are costing you money and time every single week".to_string(),
                         },
                         Persona {
                             title: "Membership Business".to_string(),
                             icon: "ticket".to_string(),
-                            description: "You have recurring customers who need to be managed and retained".to_string(),
+                            description: "You have recurring customers, but no system to reduce churn and increase lifetime value".to_string(),
                         },
                     ],
                     accent_color: "#EC4899".to_string(), // Pink for Marketing
@@ -1220,39 +1238,44 @@ Marketing that works while you sleep. Leads that get followed up automatically. 
                     slug: "technical-strategy".to_string(),
                     title: "Technical Strategy & Advisory".to_string(),
                     icon: "compass".to_string(),
-                    tagline: "Make smart decisions before spending money".to_string(),
-                    description: "Not every problem needs code. Sometimes you need someone who can help you think through options, evaluate vendors, or figure out the right approach before you invest significant time and money.".to_string(),
-                    long_description: r#"## The Challenge
+                    tagline: "Get the decision right before you spend the money".to_string(),
+                    description: "According to Gartner, 83% of data migrations fail or exceed their budgets. The wrong technology decision can cost months of wasted effort and hundreds of thousands in sunk costs. Before you commit to a platform, sign with a vendor, or greenlight a build, you need someone in your corner who understands the technology and has no stake in the outcome.".to_string(),
+                    long_description: r#"## The $500,000 Mistake
 
-You're about to make a big technical decision. Maybe it's choosing between platforms. Maybe it's deciding whether to build or buy. Maybe it's evaluating a vendor's claims. Get it wrong and you waste months and thousands of dollars.
+Every year, companies waste enormous budgets on technology that doesn't fit their needs. They choose vendors based on sales pitches instead of technical reality. They build custom when they should buy, or buy when they should build. These mistakes are expensive, and they're preventable.
 
-## What We Provide
+## How We Can Help
 
 ### Technology Assessment
-What do you actually need? We cut through the marketing speak and evaluate technologies based on your real requirements, not theoretical capabilities.
+
+Firms like <a href="https://gartner.com" target="_blank" rel="noopener noreferrer">Gartner</a> and <a href="https://forrester.com" target="_blank" rel="noopener noreferrer">Forrester</a> publish research on technology trends, but their reports are written for everyone. We translate that research to your specific situation. What do you actually need? What's overkill? What's the minimum viable solution that solves your problem?
 
 ### Vendor Evaluation
-Sales teams are trained to tell you what you want to hear. We help you ask the right questions, evaluate responses critically, and negotiate from a position of knowledge.
+
+Sales teams are trained to tell you what you want to hear. Their technical demos are optimized to impress, not to reveal limitations. We help you ask the hard questions: What happens when this fails? What's the real total cost of ownership? What does the migration path look like?
 
 ### Build vs Buy Analysis
-Sometimes custom development is the answer. Sometimes off-the-shelf is better. Sometimes it's a combination. We help you figure out which.
+
+The <a href="https://thoughtworks.com/radar" target="_blank" rel="noopener noreferrer">ThoughtWorks Technology Radar</a> tracks which technologies are ready for adoption and which are still experimental. But even mature technology isn't always the right choice. Sometimes custom development delivers 10x value. Sometimes off-the-shelf at 20% of the cost is good enough. We help you make that call.
 
 ### Architecture Review
-Have a technical plan? We'll review it. We've seen what works and what doesn't. A few hours of review can save months of rework.
+
+Before you commit hundreds of engineering hours, have someone review the plan. We've seen the patterns that work and the patterns that fail. A few hours of review can prevent months of rework. <a href="https://ey.com" target="_blank" rel="noopener noreferrer">Ernst & Young</a> estimates that fixing architectural problems after launch costs 10-100x more than fixing them during design.
 
 ### Due Diligence
-Acquiring a company? Partnering with a tech firm? We assess their technical assets, team capabilities, and technology debt so you know what you're getting into.
 
-## The Value
+Acquiring a company or making a major technology investment? <a href="https://a16z.com" target="_blank" rel="noopener noreferrer">a16z</a> and other top VCs do technical due diligence for a reason. We assess code quality, technical debt, team capabilities, and scalability. Know what you're buying before you buy it.
 
-One good decision saves more money than a hundred lines of code. We help you make good decisions."#.to_string(),
+## The ROI of Good Advice
+
+One avoided mistake pays for dozens of hours of advisory work. One right decision compounds for years. The companies that invest in getting decisions right upfront outperform those that figure it out as they go."#.to_string(),
                     features: vec![
-                        "Technology assessments".to_string(),
-                        "Vendor evaluation and selection".to_string(),
-                        "Build vs buy analysis".to_string(),
-                        "Architecture reviews".to_string(),
-                        "Technical due diligence".to_string(),
-                        "Product roadmapping".to_string(),
+                        "Technology assessments tailored to your business".to_string(),
+                        "Vendor evaluation and negotiation support".to_string(),
+                        "Build vs buy analysis with total cost modeling".to_string(),
+                        "Architecture reviews before you commit".to_string(),
+                        "Technical due diligence for acquisitions".to_string(),
+                        "Product roadmapping and prioritization".to_string(),
                         "Team capability assessment".to_string(),
                         "Documentation and knowledge transfer".to_string(),
                     ],
@@ -1260,17 +1283,17 @@ One good decision saves more money than a hundred lines of code. We help you mak
                         Persona {
                             title: "Non-Technical Founder".to_string(),
                             icon: "graduation-cap".to_string(),
-                            description: "You need technical guidance but aren't ready for a full-time CTO".to_string(),
+                            description: "You need someone who speaks tech and business fluently, without the cost of a full-time CTO".to_string(),
                         },
                         Persona {
                             title: "Decision Maker".to_string(),
                             icon: "scale".to_string(),
-                            description: "You're evaluating vendors or platforms and want an unbiased opinion".to_string(),
+                            description: "You're about to sign a six-figure contract and want an unbiased technical opinion first".to_string(),
                         },
                         Persona {
                             title: "Acquiring Company".to_string(),
                             icon: "handshake".to_string(),
-                            description: "You need technical due diligence before making an investment".to_string(),
+                            description: "You need to know what the technology is actually worth before you close the deal".to_string(),
                         },
                     ],
                     accent_color: "#6366F1".to_string(), // Indigo for Strategy
@@ -1280,57 +1303,62 @@ One good decision saves more money than a hundred lines of code. We help you mak
                     slug: "business-solutions".to_string(),
                     title: "Business Solutions & Integration".to_string(),
                     icon: "zap".to_string(),
-                    tagline: "Connect your systems, automate your workflows".to_string(),
-                    description: "Technology is supposed to make your work easier. When systems don't talk to each other, processes require too many manual steps, or data lives in too many places, it creates friction that slows everything down.".to_string(),
-                    long_description: r#"## The Challenge
+                    tagline: "Connect your systems, eliminate the busywork".to_string(),
+                    description: "According to Zapier's State of Business Automation report, small businesses using automation save over 20 hours per week on manual tasks. That's 1,000 hours per year spent on work that adds no value. We build integrations and automations that let your team focus on work that actually matters.".to_string(),
+                    long_description: r#"## The Hidden Cost of Manual Work
 
-You have five different systems and none of them talk to each other. Data gets entered multiple times. Reports require exporting from three different tools. Simple tasks take way more steps than they should.
+Every time an employee copies data from one system to another, you're paying twice: once for their time, and again in the errors they inevitably make. Research shows manual data entry has error rates of 1-4%. At scale, that's hundreds of mistakes per month, each one requiring time to find and fix.
 
-## What We Do
+## How We Can Help
 
 ### System Integration
-Connect your tools. When a sale happens in your e-commerce platform, your inventory updates, your accounting software records it, and your shipping system creates a label. Automatically.
 
-### Workflow Automation
-Those repetitive tasks you do every day? We can probably automate them. Data entry, report generation, notification sending, file management. If a human is doing something a computer could do, let's fix that.
+<a href="https://zapier.com" target="_blank" rel="noopener noreferrer">Zapier</a> and <a href="https://make.com" target="_blank" rel="noopener noreferrer">Make</a> have made it possible to connect almost any business software without custom code. When a sale happens in your e-commerce platform, inventory updates, accounting records it, and shipping gets notified. Automatically. No copying, no pasting, no errors.
+
+### Payment Processing
+
+<a href="https://stripe.com" target="_blank" rel="noopener noreferrer">Stripe</a> has become the backbone of internet commerce. We integrate Stripe with your existing systems so payments flow smoothly, subscriptions manage themselves, and financial reporting happens automatically. From simple checkout to complex billing logic, we build payment workflows that work.
+
+### Communication Automation
+
+<a href="https://twilio.com" target="_blank" rel="noopener noreferrer">Twilio</a> powers communications for companies from startups to the Fortune 500. We use it to build automated SMS notifications, voice systems, and communication workflows that keep your customers informed without requiring your team to manually send messages.
 
 ### Custom Internal Tools
-Sometimes you need something that doesn't exist. A dashboard for your specific data. A tool for your specific workflow. A calculator for your specific formulas. We build internal tools that solve your exact problems.
 
-### Data Migration
-Moving from one system to another is painful. We handle the migration so your data arrives clean, complete, and correctly mapped.
+Sometimes the tool you need doesn't exist. A dashboard for your specific metrics. A calculator for your unique pricing model. An intake form that matches your exact workflow. We build internal tools that solve your specific problems without the overhead of enterprise software.
 
-### Process Optimization
-Sometimes the problem isn't technology. Sometimes the process itself needs work. We help you figure out what's actually slowing you down and fix it.
+### Data Migration & Cleanup
 
-## The Result
+Moving from one system to another is notoriously painful. We handle migrations so your data arrives clean, complete, and correctly mapped. No lost records. No broken relationships. No three-month cleanup project.
 
-Less manual work. Fewer errors. Faster operations. Systems that actually help instead of getting in the way."#.to_string(),
+## The Automation Advantage
+
+Every automation you build is an asset that keeps working forever. The hour spent building an automation that saves 5 minutes per day pays for itself in 12 days. After that, it's pure profit. The businesses that systematically eliminate manual work create compounding efficiency advantages."#.to_string(),
                     features: vec![
-                        "Software integrations and APIs".to_string(),
-                        "Workflow automation".to_string(),
-                        "Data migrations".to_string(),
-                        "Custom internal tools".to_string(),
-                        "Dashboard development".to_string(),
-                        "Process optimization".to_string(),
-                        "System documentation".to_string(),
-                        "Ongoing support and maintenance".to_string(),
+                        "Zapier and Make automation workflows".to_string(),
+                        "Stripe payment and subscription integration".to_string(),
+                        "Twilio SMS and communication automation".to_string(),
+                        "Custom API integrations between systems".to_string(),
+                        "Internal tools and dashboards".to_string(),
+                        "Data migrations and cleanup".to_string(),
+                        "Process optimization and documentation".to_string(),
+                        "Ongoing maintenance and support".to_string(),
                     ],
                     personas: vec![
                         Persona {
                             title: "Operations Manager".to_string(),
                             icon: "refresh-cw".to_string(),
-                            description: "You're drowning in manual processes and disconnected systems".to_string(),
+                            description: "You're spending more time on manual data work than on strategic initiatives".to_string(),
                         },
                         Persona {
                             title: "Growing Company".to_string(),
                             icon: "trending-up".to_string(),
-                            description: "The scrappy processes that worked when you were small are breaking now".to_string(),
+                            description: "The spreadsheets and manual processes that worked at 5 employees are breaking at 20".to_string(),
                         },
                         Persona {
                             title: "Data-Driven Business".to_string(),
                             icon: "bar-chart".to_string(),
-                            description: "You have data everywhere but no single source of truth".to_string(),
+                            description: "Your data lives in 5 different places and nobody trusts any of the numbers".to_string(),
                         },
                     ],
                     accent_color: "#14B8A6".to_string(), // Teal for Integration

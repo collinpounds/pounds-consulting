@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" width="400" height="80">
+  <!-- Transparent background with 10px padding built into viewBox -->
+
+  <!-- Triangle/Pyramid shape with radiating lines -->
+  <g transform="translate(10, 5)">
+    <!-- Radiating lines from bottom-left corner to right edge -->
+    <line x1="0" y1="60" x2="60" y2="0" stroke="#D4A017" stroke-width="1.5"/>
+    <line x1="0" y1="60" x2="60" y2="10" stroke="#D4A017" stroke-width="1.5"/>
+    <line x1="0" y1="60" x2="60" y2="20" stroke="#D4A017" stroke-width="1.5"/>
+    <line x1="0" y1="60" x2="60" y2="30" stroke="#D4A017" stroke-width="1.5"/>
+    <line x1="0" y1="60" x2="60" y2="40" stroke="#D4A017" stroke-width="1.5"/>
+    <line x1="0" y1="60" x2="60" y2="50" stroke="#D4A017" stroke-width="1.5"/>
+    <line x1="0" y1="60" x2="60" y2="60" stroke="#D4A017" stroke-width="1.5"/>
+
+    <!-- Triangle outline (top edge) -->
+    <line x1="0" y1="60" x2="60" y2="0" stroke="#D4A017" stroke-width="2"/>
+    <line x1="60" y1="0" x2="60" y2="60" stroke="#D4A017" stroke-width="2"/>
+    <line x1="0" y1="60" x2="60" y2="60" stroke="#D4A017" stroke-width="2"/>
+  </g>
+
+  <!-- POUNDS text -->
+  <text x="85" y="38" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="34" font-weight="900" fill="#D4A017" letter-spacing="1">POUNDS</text>
+
+  <!-- CONSULTING bar background -->
+  <rect x="85" y="44" width="200" height="24" fill="#D4A017"/>
+
+  <!-- CONSULTING text -->
+  <text x="92" y="62" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#0D0D0D" letter-spacing="5">CONSULTING</text>
+</svg>

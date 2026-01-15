@@ -69,7 +69,9 @@ pub fn ServiceDetail(slug: String) -> Element {
                         div { class: "service-content glass-card",
                             for paragraph in service.long_description.split("\n\n") {
                                 if paragraph.starts_with("### ") {
-                                    h3 { class: "service-h3", {paragraph.trim_start_matches("### ")} }
+                                    h3 { class: "service-h3",
+                                        dangerous_inner_html: "{paragraph.trim_start_matches(\"### \")}"
+                                    }
                                 } else if paragraph.starts_with("## ") {
                                     // Change "What We Do" to "How We Can Help"
                                     {
@@ -85,12 +87,14 @@ pub fn ServiceDetail(slug: String) -> Element {
                                     ul { class: "service-list",
                                         for line in paragraph.lines() {
                                             if line.starts_with("- ") || line.starts_with("* ") {
-                                                li { {line.trim_start_matches("- ").trim_start_matches("* ")} }
+                                                li {
+                                                    dangerous_inner_html: "{line.trim_start_matches(\"- \").trim_start_matches(\"* \")}"
+                                                }
                                             }
                                         }
                                     }
                                 } else if !paragraph.trim().is_empty() {
-                                    p { "{paragraph}" }
+                                    p { dangerous_inner_html: "{paragraph}" }
                                 }
                             }
                         }
