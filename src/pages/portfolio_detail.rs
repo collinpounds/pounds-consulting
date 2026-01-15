@@ -20,7 +20,9 @@ pub fn PortfolioDetail(slug: String) -> Element {
                                 img {
                                     class: "case-study-logo",
                                     src: "/{logo}",
-                                    alt: "{project.title} logo"
+                                    alt: "{project.title} logo",
+                                    width: "250",
+                                    height: "250"
                                 }
                             }
 
@@ -51,13 +53,18 @@ pub fn PortfolioDetail(slug: String) -> Element {
                                     autoplay: true,
                                     r#loop: true,
                                     muted: true,
-                                    playsinline: true
+                                    playsinline: true,
+                                    width: "1200",
+                                    height: "675"
                                 }
                             } else if let Some(screenshot) = &project.screenshot {
                                 img {
                                     class: "case-study-screenshot",
                                     src: "/{screenshot}",
-                                    alt: "{project.title} screenshot"
+                                    alt: "{project.title} screenshot",
+                                    width: "1200",
+                                    height: "675",
+                                    loading: "lazy"
                                 }
                             } else {
                                 div { class: "case-study-media-placeholder",
@@ -144,7 +151,10 @@ pub fn PortfolioDetail(slug: String) -> Element {
                                             img {
                                                 class: "portfolio-card-logo",
                                                 src: "/{logo}",
-                                                alt: "{other.title} logo"
+                                                alt: "{other.title} logo",
+                                                width: "180",
+                                                height: "180",
+                                                loading: "lazy"
                                             }
                                         }
                                         div { class: "portfolio-header-text",

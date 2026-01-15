@@ -3131,6 +3131,9 @@ a.contact-link:hover {
 .portfolio-card-logo {
     width: 180px;
     height: 180px;
+    min-width: 180px;
+    min-height: 180px;
+    aspect-ratio: 1 / 1;
     object-fit: contain;
     margin-right: var(--spacing-md);
     border-radius: var(--radius-md);
@@ -3179,6 +3182,9 @@ a.contact-link:hover {
 .case-study-logo {
     width: 250px;
     height: 250px;
+    min-width: 250px;
+    min-height: 250px;
+    aspect-ratio: 1 / 1;
     object-fit: contain;
     background: rgba(255, 255, 255, 0.05);
     border-radius: var(--radius-md);
@@ -3237,6 +3243,10 @@ a.contact-link:hover {
 .case-study-screenshot,
 .case-study-video {
     max-width: 100%;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     border-radius: var(--radius-md);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
@@ -3371,6 +3381,8 @@ a.contact-link:hover {
     .case-study-logo {
         width: 200px;
         height: 200px;
+        min-width: 200px;
+        min-height: 200px;
     }
 
     .case-study-title {
@@ -3389,6 +3401,8 @@ a.contact-link:hover {
     .portfolio-card-logo {
         width: 120px;
         height: 120px;
+        min-width: 120px;
+        min-height: 120px;
     }
 }
 

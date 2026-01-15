@@ -34,7 +34,10 @@ pub fn Portfolio() -> Element {
                                         img {
                                             class: "portfolio-card-logo",
                                             src: "/{logo}",
-                                            alt: "{project.title} logo"
+                                            alt: "{project.title} logo",
+                                            width: "180",
+                                            height: "180",
+                                            loading: "lazy"
                                         }
                                     }
                                     div { class: "portfolio-header-text",
