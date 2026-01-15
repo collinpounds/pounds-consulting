@@ -2086,6 +2086,44 @@ a.contact-link:hover {
     font-size: 0.9rem;
 }
 
+/* Article Pagination */
+.articles-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pagination-btn {
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-text-primary);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-size: 0.9rem;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: var(--color-secondary);
+    color: var(--color-background);
+    border-color: var(--color-secondary);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.pagination-info {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
 /* Article Detail Page */
 .article-hero {
     padding: calc(80px + var(--spacing-xl)) 0 var(--spacing-xl);
@@ -2148,15 +2186,21 @@ a.contact-link:hover {
 }
 
 .article-h2 {
-    margin-top: var(--spacing-xl);
-    margin-bottom: var(--spacing-md);
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    color: var(--color-primary);
+    margin: var(--spacing-2xl) 0 var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-secondary);
+    display: inline-block;
 }
 
 .article-h3 {
-    margin-top: var(--spacing-lg);
-    margin-bottom: var(--spacing-sm);
-    font-size: 1.1rem;
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
     color: var(--color-secondary);
+    margin: var(--spacing-xl) 0 var(--spacing-sm);
 }
 
 .article-list {
@@ -3107,7 +3151,7 @@ a.contact-link:hover {
 
 /* ===== CASE STUDY PAGE ===== */
 .case-study-hero {
-    padding: var(--spacing-2xl) 0;
+    padding: calc(80px + var(--spacing-xl)) 0 var(--spacing-xl);
     background: linear-gradient(135deg, var(--color-background) 0%, var(--color-surface) 100%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -3228,14 +3272,18 @@ a.contact-link:hover {
     font-family: var(--font-heading);
     font-size: 1.75rem;
     color: var(--color-primary);
-    margin: var(--spacing-xl) 0 var(--spacing-md);
+    margin: var(--spacing-2xl) 0 var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-secondary);
+    display: inline-block;
 }
 
 .case-study-h3 {
     font-family: var(--font-heading);
     font-size: 1.35rem;
-    color: var(--color-primary);
-    margin: var(--spacing-lg) 0 var(--spacing-sm);
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin: var(--spacing-xl) 0 var(--spacing-sm);
 }
 
 .case-study-list {
@@ -3863,7 +3911,7 @@ a.contact-link:hover {
         var(--color-background) 0%,
         color-mix(in srgb, var(--service-accent, var(--color-secondary)) 10%, var(--color-background)) 100%
     );
-    padding: var(--spacing-2xl) 0;
+    padding: calc(80px + var(--spacing-xl)) 0 var(--spacing-xl);
     min-height: 40vh;
     display: flex;
     flex-direction: column;
