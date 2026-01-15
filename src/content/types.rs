@@ -2221,11 +2221,7 @@ mod tests {
 
         let mut seen = std::collections::HashSet::new();
         for url in &sitemap_urls {
-            assert!(
-                seen.insert(*url),
-                "Duplicate URL found in sitemap: {}",
-                url
-            );
+            assert!(seen.insert(*url), "Duplicate URL found in sitemap: {}", url);
         }
     }
 

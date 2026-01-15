@@ -5,7 +5,10 @@ use dioxus::prelude::*;
 /// Convert **bold** markers to <strong> tags for HTML rendering
 fn process_bold_markers(text: &str) -> String {
     let mut result = text.to_string();
-    while let (Some(start), Some(end)) = (result.find("**"), result[result.find("**").unwrap_or(0) + 2..].find("**")) {
+    while let (Some(start), Some(end)) = (
+        result.find("**"),
+        result[result.find("**").unwrap_or(0) + 2..].find("**"),
+    ) {
         let end_pos = start + 2 + end + 2;
         let bold_text = &result[start + 2..start + 2 + end];
         result = format!(
