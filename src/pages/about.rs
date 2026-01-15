@@ -7,9 +7,9 @@ pub fn About() -> Element {
         // Hero Section
         section { class: "hero hero-short",
             div { class: "hero-content",
-                h1 { class: "hero-title", "Technology That Just Works" }
+                h1 { class: "hero-title", "We Make Tech Less Painful" }
                 p { class: "hero-subtitle",
-                    "Whether you need your first website or your fiftieth integration, we speak your language and solve your problems."
+                    "You shouldn't need a computer science degree to run your business. We handle the technical stuff so you can focus on what you're good at."
                 }
             }
         }
@@ -187,23 +187,23 @@ pub fn About() -> Element {
                     div { class: "philosophy-grid",
                         div { class: "philosophy-item",
                             span { class: "philosophy-number", "01" }
-                            h3 { "We Listen First" }
-                            p { "Before talking technology, we want to understand your business. What are you trying to accomplish? What's getting in the way?" }
+                            h3 { "We Listen" }
+                            p { "Every project starts with a conversation. What's working? What's not? What would make your life easier? We go from there." }
                         }
                         div { class: "philosophy-item",
                             span { class: "philosophy-number", "02" }
-                            h3 { "We Explain Everything" }
-                            p { "No jargon. No confusing tech-speak. If you don't understand something, that's our fault, not yours." }
+                            h3 { "We Speak Your Language" }
+                            p { "No buzzwords. No alphabet soup of acronyms. Just clear explanations of what we're doing and why it matters." }
                         }
                         div { class: "philosophy-item",
                             span { class: "philosophy-number", "03" }
-                            h3 { "We Keep It Simple" }
-                            p { "The best solution is usually the simplest one. We won't sell you something complicated when something simple will work." }
+                            h3 { "We Don't Overdo It" }
+                            p { "The goal is to solve your problem, not to build the fanciest thing possible. We recommend what actually makes sense for your situation." }
                         }
                         div { class: "philosophy-item",
                             span { class: "philosophy-number", "04" }
-                            h3 { "We Know People" }
-                            p { "Need a designer? A security expert? We have a network of brilliant people we can call. Whatever the problem, we can figure it out." }
+                            h3 { "We've Got Backup" }
+                            p { "Some problems need specialists. We work with designers, security experts, and other talented pros. You deal with one person, but you get a whole network when you need it." }
                         }
                     }
                 }
@@ -212,8 +212,8 @@ pub fn About() -> Element {
 
         // CTA Section
         CtaSection {
-            title: "Not Sure Where to Start?".to_string(),
-            description: "That's okay. Most people who call us aren't sure what they need yet. Let's just talk and figure it out together.".to_string(),
+            title: "Not Sure What You Need?".to_string(),
+            description: "That's fine. Most people aren't when they first reach out. Let's have a conversation and figure it out.".to_string(),
             button_text: "Schedule a Free Call".to_string(),
             use_calendar_link: true
         }

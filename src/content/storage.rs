@@ -168,9 +168,11 @@ pub fn save_settings(settings: &SiteSettings) -> bool {
     set_to_storage(SETTINGS_KEY, settings)
 }
 
-/// Load articles from localStorage, or return defaults
+/// Load articles - returns compile-time defaults so all visitors see them
 pub fn load_articles() -> ArticlesData {
-    get_from_storage(ARTICLES_KEY).unwrap_or_default()
+    // Articles are now compiled into the binary so all visitors can see them
+    // To add/edit articles, modify ArticlesData::default() in types.rs
+    ArticlesData::default()
 }
 
 /// Save articles to localStorage
