@@ -59,78 +59,6 @@
             text-align: center;
             background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
         }
-        /* Loading skeleton styles */
-        .loading-skeleton {
-            animation: skeleton-pulse 1.5s ease-in-out infinite;
-        }
-        @keyframes skeleton-pulse {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 0.7; }
-        }
-        .skeleton-header {
-            height: 80px;
-            background: rgba(26, 26, 26, 0.95);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .skeleton-nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .skeleton-logo {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-        }
-        .skeleton-nav-links {
-            display: flex;
-            gap: 32px;
-        }
-        .skeleton-nav-link {
-            width: 60px;
-            height: 16px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-        }
-        .skeleton-hero {
-            min-height: calc(100vh - 80px);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 48px 24px;
-        }
-        .skeleton-title {
-            width: min(600px, 80%);
-            height: 48px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            margin-bottom: 24px;
-        }
-        .skeleton-subtitle {
-            width: min(500px, 70%);
-            height: 24px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            margin-bottom: 16px;
-        }
-        .skeleton-button {
-            width: 180px;
-            height: 48px;
-            background: rgba(212, 160, 23, 0.3);
-            border-radius: 7px;
-            margin-top: 24px;
-        }
-        @media (max-width: 768px) {
-            .skeleton-nav-links { display: none; }
-            .skeleton-title { height: 36px; }
-            .skeleton-subtitle { height: 20px; }
-        }
     </style>
 
     <!-- Main styles loaded by Dioxus via asset! macro -->
@@ -220,27 +148,6 @@
     </script>
 </head>
 <body>
-    <div id="main">
-        <!-- Loading skeleton - replaced by Dioxus on hydration -->
-        <div class="loading-skeleton">
-            <header class="skeleton-header">
-                <nav class="skeleton-nav">
-                    <div class="skeleton-logo"></div>
-                    <div class="skeleton-nav-links">
-                        <div class="skeleton-nav-link"></div>
-                        <div class="skeleton-nav-link"></div>
-                        <div class="skeleton-nav-link"></div>
-                        <div class="skeleton-nav-link"></div>
-                    </div>
-                </nav>
-            </header>
-            <div class="skeleton-hero">
-                <div class="skeleton-title"></div>
-                <div class="skeleton-subtitle"></div>
-                <div class="skeleton-subtitle" style="width: min(400px, 60%);"></div>
-                <div class="skeleton-button"></div>
-            </div>
-        </div>
-    </div>
+    <div id="main"></div>
 </body>
 </html>
