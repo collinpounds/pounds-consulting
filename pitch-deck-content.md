@@ -150,11 +150,13 @@ We don't disappear after launch. Questions come up. Things need adjusting. I'm h
 
 **Transparent. Simple. Fair.**
 
-**Hourly Rate: $100/hour**
+**Hourly Rate: $71/hour**
 
 No retainers required. No minimum commitments. You pay for work completed.
 
 For larger projects, I provide fixed-price quotes so you know exactly what you're investing before we start.
+
+**50% discount for military, veterans, law enforcement, and first responders.**
 
 **Discovery calls are always free.** If I'm not the right fit for your project, I'll tell you and point you in the right direction.
 

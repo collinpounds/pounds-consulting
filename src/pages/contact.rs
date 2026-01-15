@@ -76,7 +76,7 @@ pub fn Contact() -> Element {
                         div { class: "faq-item glass-card",
                             h3 { class: "faq-question", "How does billing work?" }
                             p { class: "faq-answer",
-                                "We bill hourly at $100/hour for most work, invoiced monthly. For fixed-scope projects, we provide a complete quote upfront."
+                                "We bill at $71/hour for most work, invoiced monthly. For fixed-scope projects, we provide a complete quote upfront. We offer a 50% discount for military, veterans, law enforcement, and first responders."
                             }
                         }
                     }
