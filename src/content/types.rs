@@ -221,7 +221,7 @@ impl Default for ArticlesData {
                     id: "do-you-need-custom-website".to_string(),
                     title: "Do You Actually Need a Custom Website?".to_string(),
                     slug: "do-you-need-custom-website".to_string(),
-                    date: "2025-01-02".to_string(),
+                    date: "2026-01-02".to_string(),
                     category: "Advice".to_string(),
                     excerpt: "Before spending thousands on a custom site, here's how to figure out if you actually need one.".to_string(),
                     content: r#"A lot of businesses pay for custom websites when they don't need them. Here's how to figure out what's right for you.
@@ -262,7 +262,7 @@ If you're not sure, we're happy to talk through it. No sales pitch, just honest 
                     id: "red-flags-hiring-developer".to_string(),
                     title: "Red Flags When Hiring a Developer".to_string(),
                     slug: "red-flags-hiring-developer".to_string(),
-                    date: "2025-01-01".to_string(),
+                    date: "2025-12-31".to_string(),
                     category: "Advice".to_string(),
                     excerpt: "How to spot problems before you've wasted time and money on the wrong hire.".to_string(),
                     content: r#"Hiring a developer or agency can feel like a gamble. Here are warning signs we've seen lead to bad outcomes.
@@ -306,7 +306,7 @@ If one bid is half the price of everyone else, something's wrong. Either they do
                     id: "questions-before-building-app".to_string(),
                     title: "5 Questions to Answer Before Building an App".to_string(),
                     slug: "questions-before-building-app".to_string(),
-                    date: "2024-12-28".to_string(),
+                    date: "2025-12-29".to_string(),
                     category: "Strategy".to_string(),
                     excerpt: "Most app projects fail because people skip these questions. Don't be one of them.".to_string(),
                     content: r#"Before you spend money building an app, make sure you can answer these questions clearly.
@@ -342,7 +342,7 @@ We're happy to help you think through these questions. Sometimes a 30-minute con
                     id: "why-software-projects-fail".to_string(),
                     title: "Why Most Software Projects Fail (And How to Avoid It)".to_string(),
                     slug: "why-software-projects-fail".to_string(),
-                    date: "2024-12-20".to_string(),
+                    date: "2025-12-26".to_string(),
                     category: "Strategy".to_string(),
                     excerpt: "After years of building software, we've seen the same mistakes over and over. Here's how to avoid them.".to_string(),
                     content: r#"Most software projects fail. The <a href="https://www.standishgroup.com/sample_research_files/CHAOSReport2015-Final.pdf" target="_blank" rel="noopener noreferrer">Standish Group's research</a> has tracked this for decades: only about a third of software projects succeed. But it's rarely the code that kills them. It's the decisions made before any code was written.
@@ -386,7 +386,7 @@ Notice something? Most of these problems are about communication and planning, n
                     id: "true-cost-free-website-builders".to_string(),
                     title: "The True Cost of 'Free' Website Builders".to_string(),
                     slug: "true-cost-free-website-builders".to_string(),
-                    date: "2024-12-15".to_string(),
+                    date: "2025-12-24".to_string(),
                     category: "Advice".to_string(),
                     excerpt: "Free sounds great until you add up what you're actually paying. Here's what those website builders really cost.".to_string(),
                     content: r#"<a href="https://wix.com" target="_blank" rel="noopener noreferrer">Wix</a>, <a href="https://squarespace.com" target="_blank" rel="noopener noreferrer">Squarespace</a>, and similar tools advertise low prices, but the actual cost is usually higher than it looks.
@@ -437,7 +437,7 @@ Run the numbers for your specific situation. Sometimes the "expensive" option is
                     id: "what-to-expect-working-with-us".to_string(),
                     title: "What to Expect When Working With Us".to_string(),
                     slug: "what-to-expect-working-with-us".to_string(),
-                    date: "2024-12-10".to_string(),
+                    date: "2025-12-20".to_string(),
                     category: "About Us".to_string(),
                     excerpt: "Here's how we work with clients, what we expect from you, and what you can expect from us.".to_string(),
                     content: r#"Every consultant works differently. Here's how we do things so you know what you're getting into.
@@ -486,7 +486,7 @@ If this sounds like a good fit, <a href="https://calendar.app.google/NxuWY3RDGE5
                     id: "website-costing-you-customers".to_string(),
                     title: "How to Tell If Your Website Is Costing You Customers".to_string(),
                     slug: "website-costing-you-customers".to_string(),
-                    date: "2025-01-10".to_string(),
+                    date: "2026-01-12".to_string(),
                     category: "Strategy".to_string(),
                     excerpt: "Your website might be driving away customers without you knowing. Here's how to find out.".to_string(),
                     content: r#"Most business owners have no idea how their website is actually performing. They assume if it loads, it's fine. But a slow or confusing website is like having a salesperson who mumbles and takes smoke breaks during pitches.
@@ -527,7 +527,7 @@ Sometimes a few quick fixes solve the problem. Sometimes you need to start fresh
                     id: "build-vs-buy-software".to_string(),
                     title: "Build vs Buy: When to Use Off-the-Shelf Software".to_string(),
                     slug: "build-vs-buy-software".to_string(),
-                    date: "2025-01-08".to_string(),
+                    date: "2026-01-10".to_string(),
                     category: "Strategy".to_string(),
                     excerpt: "Custom software isn't always the answer. Here's how to decide when to build and when to buy.".to_string(),
                     content: r#"The decision to build custom software or buy an existing solution is one of the most expensive choices a business makes. Get it wrong and you'll waste months and tens of thousands of dollars.
@@ -578,7 +578,7 @@ Most businesses should buy more and build less. But when building is the right c
                     id: "small-business-ai-mistakes".to_string(),
                     title: "What Small Businesses Get Wrong About AI".to_string(),
                     slug: "small-business-ai-mistakes".to_string(),
-                    date: "2025-01-06".to_string(),
+                    date: "2026-01-08".to_string(),
                     category: "Advice".to_string(),
                     excerpt: "AI can help your business, but probably not the way you think. Here's what actually works.".to_string(),
                     content: r#"Everyone's talking about AI. Most of what you hear is either hype or fear. Here's what small businesses actually need to know.
@@ -621,7 +621,7 @@ Most businesses find a few great use cases and lots of things that don't work. T
                     id: "first-developer-meeting".to_string(),
                     title: "How to Prepare for Your First Developer Meeting".to_string(),
                     slug: "first-developer-meeting".to_string(),
-                    date: "2025-01-04".to_string(),
+                    date: "2026-01-06".to_string(),
                     category: "Advice".to_string(),
                     excerpt: "Make the most of your first meeting with a developer by coming prepared with the right information.".to_string(),
                     content: r#"You've decided to hire a developer. Now you're about to have your first meeting. Here's how to make it productive instead of confusing.
@@ -679,7 +679,7 @@ Trust your gut. You're going to work closely with this person. If something feel
                     id: "roi-business-automation".to_string(),
                     title: "The Real ROI of Business Automation".to_string(),
                     slug: "roi-business-automation".to_string(),
-                    date: "2025-01-03".to_string(),
+                    date: "2026-01-04".to_string(),
                     category: "Strategy".to_string(),
                     excerpt: "Automation saves time, but how much? Here's how to calculate whether it's worth it for your business.".to_string(),
                     content: r#"Everyone talks about automation saving time. But how do you know if it's actually worth investing in? Here's how to think about it.
@@ -729,7 +729,7 @@ Small businesses that systematically automate routine work create compounding ef
                     id: "competitor-website-faster".to_string(),
                     title: "Why Your Competitor's Website Loads Faster (And Why It Matters)".to_string(),
                     slug: "competitor-website-faster".to_string(),
-                    date: "2024-12-22".to_string(),
+                    date: "2025-12-28".to_string(),
                     category: "Strategy".to_string(),
                     excerpt: "Website speed affects your search rankings, conversion rates, and bottom line. Here's how to fix it.".to_string(),
                     content: r#"Pull up your website and a competitor's side by side. Which loads faster? If it's not yours, you're losing money.
@@ -781,7 +781,7 @@ Sometimes the foundation is the problem. A site built on bloated technology can 
                     id: "email-marketing-service-business".to_string(),
                     title: "Email Marketing That Actually Works for Service Businesses".to_string(),
                     slug: "email-marketing-service-business".to_string(),
-                    date: "2024-12-18".to_string(),
+                    date: "2025-12-22".to_string(),
                     category: "Advice".to_string(),
                     excerpt: "Email marketing isn't just for e-commerce. Here's how service businesses can use it to stay top of mind and win more clients.".to_string(),
                     content: r#"Service businesses often think email marketing is just for online stores. It's not. Email is one of the best ways to stay in front of potential clients until they're ready to buy.
