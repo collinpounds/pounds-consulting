@@ -32,7 +32,74 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Service Detail Pages -->
+  <url>
+    <loc>https://poundsconsulting.net/services/ai-consulting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://poundsconsulting.net/services/web-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://poundsconsulting.net/services/mobile-app-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://poundsconsulting.net/services/product-management</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://poundsconsulting.net/services/digital-marketing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://poundsconsulting.net/services/technical-strategy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://poundsconsulting.net/services/business-solutions</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Articles -->
+  <url>
+    <loc>https://poundsconsulting.net/articles/website-costing-you-customers</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://poundsconsulting.net/articles/build-vs-buy-software</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://poundsconsulting.net/articles/small-business-ai-mistakes</loc>
+    <lastmod>2025-01-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://poundsconsulting.net/articles/first-developer-meeting</loc>
+    <lastmod>2025-01-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://poundsconsulting.net/articles/roi-business-automation</loc>
+    <lastmod>2025-01-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <url>
     <loc>https://poundsconsulting.net/articles/do-you-need-custom-website</loc>
     <lastmod>2025-01-02</lastmod>
@@ -52,8 +119,20 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://poundsconsulting.net/articles/competitor-website-faster</loc>
+    <lastmod>2024-12-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://poundsconsulting.net/articles/why-software-projects-fail</loc>
     <lastmod>2024-12-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://poundsconsulting.net/articles/email-marketing-service-business</loc>
+    <lastmod>2024-12-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -118,6 +197,11 @@
   </url>
   <url>
     <loc>https://poundsconsulting.net/portfolio/toledo-aa</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://poundsconsulting.net/portfolio/habiducer</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

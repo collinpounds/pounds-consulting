@@ -228,7 +228,7 @@ impl Default for ArticlesData {
 
 ## When a Template Works Fine
 
-If your business fits a common pattern (local service business, restaurant, small retail shop) a template will probably work. <a href="https://squarespace.com" target="_blank" rel="noopener noreferrer">Squarespace</a>, <a href="https://wix.com" target="_blank" rel="noopener noreferrer">Wix</a>, and similar tools have gotten pretty good. You can have a professional-looking site up in a weekend for under $200/year.
+If your business fits a common pattern (local service business, restaurant, small retail shop) a template will probably work. Tools like <a href="https://squarespace.com" target="_blank" rel="noopener noreferrer">Squarespace</a>, <a href="https://wix.com" target="_blank" rel="noopener noreferrer">Wix</a>, and <a href="https://wordpress.com" target="_blank" rel="noopener noreferrer">WordPress.com</a> have come a long way. You can have a professional-looking site up in a weekend for under $200/year.
 
 Templates work when:
 - Your site mostly shows information (hours, location, services, contact)
@@ -236,18 +236,20 @@ Templates work when:
 - You're okay looking similar to other businesses in your industry
 - You can handle basic updates yourself
 
+If you're selling products, <a href="https://shopify.com" target="_blank" rel="noopener noreferrer">Shopify</a> handles most e-commerce needs out of the box. Their template ecosystem is mature and their checkout is optimized for conversions.
+
 ## When You Need Something Custom
 
 Custom makes sense when:
 - You need your website to DO something specific (booking systems, customer portals, calculators)
 - You're integrating with other software your business uses
 - Your business model doesn't fit standard templates
-- Speed and performance are critical to your revenue (according to <a href="https://web.dev" target="_blank" rel="noopener noreferrer">Google's web.dev</a>, a 1-second delay can cost 7% in conversions)
+- Speed matters to your bottom line. Research from <a href="https://web.dev/performance/" target="_blank" rel="noopener noreferrer">Google's performance team</a> shows that <a href="https://web.dev/vitals/" target="_blank" rel="noopener noreferrer">every second of load time costs roughly 7% in conversions</a>
 - You need to stand out in a crowded market
 
 ## The Middle Ground
 
-There's a third option many people miss: start with a template, then add custom pieces. Use Squarespace for your main site, but build a custom tool for that one specific thing you need. This saves money and gets you moving faster.
+There's a third option many people miss: start with a template, then add custom pieces. Use Squarespace for your main site, but build a custom tool for that one specific thing you need. Connect them with <a href="https://zapier.com" target="_blank" rel="noopener noreferrer">Zapier</a> or a simple API integration. This saves money and gets you moving faster.
 
 ## The Real Question
 
@@ -275,28 +277,29 @@ Software is rarely easy. If someone says your project will be quick and cheap wi
 
 ## No Portfolio or References
 
-Everyone has to start somewhere, but experienced developers should be able to show you past work. Ask for references. Actually call them. Ask what went wrong on the project (something always does) and how the developer handled it.
+Everyone has to start somewhere, but experienced developers should be able to show you past work. Check their <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub profile</a> if they have one. Look at reviews on <a href="https://clutch.co" target="_blank" rel="noopener noreferrer">Clutch</a> for agencies. Ask for references and actually call them. Ask what went wrong on the project (something always does) and how the developer handled it.
 
 ## They Want All the Money Upfront
 
-Standard practice is milestone-based payments. Some money upfront is reasonable, but if they want 100% before starting, walk away. You lose all leverage if something goes wrong.
+Standard practice is milestone-based payments. Some money upfront is reasonable (usually 25-50%), but if they want 100% before starting, walk away. You lose all leverage if something goes wrong. Platforms like <a href="https://toptal.com" target="_blank" rel="noopener noreferrer">Toptal</a> and <a href="https://upwork.com" target="_blank" rel="noopener noreferrer">Upwork</a> offer escrow protection for this reason.
 
 ## They Don't Ask About Your Business
 
-A developer who jumps straight to technical solutions without understanding your business goals will build the wrong thing. Good developers ask lots of questions first.
+A developer who jumps straight to technical solutions without understanding your business goals will build the wrong thing. Good developers ask lots of questions first. They want to understand the problem before proposing solutions.
 
 ## Unusually Low Prices
 
-If one bid is half the price of everyone else, something's wrong. Either they don't understand the scope, they're going to cut corners, or they'll hit you with change orders later.
+If one bid is half the price of everyone else, something's wrong. Either they don't understand the scope, they're going to cut corners, or they'll hit you with change orders later. Quality development work has a floor. You can find <a href="https://arc.dev/developer-salaries" target="_blank" rel="noopener noreferrer">typical developer rates by region</a> to calibrate your expectations.
 
 ## What to Look For Instead
 
-- Clear communication
+- Clear communication in plain English
 - Honest about challenges and tradeoffs
-- Asks good questions about your goals
-- Has relevant experience they can demonstrate
-- Reasonable pricing with clear milestones
-- Responsive during the sales process (it only gets worse after you sign)"#.to_string(),
+- Asks good questions about your goals before talking solutions
+- Has relevant experience they can demonstrate with real examples
+- Reasonable pricing with clear milestones and deliverables
+- Responsive during the sales process (it only gets worse after you sign)
+- Written agreements that specify what you're getting"#.to_string(),
                     status: ArticleStatus::Published,
                 },
                 Article {
@@ -310,7 +313,7 @@ If one bid is half the price of everyone else, something's wrong. Either they do
 
 ## 1. What Problem Does This Solve?
 
-Not "what would be cool to have" but what actual problem are real people experiencing that this app fixes? If you can't describe the problem in one sentence, you're not ready to build.
+Not "what would be cool to have" but what actual problem are real people experiencing that this app fixes? If you can't describe the problem in one sentence, you're not ready to build. <a href="https://www.ycombinator.com/library/4D-yc-s-essential-startup-advice" target="_blank" rel="noopener noreferrer">Y Combinator's advice to startups</a> applies here: make something people want.
 
 ## 2. Who Exactly Will Use This?
 
@@ -318,15 +321,15 @@ Not "what would be cool to have" but what actual problem are real people experie
 
 ## 3. How Will People Find It?
 
-This is where most apps die. Building it is the easy part. Getting people to actually download and use it is hard. The <a href="https://developer.apple.com/app-store/" target="_blank" rel="noopener noreferrer">App Store</a> has over 2 million apps. What's your plan to stand out? Be specific.
+This is where most apps die. Building it is the easy part. Getting people to actually download and use it is hard. The <a href="https://developer.apple.com/app-store/" target="_blank" rel="noopener noreferrer">Apple App Store</a> has over 2 million apps. <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">Google Play</a> has even more. What's your plan to stand out? Be specific.
 
 ## 4. What's the Simplest Version That Solves the Problem?
 
-Your first version should do one thing well. Not ten things. Not five things. One thing. You can add more later. Most apps fail because they try to do too much too soon.
+Your first version should do one thing well. Not ten things. Not five things. One thing. You can add more later. Most apps fail because they try to do too much too soon. The startup world calls this an MVP (minimum viable product), and <a href="https://www.productplan.com/glossary/minimum-viable-product/" target="_blank" rel="noopener noreferrer">getting it right is an art</a>.
 
 ## 5. How Will You Make Money?
 
-Apps cost money to build and maintain. How does this pay for itself? Subscriptions? One-time purchase? Advertising? In-app purchases? If you don't have a clear answer, you'll run out of money before you succeed.
+Apps cost money to build and maintain. How does this pay for itself? Subscriptions? One-time purchase? Advertising? In-app purchases? Both Apple and Google <a href="https://developer.apple.com/app-store/subscriptions/" target="_blank" rel="noopener noreferrer">take 15-30% of in-app purchases</a>. Factor that into your math.
 
 ## Still Want to Build?
 
@@ -342,25 +345,25 @@ We're happy to help you think through these questions. Sometimes a 30-minute con
                     date: "2024-12-20".to_string(),
                     category: "Strategy".to_string(),
                     excerpt: "After years of building software, we've seen the same mistakes over and over. Here's how to avoid them.".to_string(),
-                    content: r#"Most software projects fail. Not because of bad code, but because of bad decisions made before any code was written.
+                    content: r#"Most software projects fail. The <a href="https://www.standishgroup.com/sample_research_files/CHAOSReport2015-Final.pdf" target="_blank" rel="noopener noreferrer">Standish Group's research</a> has tracked this for decades: only about a third of software projects succeed. But it's rarely the code that kills them. It's the decisions made before any code was written.
 
 ## The Scope Keeps Growing
 
 This is the number one killer. You start with a simple idea, then keep adding "just one more thing." Each feature seems small, but they add up. Before you know it, you're building something completely different from what you planned.
 
-**How to avoid it:** Write down exactly what version 1 will do. Put it somewhere visible. Every time someone suggests a new feature, ask "Is this essential for launch, or can it wait for version 2?"
+**How to avoid it:** Write down exactly what version 1 will do. Put it somewhere visible. Track it in a tool like <a href="https://linear.app" target="_blank" rel="noopener noreferrer">Linear</a> or <a href="https://www.atlassian.com/software/jira" target="_blank" rel="noopener noreferrer">Jira</a>. Every time someone suggests a new feature, ask "Is this essential for launch, or can it wait for version 2?"
 
 ## Nobody Agrees on What "Done" Means
 
 The project drags on forever because there's no clear finish line. Different people have different ideas of what success looks like.
 
-**How to avoid it:** Before you start, define what "done" means in writing. What has to work? What can be imperfect? Get everyone to agree on this upfront.
+**How to avoid it:** Before you start, define what "done" means in writing. What has to work? What can be imperfect? Get everyone to agree on this upfront. The <a href="https://agilemanifesto.org" target="_blank" rel="noopener noreferrer">Agile Manifesto</a> calls this working software over comprehensive documentation.
 
 ## Building Before Validating
 
 People spend months building something, then find out nobody wants it. Or they want something slightly different.
 
-**How to avoid it:** Before building the full product, test your idea cheaply. Mock-ups, landing pages, manual versions of the process. Find out if people will actually pay for this before you invest heavily.
+**How to avoid it:** Before building the full product, test your idea cheaply. Mock-ups in <a href="https://figma.com" target="_blank" rel="noopener noreferrer">Figma</a>, landing pages, manual versions of the process. Find out if people will actually pay for this before you invest heavily.
 
 ## Poor Communication
 
@@ -386,7 +389,7 @@ Notice something? Most of these problems are about communication and planning, n
                     date: "2024-12-15".to_string(),
                     category: "Advice".to_string(),
                     excerpt: "Free sounds great until you add up what you're actually paying. Here's what those website builders really cost.".to_string(),
-                    content: r#"Wix, Squarespace, and similar tools advertise low prices, but the actual cost is usually higher than it looks.
+                    content: r#"<a href="https://wix.com" target="_blank" rel="noopener noreferrer">Wix</a>, <a href="https://squarespace.com" target="_blank" rel="noopener noreferrer">Squarespace</a>, and similar tools advertise low prices, but the actual cost is usually higher than it looks.
 
 ## The Monthly Fees Add Up
 
@@ -394,12 +397,12 @@ That $16/month plan is $192/year. Over 5 years, you've spent nearly $1,000, and 
 
 ## The Real Plans Cost More
 
-The cheap plan usually has their branding on your site and missing features you'll need. Once you add a custom domain, remove ads, and get the features you actually need, you're often at $30-50/month.
+The cheap plan usually has their branding on your site and missing features you'll need. Check the <a href="https://www.squarespace.com/pricing" target="_blank" rel="noopener noreferrer">Squarespace pricing page</a> closely. Once you add a custom domain, remove ads, and get the features you actually need, you're often at $30-50/month.
 
 ## The Hidden Costs
 
 - **Apps and plugins:** Many features require paid add-ons
-- **Transaction fees:** Selling something? They take a cut
+- **Transaction fees:** Selling something? <a href="https://stripe.com/pricing" target="_blank" rel="noopener noreferrer">Stripe charges 2.9% + 30 cents</a>. The website builder often adds their own fee on top
 - **Storage and bandwidth:** Heavy use costs extra
 - **Email:** Usually separate and extra
 - **Support:** Good luck getting help on the cheap plans
@@ -425,7 +428,7 @@ Despite all this, website builders make sense when:
 
 ## The Alternative
 
-A custom website costs more upfront but often less over time. You own it. You control it. You can move it. For a business that plans to be around for years, the math usually favors custom.
+A custom website hosted on platforms like <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">Vercel</a> or <a href="https://netlify.com" target="_blank" rel="noopener noreferrer">Netlify</a> costs more upfront but often less over time. You own it. You control it. You can move it. For a business that plans to be around for years, the math usually favors custom.
 
 Run the numbers for your specific situation. Sometimes the "expensive" option is actually cheaper in the long run."#.to_string(),
                     status: ArticleStatus::Published,
@@ -441,7 +444,7 @@ Run the numbers for your specific situation. Sometimes the "expensive" option is
 
 ## How Projects Start
 
-We start with a conversation, usually 30 minutes to an hour. No charge. We want to understand what you're trying to accomplish, what you've tried, and what's getting in the way.
+We start with a conversation, usually 30 minutes to an hour. No charge. <a href="https://calendar.app.google/NxuWY3RDGE5Miaan7" target="_blank" rel="noopener noreferrer">Book a time that works for you</a>. We want to understand what you're trying to accomplish, what you've tried, and what's getting in the way.
 
 After that, we'll tell you honestly whether we think we can help. Sometimes the answer is "you don't need us" or "someone else would be a better fit." We'd rather say that upfront than waste your time and money.
 
@@ -475,7 +478,355 @@ For ongoing work, we offer monthly retainers. Fixed price, predictable costs.
 
 ## Ready to Talk?
 
-If this sounds like a good fit, let's have a conversation. No commitment, no sales pressure. Just a chance to see if working together makes sense."#.to_string(),
+If this sounds like a good fit, <a href="https://calendar.app.google/NxuWY3RDGE5Miaan7" target="_blank" rel="noopener noreferrer">schedule a free discovery call</a>. No commitment, no sales pressure. Just a chance to see if working together makes sense. You can also <a href="/portfolio" target="_blank" rel="noopener noreferrer">check out our past work</a> first."#.to_string(),
+                    status: ArticleStatus::Published,
+                },
+                // New Article 1
+                Article {
+                    id: "website-costing-you-customers".to_string(),
+                    title: "How to Tell If Your Website Is Costing You Customers".to_string(),
+                    slug: "website-costing-you-customers".to_string(),
+                    date: "2025-01-10".to_string(),
+                    category: "Strategy".to_string(),
+                    excerpt: "Your website might be driving away customers without you knowing. Here's how to find out.".to_string(),
+                    content: r#"Most business owners have no idea how their website is actually performing. They assume if it loads, it's fine. But a slow or confusing website is like having a salesperson who mumbles and takes smoke breaks during pitches.
+
+## Check Your Speed
+
+Run your site through <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">Google's PageSpeed Insights</a>. Anything below 50 on mobile is costing you money. <a href="https://gtmetrix.com" target="_blank" rel="noopener noreferrer">GTmetrix</a> gives you more detail on exactly what's slowing things down.
+
+The math is brutal: <a href="https://web.dev/vitals/" target="_blank" rel="noopener noreferrer">Google's Core Web Vitals research</a> shows that sites meeting their performance thresholds see 24% fewer visitors abandon the page before it loads.
+
+## Watch Real Users
+
+Tools like <a href="https://hotjar.com" target="_blank" rel="noopener noreferrer">Hotjar</a> or <a href="https://clarity.microsoft.com" target="_blank" rel="noopener noreferrer">Microsoft Clarity</a> (which is free) let you see recordings of actual visitors using your site. You'll watch them get confused, click the wrong things, and give up. It's painful but enlightening.
+
+## Check Your Mobile Experience
+
+Pull out your phone and try to complete the main action on your site. Buy something. Fill out a contact form. Find your phone number. If it's frustrating for you, imagine how it feels for someone who's never been there.
+
+Over 60% of web traffic is mobile. If your mobile experience is bad, most of your visitors are having a bad experience.
+
+## Look at Your Analytics
+
+If you have <a href="https://analytics.google.com" target="_blank" rel="noopener noreferrer">Google Analytics</a> set up, check your bounce rate. Above 70% on key pages? People are landing and immediately leaving. Check where they're dropping off in your conversion funnel.
+
+## The Fixes
+
+Most website performance problems come down to a few things:
+- Images that aren't optimized (use <a href="https://tinypng.com" target="_blank" rel="noopener noreferrer">TinyPNG</a> or WebP format)
+- Too many third-party scripts (tracking pixels, chat widgets, etc.)
+- Cheap hosting that can't handle traffic
+- Bloated themes or page builders
+
+Sometimes a few quick fixes solve the problem. Sometimes you need to start fresh. But you won't know until you measure."#.to_string(),
+                    status: ArticleStatus::Published,
+                },
+                // New Article 2
+                Article {
+                    id: "build-vs-buy-software".to_string(),
+                    title: "Build vs Buy: When to Use Off-the-Shelf Software".to_string(),
+                    slug: "build-vs-buy-software".to_string(),
+                    date: "2025-01-08".to_string(),
+                    category: "Strategy".to_string(),
+                    excerpt: "Custom software isn't always the answer. Here's how to decide when to build and when to buy.".to_string(),
+                    content: r#"The decision to build custom software or buy an existing solution is one of the most expensive choices a business makes. Get it wrong and you'll waste months and tens of thousands of dollars.
+
+## When to Buy
+
+Buy when the problem is common and the solution is mature. Thousands of companies need CRM software. That's why <a href="https://salesforce.com" target="_blank" rel="noopener noreferrer">Salesforce</a>, <a href="https://hubspot.com" target="_blank" rel="noopener noreferrer">HubSpot</a>, and dozens of others exist. You're not special enough to need custom here.
+
+Use <a href="https://g2.com" target="_blank" rel="noopener noreferrer">G2</a> or <a href="https://capterra.com" target="_blank" rel="noopener noreferrer">Capterra</a> to find existing solutions. Read the reviews. Try the free trials. Can something get you 80% of what you need? That's probably good enough.
+
+## When to Build
+
+Build when:
+- Your business process is genuinely unique (not just different, unique)
+- Off-the-shelf solutions require so many workarounds that they become unmaintainable
+- The software IS your product or a core competitive advantage
+- You've outgrown existing solutions and need something that scales differently
+
+## The Hybrid Approach
+
+Often the best answer is to buy the basics and build the differentiators. Use <a href="https://shopify.com" target="_blank" rel="noopener noreferrer">Shopify</a> for your store but build a custom recommendation engine. Use <a href="https://hubspot.com/crm" target="_blank" rel="noopener noreferrer">HubSpot's free CRM</a> but build custom integrations to your proprietary systems.
+
+<a href="https://zapier.com" target="_blank" rel="noopener noreferrer">Zapier</a> and <a href="https://make.com" target="_blank" rel="noopener noreferrer">Make</a> let you connect off-the-shelf tools without writing code. Start there before jumping to custom development.
+
+## The Real Cost of Building
+
+Custom software costs more than most people expect. It's not just the initial build. There's:
+- Ongoing maintenance and updates
+- Security patches
+- Hosting costs
+- Bug fixes when something breaks at 2 AM
+
+<a href="https://gartner.com" target="_blank" rel="noopener noreferrer">Gartner research</a> suggests that maintenance costs 15-20% of the original development cost per year. A $50,000 project costs $7,500-10,000 annually to maintain.
+
+## The Decision Framework
+
+Ask yourself:
+1. Does a solution already exist that solves at least 80% of my problem?
+2. If yes, can I live with the other 20% or work around it?
+3. If I must build, is this a core business function worth the ongoing investment?
+4. Have I actually tried the existing solutions, or am I assuming they won't work?
+
+Most businesses should buy more and build less. But when building is the right choice, it can be a massive competitive advantage."#.to_string(),
+                    status: ArticleStatus::Published,
+                },
+                // New Article 3
+                Article {
+                    id: "small-business-ai-mistakes".to_string(),
+                    title: "What Small Businesses Get Wrong About AI".to_string(),
+                    slug: "small-business-ai-mistakes".to_string(),
+                    date: "2025-01-06".to_string(),
+                    category: "Advice".to_string(),
+                    excerpt: "AI can help your business, but probably not the way you think. Here's what actually works.".to_string(),
+                    content: r#"Everyone's talking about AI. Most of what you hear is either hype or fear. Here's what small businesses actually need to know.
+
+## Mistake 1: Thinking You Need Custom AI
+
+You probably don't need to train a custom model or hire an AI team. The tools that already exist can handle most business use cases.
+
+<a href="https://anthropic.com" target="_blank" rel="noopener noreferrer">Claude</a> can draft emails, summarize documents, and answer customer questions. <a href="https://openai.com/chatgpt" target="_blank" rel="noopener noreferrer">ChatGPT</a> can help with content creation and research. <a href="https://zapier.com/ai" target="_blank" rel="noopener noreferrer">Zapier's AI features</a> can automate workflows. These work out of the box.
+
+## Mistake 2: Automating Before Understanding
+
+AI amplifies what you already do. If your process is broken, AI will do broken things faster. Before automating anything, make sure the manual version works.
+
+## Mistake 3: Ignoring What Actually Works
+
+The most useful AI for small businesses isn't flashy. It's:
+
+**Customer service:** AI chatbots that handle common questions 24/7. <a href="https://intercom.com" target="_blank" rel="noopener noreferrer">Intercom</a> and <a href="https://zendesk.com" target="_blank" rel="noopener noreferrer">Zendesk</a> both have AI features that work well.
+
+**Content creation:** Drafting blog posts, social media, emails. Still needs human editing, but saves hours.
+
+**Data entry:** Extracting information from documents, emails, forms. <a href="https://zapier.com" target="_blank" rel="noopener noreferrer">Zapier</a> and <a href="https://make.com" target="_blank" rel="noopener noreferrer">Make</a> can do this.
+
+**Meeting notes:** Tools like <a href="https://otter.ai" target="_blank" rel="noopener noreferrer">Otter.ai</a> transcribe and summarize meetings automatically.
+
+## Mistake 4: Expecting Magic
+
+AI makes mistakes. Sometimes confident, convincing mistakes. Always have a human review anything customer-facing or legally important. AI is a tool, not a replacement for judgment.
+
+## Where to Start
+
+Pick one small, low-risk task. Maybe drafting the first version of your weekly email newsletter. Or summarizing customer feedback. Try it for a month. Measure if it actually saved time.
+
+Most businesses find a few great use cases and lots of things that don't work. That's normal. The goal is finding your few great ones."#.to_string(),
+                    status: ArticleStatus::Published,
+                },
+                // New Article 4
+                Article {
+                    id: "first-developer-meeting".to_string(),
+                    title: "How to Prepare for Your First Developer Meeting".to_string(),
+                    slug: "first-developer-meeting".to_string(),
+                    date: "2025-01-04".to_string(),
+                    category: "Advice".to_string(),
+                    excerpt: "Make the most of your first meeting with a developer by coming prepared with the right information.".to_string(),
+                    content: r#"You've decided to hire a developer. Now you're about to have your first meeting. Here's how to make it productive instead of confusing.
+
+## What to Bring
+
+### The Problem
+Be ready to explain what's not working. Not the technical details, but the business problem. "Customers can't easily book appointments" is better than "I need an online booking system."
+
+### Examples
+Show them websites or apps that do something similar to what you want. "I like how Calendly handles scheduling" gives a developer more information than a paragraph of description.
+
+### Your Constraints
+Be upfront about budget, timeline, and non-negotiables. It saves everyone time if you're $5,000 and they're $50,000.
+
+## What to Ask
+
+### Their Process
+How do they work? Weekly check-ins? What happens when there's a change request? How do they handle unexpected problems?
+
+### Similar Projects
+Have they built something like this before? Can they show you? Talk to that client?
+
+### The Team
+Who actually does the work? Some agencies sell with senior people and deliver with juniors. You want to know who you'll be working with.
+
+### What Could Go Wrong
+A good developer will be honest about risks. If they say nothing could go wrong, they're either lying or inexperienced.
+
+## Red Flags During the Meeting
+
+- They talk more than they listen
+- They start proposing solutions before understanding your problem
+- They promise an exact price without asking many questions
+- They can't explain things in plain English
+- They seem annoyed by your questions
+
+## Green Flags
+
+- They ask lots of clarifying questions
+- They push back on requirements that don't make sense
+- They're honest about what they don't know
+- They suggest starting smaller than you proposed
+- They explain the tradeoffs of different approaches
+
+## After the Meeting
+
+A good developer will follow up with a summary of what they understood and next steps. If you have to chase them, imagine how it'll be during the project.
+
+Trust your gut. You're going to work closely with this person. If something feels off in the first meeting, it won't get better."#.to_string(),
+                    status: ArticleStatus::Published,
+                },
+                // New Article 5
+                Article {
+                    id: "roi-business-automation".to_string(),
+                    title: "The Real ROI of Business Automation".to_string(),
+                    slug: "roi-business-automation".to_string(),
+                    date: "2025-01-03".to_string(),
+                    category: "Strategy".to_string(),
+                    excerpt: "Automation saves time, but how much? Here's how to calculate whether it's worth it for your business.".to_string(),
+                    content: r#"Everyone talks about automation saving time. But how do you know if it's actually worth investing in? Here's how to think about it.
+
+## The Basic Math
+
+Calculate how long a task takes manually. Multiply by how often you do it. Multiply by your hourly rate (or the rate of whoever's doing it). That's the cost of not automating.
+
+Example: A 15-minute task done 4 times a day at $50/hour costs $250/week, or $13,000/year in labor.
+
+## What's Worth Automating
+
+<a href="https://zapier.com" target="_blank" rel="noopener noreferrer">Zapier's State of Business Automation report</a> found that the biggest time savings come from:
+
+**Lead management:** Automatically adding form submissions to your CRM, sending follow-up emails, notifying sales. <a href="https://hubspot.com" target="_blank" rel="noopener noreferrer">HubSpot</a> does much of this out of the box.
+
+**Appointment scheduling:** Letting customers book themselves instead of back-and-forth emails. <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">Calendly</a> and <a href="https://cal.com" target="_blank" rel="noopener noreferrer">Cal.com</a> handle this.
+
+**Invoice and payment follow-up:** Automatic reminders for unpaid invoices. <a href="https://stripe.com/billing" target="_blank" rel="noopener noreferrer">Stripe Billing</a> and <a href="https://quickbooks.intuit.com" target="_blank" rel="noopener noreferrer">QuickBooks</a> can do this.
+
+**Data entry:** Moving information between systems. Forms to spreadsheets, orders to inventory, leads to CRM.
+
+## What's Not Worth Automating
+
+- Tasks you do once a month for 5 minutes
+- Processes that aren't standardized yet
+- Anything requiring human judgment on every instance
+- Things where the automation costs more than the time saved
+
+## How to Start
+
+1. Track your time for a week. What tasks are repetitive?
+2. Pick the one that's most frequent AND most annoying
+3. Check if <a href="https://zapier.com" target="_blank" rel="noopener noreferrer">Zapier</a> or <a href="https://make.com" target="_blank" rel="noopener noreferrer">Make</a> can connect the tools you're already using
+4. Start simple. One automation that handles one thing.
+5. Measure the before and after
+
+## The Compound Effect
+
+The real value of automation isn't just the time saved. It's that automated tasks don't get forgotten, don't have bad days, and don't quit. Every automation you build is an asset that keeps working.
+
+Small businesses that systematically automate routine work create compounding efficiency advantages over competitors still doing everything manually."#.to_string(),
+                    status: ArticleStatus::Published,
+                },
+                // New Article 6
+                Article {
+                    id: "competitor-website-faster".to_string(),
+                    title: "Why Your Competitor's Website Loads Faster (And Why It Matters)".to_string(),
+                    slug: "competitor-website-faster".to_string(),
+                    date: "2024-12-22".to_string(),
+                    category: "Strategy".to_string(),
+                    excerpt: "Website speed affects your search rankings, conversion rates, and bottom line. Here's how to fix it.".to_string(),
+                    content: r#"Pull up your website and a competitor's side by side. Which loads faster? If it's not yours, you're losing money.
+
+## Why Speed Matters
+
+Google explicitly uses site speed in search rankings. <a href="https://developers.google.com/search/docs/appearance/core-web-vitals" target="_blank" rel="noopener noreferrer">Their Core Web Vitals update</a> made it official: slow sites rank lower.
+
+But rankings aren't the only issue. Every second of load time <a href="https://web.dev/why-speed-matters/" target="_blank" rel="noopener noreferrer">costs you roughly 7% in conversions</a>. If your site makes $100,000/year and takes 2 extra seconds to load, that's potentially $14,000 you're leaving on the table.
+
+## Common Reasons Your Site Is Slow
+
+### Cheap Hosting
+Shared hosting for $5/month means your site shares a server with hundreds of others. When traffic spikes, everyone slows down. <a href="https://cloudflare.com" target="_blank" rel="noopener noreferrer">Cloudflare</a> can help by caching your content on servers worldwide.
+
+### Unoptimized Images
+A single large image can slow your entire page. Use <a href="https://tinypng.com" target="_blank" rel="noopener noreferrer">TinyPNG</a> or convert to WebP format. Better yet, use a CDN that handles this automatically.
+
+### Too Many Plugins
+Every WordPress plugin adds code. Most add code even on pages where they're not used. Each one makes your site slower.
+
+### Heavy Page Builders
+Those drag-and-drop builders are convenient, but they generate bloated code. A simple page built with a page builder can be 10x heavier than the same page coded directly.
+
+### Third-Party Scripts
+Every analytics tool, chat widget, and tracking pixel adds load time. The Facebook pixel, Google Analytics, Intercom chat, HotJar recordings. They add up.
+
+## How to Check
+
+Run your site through <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a>. Score below 50 on mobile? You have work to do. <a href="https://gtmetrix.com" target="_blank" rel="noopener noreferrer">GTmetrix</a> shows you exactly what's slowing things down.
+
+<a href="https://tools.pingdom.com" target="_blank" rel="noopener noreferrer">Pingdom</a> tests from different locations. Your site might be fast locally but slow for visitors across the country.
+
+## Quick Wins
+
+- Enable caching (if you're on WordPress, use a caching plugin)
+- Compress images before uploading
+- Remove plugins you're not actively using
+- Consider a CDN like <a href="https://cloudflare.com" target="_blank" rel="noopener noreferrer">Cloudflare</a> (free tier works for most small sites)
+- Audit your third-party scripts; remove ones that aren't earning their keep
+
+## When You Need More
+
+Sometimes the foundation is the problem. A site built on bloated technology can only be optimized so much. At some point, starting fresh with a clean, fast foundation is the better investment."#.to_string(),
+                    status: ArticleStatus::Published,
+                },
+                // New Article 7
+                Article {
+                    id: "email-marketing-service-business".to_string(),
+                    title: "Email Marketing That Actually Works for Service Businesses".to_string(),
+                    slug: "email-marketing-service-business".to_string(),
+                    date: "2024-12-18".to_string(),
+                    category: "Advice".to_string(),
+                    excerpt: "Email marketing isn't just for e-commerce. Here's how service businesses can use it to stay top of mind and win more clients.".to_string(),
+                    content: r#"Service businesses often think email marketing is just for online stores. It's not. Email is one of the best ways to stay in front of potential clients until they're ready to buy.
+
+## Why Email Still Works
+
+Social media algorithms decide who sees your posts. Email goes directly to their inbox. Open rates for business email <a href="https://mailchimp.com/resources/email-marketing-benchmarks/" target="_blank" rel="noopener noreferrer">average 20-25%</a>. That beats social media reach by a mile.
+
+## What to Send
+
+### The Welcome Sequence
+When someone joins your list, send 3-5 emails over a couple weeks. Introduce yourself. Share your best advice. Help them before asking for anything.
+
+### Regular Value
+Monthly or bi-weekly updates with useful information. Not sales pitches. Tips they can actually use. Industry news that affects them. Answers to common questions you hear.
+
+### Occasional Offers
+After you've provided value, you've earned the right to ask. A promotion, a new service, a seasonal offer. But keep the ratio heavily tilted toward value.
+
+## Tools for Service Businesses
+
+<a href="https://mailchimp.com" target="_blank" rel="noopener noreferrer">Mailchimp</a> is fine for getting started. Free up to 500 contacts. <a href="https://convertkit.com" target="_blank" rel="noopener noreferrer">ConvertKit</a> is better for creators and consultants. <a href="https://klaviyo.com" target="_blank" rel="noopener noreferrer">Klaviyo</a> is overkill unless you're doing serious e-commerce.
+
+The tool matters less than actually sending emails consistently.
+
+## Building Your List
+
+- Add a signup form to your website (not a popup, a visible form)
+- Offer something useful in exchange: a guide, a checklist, a video
+- Collect emails at in-person events
+- Ask satisfied clients if they'd like to hear from you
+
+## The Metrics That Matter
+
+**Open rate:** Are people actually reading? Below 15% means your subject lines are boring or your list is stale.
+
+**Click rate:** Are they taking action? 2-3% is typical.
+
+**Unsubscribes:** A few per email is normal. A spike means you sent something off-putting.
+
+## Starting Simple
+
+Don't overthink it. Start with one email per month to past and potential clients. Share something useful. Include a clear call to action. See what happens.
+
+Most service businesses find that just showing up consistently in inboxes wins more business than any fancy campaign. The bar is low because most of your competitors aren't doing it at all."#.to_string(),
                     status: ArticleStatus::Published,
                 },
             ],
@@ -864,6 +1215,45 @@ Organized resources and information in a clear, non-overwhelming way to help new
                     ],
                 },
                 PortfolioProject {
+                    id: "habiducer".to_string(),
+                    slug: "habiducer".to_string(),
+                    title: "Habiducer".to_string(),
+                    project_type: "Mobile App".to_string(),
+                    description: "Habit and goal tracking mobile app designed to help users build consistent routines and achieve their objectives through simple, effective tracking.".to_string(),
+                    long_description: r#"## The Project
+
+Habiducer is a habit and goal tracking application built to help people build better routines and achieve their personal objectives.
+
+## The Problem
+
+Most habit trackers overwhelm users with features they don't need. Complex analytics, social features, and gamification often distract from the core purpose: building consistent habits.
+
+## The Solution
+
+Habiducer takes a different approach. Clean interface. Simple tracking. Focus on what matters: showing up every day.
+
+### Key Features
+- Straightforward habit tracking without the clutter
+- Goal setting with progress visualization
+- Daily reminders to keep you accountable
+- Clean, distraction-free design
+
+## Why It Works
+
+The best habit tracker is the one you actually use. By removing unnecessary complexity, Habiducer helps users focus on building habits rather than managing an app."#.to_string(),
+                    external_url: "https://habiducer.com".to_string(),
+                    before_url: None,
+                    logo: None,
+                    screenshot: None,
+                    video: None,
+                    tech_tags: vec!["Mobile App".to_string(), "Habit Tracking".to_string(), "Goal Setting".to_string()],
+                    scope: vec![
+                        "Mobile app development".to_string(),
+                        "Habit tracking system".to_string(),
+                        "Goal progress visualization".to_string(),
+                    ],
+                },
+                PortfolioProject {
                     id: "pounds-consulting".to_string(),
                     slug: "pounds-consulting".to_string(),
                     title: "Pounds Consulting".to_string(),
@@ -904,7 +1294,7 @@ The entire codebase is available on GitHub. Fork it, clone it, make it yours. Th
 - Open source template for the community"#.to_string(),
                     external_url: "https://github.com/collinpounds/pounds-consulting".to_string(),
                     before_url: None,
-                    logo: Some("assets/favicon.png".to_string()),
+                    logo: Some("assets/portfolio/Pounds-Consulting-Black-logo.png".to_string()),
                     screenshot: None,
                     video: None,
                     tech_tags: vec!["Rust".to_string(), "WebAssembly".to_string(), "Dioxus".to_string(), "Open Source".to_string()],
@@ -1730,5 +2120,142 @@ mod tests {
         let deserialized: ArticlesData = serde_json::from_str(&json).unwrap();
 
         assert!(deserialized.articles.is_empty());
+    }
+
+    // ==================== Sitemap Verification Tests ====================
+
+    #[test]
+    fn test_sitemap_contains_all_routes() {
+        // Read sitemap.xml
+        let sitemap_content =
+            std::fs::read_to_string("sitemap.xml").expect("Failed to read sitemap.xml");
+
+        // Extract all URLs from sitemap
+        let sitemap_urls: Vec<&str> = sitemap_content
+            .lines()
+            .filter(|line| line.contains("<loc>"))
+            .map(|line| {
+                let start = line.find("<loc>").unwrap() + 5;
+                let end = line.find("</loc>").unwrap();
+                &line[start..end]
+            })
+            .collect();
+
+        let base_url = "https://poundsconsulting.net";
+
+        // Main pages that should be in sitemap
+        let main_pages = vec![
+            "/",
+            "/about",
+            "/services",
+            "/portfolio",
+            "/articles",
+            "/contact",
+        ];
+
+        for page in main_pages {
+            let full_url = if page == "/" {
+                format!("{}/", base_url)
+            } else {
+                format!("{}{}", base_url, page)
+            };
+            assert!(
+                sitemap_urls.contains(&full_url.as_str()),
+                "Missing main page in sitemap: {}",
+                full_url
+            );
+        }
+
+        // Service detail pages
+        let services = ServicesData::default();
+        for service in &services.services {
+            let url = format!("{}/services/{}", base_url, service.slug);
+            assert!(
+                sitemap_urls.contains(&url.as_str()),
+                "Missing service page in sitemap: {}",
+                url
+            );
+        }
+
+        // Article detail pages (only published)
+        let articles = ArticlesData::default();
+        for article in articles
+            .articles
+            .iter()
+            .filter(|a| matches!(a.status, ArticleStatus::Published))
+        {
+            let url = format!("{}/articles/{}", base_url, article.slug);
+            assert!(
+                sitemap_urls.contains(&url.as_str()),
+                "Missing article page in sitemap: {}",
+                url
+            );
+        }
+
+        // Portfolio detail pages
+        let portfolio = PortfolioData::default();
+        for project in &portfolio.projects {
+            let url = format!("{}/portfolio/{}", base_url, project.slug);
+            assert!(
+                sitemap_urls.contains(&url.as_str()),
+                "Missing portfolio page in sitemap: {}",
+                url
+            );
+        }
+    }
+
+    #[test]
+    fn test_sitemap_has_no_duplicate_urls() {
+        let sitemap_content =
+            std::fs::read_to_string("sitemap.xml").expect("Failed to read sitemap.xml");
+
+        let sitemap_urls: Vec<&str> = sitemap_content
+            .lines()
+            .filter(|line| line.contains("<loc>"))
+            .map(|line| {
+                let start = line.find("<loc>").unwrap() + 5;
+                let end = line.find("</loc>").unwrap();
+                &line[start..end]
+            })
+            .collect();
+
+        let mut seen = std::collections::HashSet::new();
+        for url in &sitemap_urls {
+            assert!(
+                seen.insert(*url),
+                "Duplicate URL found in sitemap: {}",
+                url
+            );
+        }
+    }
+
+    #[test]
+    fn test_sitemap_urls_are_valid_format() {
+        let sitemap_content =
+            std::fs::read_to_string("sitemap.xml").expect("Failed to read sitemap.xml");
+
+        let sitemap_urls: Vec<&str> = sitemap_content
+            .lines()
+            .filter(|line| line.contains("<loc>"))
+            .map(|line| {
+                let start = line.find("<loc>").unwrap() + 5;
+                let end = line.find("</loc>").unwrap();
+                &line[start..end]
+            })
+            .collect();
+
+        for url in &sitemap_urls {
+            assert!(
+                url.starts_with("https://poundsconsulting.net"),
+                "URL does not use correct base: {}",
+                url
+            );
+            assert!(!url.contains(' '), "URL contains spaces: {}", url);
+            assert!(
+                !url.ends_with('/') || *url == "https://poundsconsulting.net/",
+                "URL has trailing slash (except root): {}",
+                url
+            );
+        }
     }
 }
