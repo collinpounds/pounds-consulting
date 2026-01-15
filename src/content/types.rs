@@ -906,7 +906,7 @@ Managed Google Ads campaigns coordinated with new store openings, driving local 
 - 1+ year of ongoing maintenance and support"#.to_string(),
                     external_url: "https://clubcarwash.com".to_string(),
                     before_url: None,
-                    logo: None,
+                    logo: Some("assets/portfolio/club-car-wash-logo-for-Black-Background_Transparent.png".to_string()),
                     screenshot: None,
                     video: None,
                     tech_tags: vec!["React".to_string(), "Custom CMS".to_string(), "Google Ads".to_string()],
