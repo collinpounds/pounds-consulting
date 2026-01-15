@@ -3395,12 +3395,10 @@ a.contact-link:hover {
 /* ===== SECTION DIVIDERS ===== */
 .section {
     border-top: 1px solid var(--color-border);
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .section:first-of-type {
     border-top: none;
-    box-shadow: none;
 }
 
 /* ===== THEME CUSTOMIZER ===== */
