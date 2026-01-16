@@ -9,15 +9,6 @@ pub fn Services() -> Element {
     let discount = &settings.discount;
     let services_data = load_services();
 
-    // Calculate discounted rate if promo is enabled
-    let base_rate: u32 = 71;
-    let discounted_rate = if discount.promo_discount.enabled {
-        let discount_amount = base_rate * discount.promo_discount.percentage as u32 / 100;
-        base_rate - discount_amount
-    } else {
-        base_rate
-    };
-
     rsx! {
         // Hero Section with animated background
         section { class: "hero hero-services",
@@ -124,48 +115,37 @@ pub fn Services() -> Element {
             }
         }
 
-        // Pricing Section
+        // How We Work Section
         section { class: "section pricing-section",
             div { class: "container",
-                h2 { class: "section-title", "Simple, Transparent Pricing" }
+                h2 { class: "section-title", "How We Work Together" }
                 div { class: "pricing-content glass-card",
-                    p { class: "pricing-intro",
-                        "Initial conversations are always free. We want to understand a problem in its entirety before accepting payment."
-                    }
-
-                    // Show discount badge if promo is enabled
-                    if discount.promo_discount.enabled {
-                        div { class: "discount-badge",
-                            {discount.promo_discount.label.clone().unwrap_or_else(|| format!("{}% Off", discount.promo_discount.percentage))}
+                    div { class: "discovery-highlight",
+                        div { class: "discovery-badge",
+                            Icon { name: IconName::Calendar, size: 32, color: "var(--color-secondary)".to_string() }
+                        }
+                        h3 { class: "discovery-title", "Start With a Free Discovery Call" }
+                        p { class: "discovery-description",
+                            "Every project starts with a conversation. We'll discuss your goals, challenges, and what success looks like for you."
                         }
                     }
 
-                    div { class: "pricing-rate",
-                        if discount.promo_discount.enabled {
-                            span { class: "rate-original", "${base_rate}" }
-                            span { class: "rate-amount rate-discounted", "${discounted_rate}" }
-                        } else {
-                            span { class: "rate-amount", "${base_rate}" }
+                    div { class: "promise-box",
+                        h4 { class: "promise-title", "Our Promise" }
+                        p { class: "promise-text",
+                            "You'll receive a complete quote with a clear delivery timeline before we ask for a single dollar. No surprises. No pressure. Just honest numbers so you can make the right decision for your business."
                         }
-                        span { class: "rate-period", "/hour" }
                     }
 
-                    p { class: "pricing-description",
-                        "No hidden fees. No surprise charges. You'll always know what you're paying for and why."
-                    }
-                    p { class: "pricing-description",
-                        "For larger projects, we can provide fixed-price quotes after a few discovery conversations. Either way, you'll have complete clarity on costs before any work begins."
-                    }
-
-                    // Book Time Button
                     div { class: "pricing-actions",
                         a {
                             href: "https://calendar.app.google/NxuWY3RDGE5Miaan7",
                             target: "_blank",
                             rel: "noopener noreferrer",
-                            class: "btn btn-primary btn-large",
-                            "Book Time"
+                            class: "btn btn-primary btn-large btn-pulse",
+                            "Book Your Free Call"
                         }
+                        p { class: "no-obligation", "No credit card. No obligation. Just a conversation." }
                     }
 
                     div { class: "pricing-process",
@@ -181,22 +161,22 @@ pub fn Services() -> Element {
                             div { class: "process-step",
                                 span { class: "step-number", "2" }
                                 div { class: "step-content",
-                                    strong { "Proposal" }
-                                    p { "Clear scope, timeline, and pricing in writing" }
+                                    strong { "Custom Quote" }
+                                    p { "Detailed proposal with exact pricing and timeline" }
                                 }
                             }
                             div { class: "process-step",
                                 span { class: "step-number", "3" }
                                 div { class: "step-content",
-                                    strong { "Execution" }
-                                    p { "Regular updates and open communication throughout" }
+                                    strong { "You Decide" }
+                                    p { "Review everything, ask questions, no pressure" }
                                 }
                             }
                             div { class: "process-step",
                                 span { class: "step-number", "4" }
                                 div { class: "step-content",
-                                    strong { "Delivery" }
-                                    p { "Final handoff with documentation and training as needed" }
+                                    strong { "We Build" }
+                                    p { "Regular updates until delivery and handoff" }
                                 }
                             }
                         }

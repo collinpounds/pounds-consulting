@@ -915,6 +915,74 @@ main {
     margin: 0;
 }
 
+/* Discovery Call Highlight */
+.discovery-highlight {
+    margin-bottom: var(--spacing-lg);
+}
+
+.discovery-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #f0c040 100%);
+    border-radius: 50%;
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 4px 20px rgba(212, 160, 23, 0.3);
+}
+
+.discovery-title {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.discovery-description {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Promise Box */
+.promise-box {
+    background: linear-gradient(135deg, rgba(212, 160, 23, 0.1) 0%, rgba(212, 160, 23, 0.05) 100%);
+    border: 1px solid rgba(212, 160, 23, 0.3);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.promise-title {
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.promise-text {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* Pricing Actions Enhancement */
+.pricing-actions {
+    margin: var(--spacing-lg) 0;
+}
+
+.no-obligation {
+    margin-top: var(--spacing-sm);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
 /* ===== CONTACT SECTION ===== */
 .contact-section {
     padding: var(--spacing-2xl) 0;
