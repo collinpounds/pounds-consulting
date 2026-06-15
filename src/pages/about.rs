@@ -187,23 +187,23 @@ pub fn About() -> Element {
                     div { class: "philosophy-grid",
                         div { class: "philosophy-item",
                             span { class: "philosophy-number", "01" }
-                            h3 { "We Listen" }
-                            p { "Every project starts with a conversation. What's working? What's not? What would make your life easier? We go from there." }
+                            h3 { "It Starts With a Conversation" }
+                            p { "Every project starts by understanding what's actually slowing you down. The fix follows from the problem, not from a template." }
                         }
                         div { class: "philosophy-item",
                             span { class: "philosophy-number", "02" }
-                            h3 { "We Speak Your Language" }
-                            p { "No buzzwords. No alphabet soup of acronyms. Just clear explanations of what we're doing and why it matters." }
+                            h3 { "Plain English, Always" }
+                            p { "No buzzwords, no acronyms. You'll always know what's being built and why it matters." }
                         }
                         div { class: "philosophy-item",
                             span { class: "philosophy-number", "03" }
-                            h3 { "We Don't Overdo It" }
-                            p { "The goal is to solve your problem, not to build the fanciest thing possible. We recommend what actually makes sense for your situation." }
+                            h3 { "No Overbuilding" }
+                            p { "The goal is to solve your problem, not to build something impressive that costs more and breaks more. You get the option that fits your situation, and a straight answer when you don't need something." }
                         }
                         div { class: "philosophy-item",
                             span { class: "philosophy-number", "04" }
-                            h3 { "We've Got Backup" }
-                            p { "Some problems need specialists. We work with designers, security experts, and other talented pros. You deal with one person, but you get a whole network when you need it." }
+                            h3 { "A Whole Network Behind You" }
+                            p { "Some problems need a specialist. Behind the one person you talk to is a network of designers, security engineers, and data people who have solved hard problems before. One point of contact, a whole bench when the work calls for it." }
                         }
                     }
                 }

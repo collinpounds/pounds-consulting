@@ -1,10 +1,10 @@
 # Pounds Consulting
 
-> Missouri-based technical consulting firm specializing in website development, product strategy, and business solutions. We keep things simple, intuitive, and built to last.
+> San Francisco Bay Area technical consulting firm specializing in website development, product strategy, and business solutions. We keep things simple, intuitive, and built to last.
 
 ## About
 
-Pounds Consulting is a technical consulting firm based in Columbia, Missouri, founded by Collin Pounds. We help growing businesses with website development, digital marketing systems, technical strategy, and business solutions.
+Pounds Consulting is a technical consulting firm based in the San Francisco Bay Area, founded by Collin Pounds. We help growing businesses with website development, digital marketing systems, technical strategy, and business solutions.
 
 ## Services
 
@@ -22,15 +22,15 @@ Software integrations, workflow automation, data migrations, custom internal too
 
 ## Pricing
 
-- **Hourly Rate:** $71/hour
+- **Pricing:** Project-based quotes. Hourly work runs $71 to $100 per hour depending on scope.
 - **Initial Consultation:** Free 30-minute discovery call
 - **Fixed-Price Quotes:** Available for larger projects
-- **First Responder/Military Discount:** 50% off for Military, Veterans, Law Enforcement, Fire Fighters, and EMTs
+- **Service Discount:** 50% off for Military, Veterans, Law Enforcement, First Responders, and Healthcare Workers
 
 ## Contact
 
 - **Email:** collin@poundsconsulting.net
-- **Location:** Columbia, Missouri
+- **Location:** San Francisco Bay Area
 - **Website:** https://poundsconsulting.net
 - **Book a Call:** https://calendar.app.google/NxuWY3RDGE5Miaan7
 

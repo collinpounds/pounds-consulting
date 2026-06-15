@@ -42,34 +42,31 @@ pub fn PortfolioDetail(slug: String) -> Element {
                     }
                 }
 
-                // Media Section (screenshot/video placeholder)
-                section { class: "case-study-media-section",
-                    div { class: "container",
-                        div { class: "case-study-media glass-card",
-                            if let Some(video) = &project.video {
-                                video {
-                                    class: "case-study-video",
-                                    src: "/{video}",
-                                    autoplay: true,
-                                    r#loop: true,
-                                    muted: true,
-                                    playsinline: true,
-                                    width: "1200",
-                                    height: "675"
-                                }
-                            } else if let Some(screenshot) = &project.screenshot {
-                                img {
-                                    class: "case-study-screenshot",
-                                    src: "/{screenshot}",
-                                    alt: "{project.title} screenshot",
-                                    width: "1200",
-                                    height: "675",
-                                    loading: "lazy"
-                                }
-                            } else {
-                                div { class: "case-study-media-placeholder",
-                                    span { class: "placeholder-icon", "🖼️" }
-                                    p { "Screenshot or video coming soon" }
+                // Media Section (screenshot/video)
+                if project.video.is_some() || project.screenshot.is_some() {
+                    section { class: "case-study-media-section",
+                        div { class: "container",
+                            div { class: "case-study-media glass-card",
+                                if let Some(video) = &project.video {
+                                    video {
+                                        class: "case-study-video",
+                                        src: "/{video}",
+                                        autoplay: true,
+                                        r#loop: true,
+                                        muted: true,
+                                        playsinline: true,
+                                        width: "1200",
+                                        height: "675"
+                                    }
+                                } else if let Some(screenshot) = &project.screenshot {
+                                    img {
+                                        class: "case-study-screenshot",
+                                        src: "/{screenshot}",
+                                        alt: "{project.title} screenshot",
+                                        width: "1200",
+                                        height: "675",
+                                        loading: "lazy"
+                                    }
                                 }
                             }
                         }

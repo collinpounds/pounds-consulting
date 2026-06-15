@@ -1071,10 +1071,10 @@ Ensured the site works perfectly on mobile devices, since many potential clients
                     slug: "missouri-jiu-jitsu".to_string(),
                     title: "Missouri Jiu Jitsu".to_string(),
                     project_type: "Website Development".to_string(),
-                    description: "Demo website with a mock jiu-jitsu academy featuring class information, instructor bios, and signup flow automation.".to_string(),
+                    description: "Capability example: a full martial arts academy site with class schedules, instructor profiles, and an automated signup flow. Shows what a complete build looks like for this industry.".to_string(),
                     long_description: r#"## The Project
 
-Missouri Jiu Jitsu is a demo website showcasing our capabilities for martial arts academies. It demonstrates a complete solution including class schedules, instructor profiles, and member sign-up flows.
+We built Missouri Jiu Jitsu as a full working example of what we deliver for martial arts academies. If you run a gym and want to see exactly what your site could look like before committing, this is it.
 
 ## Features
 
@@ -1087,12 +1087,11 @@ Professional profiles for each instructor, highlighting their background and exp
 ### Membership Inquiry
 Lead capture forms for prospective students to request information or schedule a trial class.
 
-## Technical Details
+## Built With
 
-- Responsive design for all devices
-- Clean, modern aesthetic
-- Fast loading times
-- Easy content management"#.to_string(),
+- Responsive layout, works on all screen sizes
+- Content management so the gym owner can update schedules without help
+- No third-party page builders, coded directly for speed"#.to_string(),
                     external_url: "https://missourijiujitsu.com".to_string(),
                     before_url: None,
                     logo: Some("assets/portfolio/missouri-jiu-jitsu-logo.png".to_string()),
@@ -1334,14 +1333,14 @@ Before writing a single line of code, we map your business processes to identify
 Large Language Models have matured rapidly. <a href="https://anthropic.com" target="_blank" rel="noopener noreferrer">Anthropic's Claude</a> excels at nuanced reasoning. Open-source models from <a href="https://huggingface.co" target="_blank" rel="noopener noreferrer">Hugging Face</a> offer flexibility and cost control. <a href="https://ai.google" target="_blank" rel="noopener noreferrer">Google's Gemini</a> integrates seamlessly with existing Google infrastructure. We help you choose the right model for your specific use case and budget.
 
 ### Small Language Models (SLMs)
-Sometimes smaller is better. SLMs can run on your own infrastructure, keeping sensitive data in-house while reducing API costs by 90% or more. Companies like <a href="https://onefootprint.com" target="_blank" rel="noopener noreferrer">Footprint</a> are pioneering privacy-first AI approaches that we can help you implement.
+Sometimes smaller is better. SLMs can run on your own infrastructure, keeping sensitive data in-house while reducing API costs by 90% or more. Running a smaller model on your own server means sensitive data never leaves your infrastructure. We can help you evaluate whether that trade-off makes sense for your use case and set it up.
 
 ### Custom AI Solutions
 When off-the-shelf doesn't cut it, we build custom solutions. Fine-tuned models. RAG systems for your proprietary data. AI-powered applications that give you a competitive edge. Research from <a href="https://hai.stanford.edu" target="_blank" rel="noopener noreferrer">Stanford HAI</a> informs our approach to responsible AI development.
 
 ## Why Work With Us
 
-I've spent years at the intersection of computer science theory and practical business application. You get someone who can explain transformer architectures to your engineering team and ROI projections to your board. No translation needed."#.to_string(),
+We can talk AI architecture with your engineers and explain the tradeoffs in plain English to everyone else. You don't need two different consultants for that."#.to_string(),
                     features: vec![
                         "AI strategy aligned with business objectives".to_string(),
                         "LLM integration (Claude, Llama, Gemini, Mistral)".to_string(),
@@ -1508,11 +1507,11 @@ Every feature you build costs money. Every feature you don't build has opportuni
 
 ### Product Strategy
 
-<a href="https://tesla.com" target="_blank" rel="noopener noreferrer">Tesla</a> didn't become the world's most valuable automaker by building better cars. They redefined what a car could be: software-defined, constantly improving, directly sold. <a href="https://spacex.com" target="_blank" rel="noopener noreferrer">SpaceX</a> revolutionized aerospace not through incremental improvements but by questioning every assumption about rocket design. We bring that same first-principles thinking to your product strategy.
+Good product strategy starts with the problem, not the feature list. We help you figure out what actually matters to your users, cut what doesn't, and keep the team focused on the things that move the business forward.
 
 ### Roadmap Development
 
-<a href="https://boringcompany.com" target="_blank" rel="noopener noreferrer">The Boring Company</a> started with the goal of reducing tunnel costs by 10x. Every decision flows from that single metric. Your roadmap needs the same clarity. We help you identify your "one metric that matters" and ruthlessly prioritize everything against it.
+A roadmap only works if everyone agrees on what success looks like. We help you define the number that matters most, then cut everything that doesn't move it.
 
 ### User Research
 

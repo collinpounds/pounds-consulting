@@ -3,7 +3,7 @@
 ## Voice & Tone
 
 ### Who We Are
-Pounds Consulting is a technical consulting firm run by Collin Pounds, based in Columbia, Missouri. We position ourselves as a **technical partner**, not a vendor or agency. The difference matters: we treat client businesses like their business and time is valuable and we are grateful they are using it with us, with direct communication and honest advice.
+Pounds Consulting is a technical consulting firm run by Collin Pounds, based in the San Francisco Bay Area. We position ourselves as a **technical partner**, not a vendor or agency. The difference matters: we treat client businesses like their business and time is valuable and we are grateful they are using it with us, with direct communication and honest advice.
 
 ### Writing Style
 - **Simple, plain English.** Avoid jargon. If a 5th grader can't understand it, rewrite it.
@@ -93,7 +93,7 @@ Collin has a network of brilliant friends and collaborators across every special
 - Lead each service with the client's problem
 - Then explain what we do
 - Include "Good Fit For" sections to help visitors self-qualify
-- Pricing should be transparent ($100/hour, free discovery calls)
+- Pricing is quote-by-project. If an hourly is needed, share a $71 to $100/hour ballpark (in the FAQ only). Free discovery calls. 50% discount for military, veterans, law enforcement, first responders, and healthcare workers.
 
 ### Portfolio Page
 - Let the work speak for itself

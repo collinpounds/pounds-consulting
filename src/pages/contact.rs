@@ -45,7 +45,7 @@ pub fn Contact() -> Element {
                         }
                         div { class: "contact-item",
                             span { class: "contact-label", "Location" }
-                            span { class: "contact-value", "Kansas City, Missouri" }
+                            span { class: "contact-value", "San Francisco Bay Area" }
                             span { class: "contact-note", }
                         }
                     }
@@ -62,9 +62,9 @@ pub fn Contact() -> Element {
                             }
                         }
                         div { class: "faq-item glass-card",
-                            h3 { class: "faq-question", "Do you work with clients outside Missouri?" }
+                            h3 { class: "faq-question", "Do you work with clients outside the Bay Area?" }
                             p { class: "faq-answer",
-                                "Absolutely. While we're based in Columbia, most of our work is done remotely. We work with clients across the country."
+                                "Absolutely. We're based in the San Francisco Bay Area, but most of our work is remote. We work with clients across the country."
                             }
                         }
                         div { class: "faq-item glass-card",
@@ -76,7 +76,7 @@ pub fn Contact() -> Element {
                         div { class: "faq-item glass-card",
                             h3 { class: "faq-question", "How does billing work?" }
                             p { class: "faq-answer",
-                                "We bill at $71/hour for most work, invoiced monthly. For fixed-scope projects, we provide a complete quote upfront. We offer a 50% discount for military, veterans, law enforcement, and first responders."
+                                "Most work is quoted by project, so you know the full cost before we start. For smaller or open-ended work billed hourly, the rate runs $71 to $100 per hour depending on scope. We offer a 50% discount for military, veterans, law enforcement, first responders, and healthcare workers."
                             }
                         }
                     }

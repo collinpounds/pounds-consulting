@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Missouri-based technical consulting firm specializing in website development, product strategy, and business solutions. We keep things simple, intuitive, and built to last.">
-    <meta name="keywords" content="technical consulting Missouri, website development Columbia MO, business technology solutions">
+    <meta name="description" content="San Francisco Bay Area technical consulting firm specializing in website development, product strategy, and business solutions. We keep things simple, intuitive, and built to last.">
+    <meta name="keywords" content="technical consulting San Francisco Bay Area, website development Bay Area CA, business technology solutions">
     <link rel="canonical" href="https://poundsconsulting.net">
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Pounds Consulting | Technical Solutions for Growing Businesses">
-    <meta property="og:description" content="Missouri-based technical consulting firm specializing in website development, product strategy, and business solutions.">
+    <meta property="og:description" content="San Francisco Bay Area technical consulting firm specializing in website development, product strategy, and business solutions.">
     <meta property="og:url" content="https://poundsconsulting.net">
+    <meta property="og:image" content="https://poundsconsulting.net/assets/pounds-consulting-og.png">
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pounds Consulting | Technical Solutions for Growing Businesses">
+    <meta name="twitter:description" content="San Francisco Bay Area technical consulting firm specializing in website development, product strategy, and business solutions.">
+    <meta name="twitter:image" content="https://poundsconsulting.net/assets/pounds-consulting-og.png">
 
     <title>Pounds Consulting | Technical Solutions for Growing Businesses</title>
 
@@ -19,37 +26,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Preload critical fonts for faster LCP -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w5aXp-p7K4KLg.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/opensans/v44/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSumu0SC55K5gw.woff2" as="font" type="font/woff2" crossorigin>
-
-    <!-- Load Google Fonts with display=optional to prevent CLS from font swapping -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Montserrat:wght@700&family=Open+Sans:wght@400;500&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Montserrat:wght@700&family=Open+Sans:wght@400;500&display=optional"></noscript>
+    <!-- Load Google Fonts: IBM Plex Mono (headings), IBM Plex Sans (body/UI), Inter (sparing emphasis) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@600;700&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@600;700&display=optional"></noscript>
 
     <!-- Critical CSS for above-the-fold content to reduce LCP -->
     <style>
         :root {
             --color-primary: #FAFAFA;
             --color-secondary: #D4A017;
-            --color-background: #1A1A1A;
-            --color-surface: #2A2A2A;
-            --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Open Sans', sans-serif;
+            --color-background: #0E0E0F;
+            --color-surface: #1A1A1B;
+            --font-heading: 'IBM Plex Mono', ui-monospace, monospace;
+            --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         body {
             margin: 0;
-            background-color: #1A1A1A;
+            background-color: #0E0E0F;
             color: #FAFAFA;
-            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         .header {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(26, 26, 26, 0.95);
+            background: rgba(14, 14, 15, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
         .hero {
             min-height: 80vh;
@@ -57,13 +60,19 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+            background: linear-gradient(135deg, #0E0E0F 0%, #1A1A1B 100%);
+        }
+        /* Reserve the app container height before WASM hydrates, so content fills a
+           pre-sized box instead of expanding from zero. Cuts the large CLS on load. */
+        #main {
+            min-height: 100vh;
         }
     </style>
 
     <!-- Main styles loaded by Dioxus via asset! macro -->
 
     <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
     <link rel="icon" type="image/png" href="/assets/PoundsConsultingBlackWhiteSiteIcon.png">
     <link rel="apple-touch-icon" href="/assets/PoundsConsultingBlackWhiteSiteIcon.png">
 
@@ -79,15 +88,14 @@
         "email": "collin@poundsconsulting.net",
         "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Columbia",
-            "addressRegion": "MO",
-            "postalCode": "65201",
+            "addressLocality": "San Francisco Bay Area",
+            "addressRegion": "CA",
             "addressCountry": "US"
         },
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": "38.9517",
-            "longitude": "-92.3341"
+            "latitude": "37.7749",
+            "longitude": "-122.4194"
         },
         "founder": {
             "@type": "Person",
