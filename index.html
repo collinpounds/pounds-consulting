@@ -157,5 +157,96 @@
 </head>
 <body>
     <div id="main"></div>
+
+    <!-- Brand background shaders: gold-tinted, slowed, subtle. The driver mounts a
+         WebGL shader onto any <canvas class="shader-bg" data-shader="smoke|lines">
+         that Dioxus renders, and pauses to a static frame under reduced-motion. -->
+    <script>
+    (function () {
+      "use strict";
+      var BRAND = [212 / 255, 160 / 255, 23 / 255]; // #D4A017 gold
+      var VERT = "#version 300 es\nprecision highp float;\nin vec4 position;\nvoid main(){gl_Position=position;}";
+      var SMOKE = `#version 300 es
+precision highp float;
+out vec4 O;
+uniform float time; uniform vec2 resolution; uniform vec3 u_color;
+#define FC gl_FragCoord.xy
+#define R resolution
+#define T (time+660.)
+float rnd(vec2 p){p=fract(p*vec2(12.9898,78.233));p+=dot(p,p+34.56);return fract(p.x*p.y);}
+float noise(vec2 p){vec2 i=floor(p),f=fract(p),u=f*f*(3.-2.*f);return mix(mix(rnd(i),rnd(i+vec2(1,0)),u.x),mix(rnd(i+vec2(0,1)),rnd(i+1.),u.x),u.y);}
+float fbm(vec2 p){float t=.0,a=1.;for(int i=0;i<5;i++){t+=a*noise(p);p*=mat2(1,-1.2,.2,1.2)*2.;a*=.5;}return t;}
+void main(){
+  vec2 uv=(FC-.5*R)/R.y; vec3 col=vec3(1); uv.x+=.25; uv*=vec2(2,1);
+  float n=fbm(uv*.28-vec2(T*.01,0)); n=noise(uv*3.+n*2.);
+  col.r-=fbm(uv+vec2(0,T*.015)+n);
+  col.g-=fbm(uv*1.003+vec2(0,T*.015)+n+.003);
+  col.b-=fbm(uv*1.006+vec2(0,T*.015)+n+.006);
+  col=mix(col,u_color,dot(col,vec3(.21,.71,.07)));
+  col=mix(vec3(.055),col,min(time*.1,1.));
+  col=clamp(col,.0,1.);
+  O=vec4(col,1);
+}`;
+      var LINES = `#version 300 es
+precision highp float;
+out vec4 O;
+uniform float time; uniform vec2 resolution; uniform vec3 u_color;
+float random(float x){return fract(sin(x)*1e4);}
+void main(){
+  vec2 uv=(gl_FragCoord.xy*2.0-resolution.xy)/min(resolution.x,resolution.y);
+  vec2 fM=vec2(4.0,2.0); vec2 vS=vec2(256.0,256.0);
+  uv.x=floor(uv.x*vS.x/fM.x)/(vS.x/fM.x);
+  uv.y=floor(uv.y*vS.y/fM.y)/(vS.y/fM.y);
+  float t=time*0.06+random(uv.x)*0.4; float lw=0.0009; float v=0.0;
+  for(int i=0;i<5;i++){ v+=lw*float(i*i)/abs(fract(t+float(i)*0.01)-length(uv)); }
+  O=vec4(u_color*v,1.0);
+}`;
+      function compile(gl, t, src) { var s = gl.createShader(t); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) console.error("shader:", gl.getShaderInfoLog(s)); return s; }
+      function makeRenderer(canvas, frag, color) {
+        var gl = canvas.getContext("webgl2", { alpha: false, antialias: false });
+        if (!gl) return null;
+        var p = gl.createProgram(), vs = compile(gl, gl.VERTEX_SHADER, VERT), fs = compile(gl, gl.FRAGMENT_SHADER, frag);
+        gl.attachShader(p, vs); gl.attachShader(p, fs); gl.linkProgram(p);
+        if (!gl.getProgramParameter(p, gl.LINK_STATUS)) { console.error("link:", gl.getProgramInfoLog(p)); return null; }
+        var b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, 1, -1, -1, 1, 1, 1, -1]), gl.STATIC_DRAW);
+        var loc = gl.getAttribLocation(p, "position"); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+        var uR = gl.getUniformLocation(p, "resolution"), uT = gl.getUniformLocation(p, "time"), uC = gl.getUniformLocation(p, "u_color");
+        return {
+          gl: gl,
+          render: function (ms) { gl.useProgram(p); gl.uniform2f(uR, canvas.width, canvas.height); gl.uniform1f(uT, ms * 1e-3); if (uC) gl.uniform3fv(uC, color); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); },
+          dispose: function () { try { gl.deleteProgram(p); gl.deleteShader(vs); gl.deleteShader(fs); gl.deleteBuffer(b); } catch (e) {} }
+        };
+      }
+      function mount(c) {
+        if (c.__sh) return; c.__sh = true;
+        var type = c.getAttribute("data-shader");
+        var attr = parseFloat(c.getAttribute("data-speed"));
+        var speed = isNaN(attr) ? (type === "lines" ? 0.5 : 0.35) : attr;
+        var r = makeRenderer(c, type === "lines" ? LINES : SMOKE, BRAND);
+        if (!r) { c.style.display = "none"; return; }
+        var dpr = Math.min(2, window.devicePixelRatio || 1);
+        function size() { var w = c.clientWidth || window.innerWidth, h = c.clientHeight || window.innerHeight; c.width = Math.max(1, Math.floor(w * dpr)); c.height = Math.max(1, Math.floor(h * dpr)); r.gl.viewport(0, 0, c.width, c.height); }
+        size(); window.addEventListener("resize", size);
+        var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (reduce) { r.render(4000); c.__shClean = function () { window.removeEventListener("resize", size); r.dispose(); }; return; }
+        var raf; function loop(now) { r.render(now * speed); raf = requestAnimationFrame(loop); }
+        raf = requestAnimationFrame(loop);
+        c.__shClean = function () { cancelAnimationFrame(raf); window.removeEventListener("resize", size); r.dispose(); };
+      }
+      function scan(n) { if (n.querySelectorAll) n.querySelectorAll("canvas.shader-bg").forEach(mount); }
+      function start() {
+        scan(document);
+        if (!window.MutationObserver) return;
+        new MutationObserver(function (ms) {
+          ms.forEach(function (m) {
+            m.addedNodes.forEach(function (n) { if (n.nodeType === 1) { if (n.matches && n.matches("canvas.shader-bg")) mount(n); scan(n); } });
+            m.removedNodes.forEach(function (n) { if (n.nodeType === 1 && n.__shClean) n.__shClean(); });
+          });
+        }).observe(document.body, { childList: true, subtree: true });
+      }
+      if (document.readyState !== "loading") start(); else document.addEventListener("DOMContentLoaded", start);
+    })();
+    </script>
 </body>
 </html>

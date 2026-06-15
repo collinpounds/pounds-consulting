@@ -1,4 +1,4 @@
-use crate::components::{CtaSection, Icon, IconName, ServiceCard};
+use crate::components::{CtaSection, Icon, IconName, ServiceCard, ShaderBackground};
 use crate::Route;
 use dioxus::prelude::*;
 
@@ -7,6 +7,7 @@ pub fn Home() -> Element {
     rsx! {
         // Hero Section
         section { class: "hero",
+            ShaderBackground { variant: "smoke".to_string() }
             div { class: "hero-content",
                 h1 { class: "hero-title", "Your Technical Partner" }
                 p { class: "hero-subtitle",

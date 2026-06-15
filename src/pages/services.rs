@@ -203,6 +203,7 @@ pub fn Services() -> Element {
                             li { "Law Enforcement" }
                             li { "Fire Fighters" }
                             li { "EMTs & Paramedics" }
+                            li { "Healthcare Workers" }
                         }
                         p { class: "first-responder-cta",
                             "Mention your service when you book and we'll apply the discount."
