@@ -1,3 +1,4 @@
+use crate::components::ShaderBackground;
 use crate::Route;
 use dioxus::prelude::*;
 
@@ -10,6 +11,7 @@ pub fn CtaSection(
 ) -> Element {
     rsx! {
         section { class: "cta-section",
+            ShaderBackground { variant: "lines".to_string() }
             div { class: "cta-container",
                 h2 { class: "cta-title", "{title}" }
                 p { class: "cta-description", "{description}" }

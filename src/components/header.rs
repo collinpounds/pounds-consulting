@@ -1,3 +1,4 @@
+use crate::components::BrandLogo;
 use crate::Route;
 use dioxus::prelude::*;
 
@@ -46,24 +47,7 @@ pub fn Header() -> Element {
         header { class: "header",
             div { class: "header-container",
                 Link { to: Route::Home {}, class: "footer-logo",
-                    svg {
-                        class: "logo-mark",
-                        xmlns: "http://www.w3.org/2000/svg",
-                        view_box: "0 0 64 64",
-                        width: "26",
-                        height: "26",
-                        fill: "none",
-                        line { x1: "8", y1: "56", x2: "56", y2: "8", stroke: "#D4A017", stroke_width: "2.5" }
-                        line { x1: "8", y1: "56", x2: "56", y2: "16", stroke: "#D4A017", stroke_width: "2.5" }
-                        line { x1: "8", y1: "56", x2: "56", y2: "24", stroke: "#D4A017", stroke_width: "2.5" }
-                        line { x1: "8", y1: "56", x2: "56", y2: "32", stroke: "#D4A017", stroke_width: "2.5" }
-                        line { x1: "8", y1: "56", x2: "56", y2: "40", stroke: "#D4A017", stroke_width: "2.5" }
-                        line { x1: "8", y1: "56", x2: "56", y2: "48", stroke: "#D4A017", stroke_width: "2.5" }
-                        line { x1: "8", y1: "56", x2: "56", y2: "56", stroke: "#D4A017", stroke_width: "2.5" }
-                        line { x1: "56", y1: "8", x2: "56", y2: "56", stroke: "#D4A017", stroke_width: "2.5" }
-                    }
-                    span { class: "logo-text", "POUNDS" }
-                    span { class: "logo-accent", "/ CONSULTING" }
+                    BrandLogo { variant: "header".to_string() }
                 }
 
                 nav { class: "nav-desktop",

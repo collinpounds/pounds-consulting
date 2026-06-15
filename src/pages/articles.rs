@@ -49,7 +49,7 @@ pub fn Articles() -> Element {
             div { class: "hero-content",
                 h1 { class: "hero-title", "Articles" }
                 p { class: "hero-subtitle",
-                    "Insights, updates, and perspectives on technology and business."
+                    "Practical writing for business owners and operators who want straight answers before making technology decisions."
                 }
             }
         }
@@ -147,9 +147,9 @@ pub fn Articles() -> Element {
 
         // CTA Section
         CtaSection {
-            title: "Have a Question?".to_string(),
-            description: "We're always happy to discuss technology, business, or potential projects.".to_string(),
-            button_text: "Get in Touch".to_string(),
+            title: "Want to talk through your situation?".to_string(),
+            description: "Book a free 30-minute call. No pitch, no pressure. Just an honest conversation about what you're trying to solve.".to_string(),
+            button_text: "Book a Free Call".to_string(),
             use_calendar_link: true
         }
     }

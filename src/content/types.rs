@@ -151,7 +151,7 @@ impl Default for SiteSettings {
         Self {
             brand: BrandSettings {
                 name: "Pounds Consulting".to_string(),
-                tagline: "Technical Solutions for Growing Businesses".to_string(),
+                tagline: "Your Technical Partner".to_string(),
                 primary_color: "#C9A227".to_string(),
                 accent_color: "#D4AF37".to_string(),
             },
@@ -861,10 +861,9 @@ Security is critical for financial applications. We led a team of 6 engineers to
 
 ## Results
 
-- Improved onboarding completion rates
-- Better member engagement on the portal
-- Enterprise-grade security with MFA
-- Scalable architecture supporting continued growth"#.to_string(),
+- Reduced onboarding drop-off by simplifying the registration flow for hundreds of thousands of users
+- Redesigned the member portal landing page so users could more easily understand their benefits and next steps
+- Led a 6-engineer team to roll out MFA across the full platform, protecting user accounts without disrupting the experience"#.to_string(),
                     external_url: "https://my.paytient.com".to_string(),
                     before_url: None,
                     logo: Some("assets/portfolio/paytient-logo.svg".to_string()),
@@ -882,7 +881,7 @@ Security is critical for financial applications. We led a team of 6 engineers to
                     slug: "club-car-wash".to_string(),
                     title: "Club Car Wash".to_string(),
                     project_type: "Website + Portal + Digital Marketing".to_string(),
-                    description: "Complete digital transformation for a growing regional car wash chain. Built and managed the public-facing website, developed an internal employee portal, and ran ongoing Google Ads campaigns to support new store openings.".to_string(),
+                    description: "Full digital build for a fast-growing regional car wash chain. Designed and developed the public website, built an internal employee portal, and ran Google Ads campaigns to support new store openings at roughly 3 locations per month.".to_string(),
                     long_description: r#"## The Challenge
 
 Club Car Wash is a rapidly expanding car wash chain opening approximately 3 new stores per month. They needed a complete digital presence that could scale with their growth.
@@ -900,10 +899,9 @@ Managed Google Ads campaigns coordinated with new store openings, driving local 
 
 ## Results
 
-- Scalable website supporting rapid expansion
-- Centralized employee portal across all locations
-- Successful launch marketing for ~3 store openings per month
-- 1+ year of ongoing maintenance and support"#.to_string(),
+- Website and employee portal in active use across all locations during a period of approximately 3 new store openings per month
+- Google Ads campaigns coordinated with each new opening, driving local awareness and membership sign-ups in each market
+- Maintained and supported the full digital presence for over a year as the chain continued to expand"#.to_string(),
                     external_url: "https://clubcarwash.com".to_string(),
                     before_url: None,
                     logo: Some("assets/portfolio/club-car-wash-logo-for-Black-Background_Transparent.png".to_string()),
@@ -940,9 +938,9 @@ Made various usability improvements throughout the site to create a more polishe
 
 ## Results
 
-- Modern, professional appearance
-- Improved navigation and usability
-- Better reflection of the club's quality"#.to_string(),
+- Replaced the dated beige wallpaper background with a cleaner design that fits the club's image
+- Reorganized navigation so members and prospective members can find information more easily
+- Made targeted usability improvements without rebuilding what was already working"#.to_string(),
                     external_url: "https://oldhawthorne.com".to_string(),
                     before_url: None,
                     logo: Some("assets/portfolio/old-hawthorne-logo.png".to_string()),
@@ -977,9 +975,9 @@ Integrated SMTP-based email automation to automatically follow up with new leads
 
 ## Results
 
-- Professional web presence for the academy
-- Automated lead follow-up saving staff time
-- Mobile-friendly design for on-the-go access"#.to_string(),
+- Replaced the previous site (visible in the web archive) with a mobile-first design built for beginners and returning students
+- Automated follow-up emails go out to new leads without staff having to send them manually
+- Lead capture form routes prospect information directly into the follow-up sequence"#.to_string(),
                     external_url: "https://graciehumaitacolumbia.com".to_string(),
                     before_url: Some("https://web.archive.org/web/20190723164913/http://www.graciehumaitacolumbia.com/".to_string()),
                     logo: Some("assets/portfolio/gracie-humaita-columbia-logo.png".to_string()),
@@ -1014,10 +1012,9 @@ Built the site with SEO best practices to help the gym appear in local search re
 
 ## Results
 
-- Fully functional website replacing broken one
-- Professional appearance reflecting ATT brand
-- Easy navigation for prospective students
-- Improved local search visibility"#.to_string(),
+- Replaced a broken site (visible in the web archive) with a fully working one built from scratch
+- Prospective students can now find class information and contact the gym without hitting dead ends
+- Built with local SEO best practices so the gym shows up in relevant searches"#.to_string(),
                     external_url: "https://attindianapolis.com".to_string(),
                     before_url: Some("https://web.archive.org/web/20200530220933/http://www.attindianapolis.com/".to_string()),
                     logo: Some("assets/portfolio/att-indianapolis-logo.png".to_string()),
@@ -1052,9 +1049,9 @@ Ensured the site works perfectly on mobile devices, since many potential clients
 
 ## Results
 
-- Professional online presence
-- Automated lead capture and follow-up
-- Mobile-friendly experience"#.to_string(),
+- Business website live with services, equipment, and past project showcase
+- Lead capture form triggers automated follow-up so no potential client falls through the cracks
+- Site works correctly on mobile, where most contractor searches happen"#.to_string(),
                     external_url: "https://apexearthwork.com".to_string(),
                     before_url: None,
                     logo: Some("assets/portfolio/apex-earthworks-logo.png".to_string()),
@@ -1123,9 +1120,9 @@ Set up an automated form that captures prospect information and delivers it dire
 
 ## Results
 
-- Clean, professional landing page
-- Automated lead capture and delivery
-- Simple, low-maintenance solution"#.to_string(),
+- Single-page site that communicates the training offering and drives visitors to inquire
+- Automated form captures prospect information and delivers it directly to the instructor
+- Low-maintenance by design, no more to manage than a single page"#.to_string(),
                     external_url: "https://delawarekravmaga.com".to_string(),
                     before_url: None,
                     logo: Some("assets/portfolio/delaware-krav-maga-logo.png".to_string()),
@@ -1160,10 +1157,9 @@ Streamlined the inquiry and booking process to make it easy for interested visit
 
 ## Results
 
-- Professional, inviting web presence
-- Clear communication of retreat offerings
-- Streamlined booking inquiries
-- Improved trust signals throughout"#.to_string(),
+- Redesigned site presents the retreat experience clearly, with testimonials and photography that help prospective guests understand what to expect
+- Booking inquiry flow is straightforward so interested visitors can take the next step without friction
+- Design reflects the quality of the retreats rather than undercutting it"#.to_string(),
                     external_url: "https://silowellness.com".to_string(),
                     before_url: None,
                     logo: Some("assets/portfolio/silo-wellness-logo.png".to_string()),
@@ -1198,10 +1194,9 @@ Organized resources and information in a clear, non-overwhelming way to help new
 
 ## Results
 
-- Fully accessible website
-- Easy meeting finder functionality
-- Clear, welcoming design
-- Resources organized for newcomers"#.to_string(),
+- Site built to accessibility standards with clear fonts, high contrast, and simple navigation
+- Meeting finder lets visitors locate nearby meetings by day, time, or location in a few clicks
+- Resources organized so someone visiting for the first time can quickly find what they need"#.to_string(),
                     external_url: "https://toledoaa.com".to_string(),
                     before_url: None,
                     logo: None,
@@ -1266,7 +1261,7 @@ Yes, this is a case study about the website you're currently viewing. A consulti
 
 Three reasons:
 
-1. **It's blazingly fast.** Near-native performance on every device.
+1. **It's fast.** Near-native performance on every device.
 2. **It proves we can.** If we'll over-engineer our own website, imagine what we'll do for your actual problems.
 3. **It's a conversation starter.** You're reading this, aren't you?
 
@@ -1319,28 +1314,28 @@ impl Default for ServicesData {
                     title: "AI Consulting".to_string(),
                     icon: "brain".to_string(),
                     tagline: "Turn AI potential into measurable business results".to_string(),
-                    description: "According to McKinsey, companies using AI effectively see a 20% increase in cash flow. But most AI projects fail because they start with technology instead of business problems. With a Computer Science degree and hands-on experience implementing solutions with Claude, Llama, and custom models, I help businesses cut through the noise and deploy AI that actually delivers ROI.".to_string(),
-                    long_description: r#"## The $15.7 Trillion Opportunity
+                    description: "Most AI projects fail because they start with the technology instead of a real business problem. With hands-on experience building with Claude, Llama, and custom models, we help you find the few places where AI actually saves time or money, then build something that works.".to_string(),
+                    long_description: r#"## Why Most AI Projects Stall
 
-According to PwC, AI will contribute $15.7 trillion to the global economy by 2030. But here's what the headlines don't tell you: 85% of AI projects fail to deliver expected results. The difference between success and failure isn't the technology. It's the strategy.
+Companies spend months evaluating AI, run a pilot, get a demo that impresses the board, then watch it sit unused. The problem is almost never the model. It's that nobody asked what problem they were actually solving before they started.
 
 ## How We Can Help
 
 ### AI Strategy & Assessment
-Before writing a single line of code, we map your business processes to identify where AI creates genuine value versus expensive novelty. Using frameworks developed by leading consulting firms like <a href="https://ey.com" target="_blank" rel="noopener noreferrer">Ernst & Young</a>, we build business cases that your stakeholders can actually approve.
+Before writing a single line of code, we look at your real workflows and ask where AI would genuinely save time or reduce errors. Some processes are good candidates. Most are not. We tell you which is which, so you spend money on the ones worth building.
 
 ### LLM Implementation
-Large Language Models have matured rapidly. <a href="https://anthropic.com" target="_blank" rel="noopener noreferrer">Anthropic's Claude</a> excels at nuanced reasoning. Open-source models from <a href="https://huggingface.co" target="_blank" rel="noopener noreferrer">Hugging Face</a> offer flexibility and cost control. <a href="https://ai.google" target="_blank" rel="noopener noreferrer">Google's Gemini</a> integrates seamlessly with existing Google infrastructure. We help you choose the right model for your specific use case and budget.
+<a href="https://anthropic.com" target="_blank" rel="noopener noreferrer">Anthropic's Claude</a> is strong at nuanced reasoning and long documents. Open-source models from <a href="https://huggingface.co" target="_blank" rel="noopener noreferrer">Hugging Face</a> give you more control and lower costs. <a href="https://ai.google" target="_blank" rel="noopener noreferrer">Google's Gemini</a> fits well inside existing Google infrastructure. We help you pick the right model for your situation and budget, not whatever is generating the most buzz.
 
 ### Small Language Models (SLMs)
-Sometimes smaller is better. SLMs can run on your own infrastructure, keeping sensitive data in-house while reducing API costs by 90% or more. Running a smaller model on your own server means sensitive data never leaves your infrastructure. We can help you evaluate whether that trade-off makes sense for your use case and set it up.
+Sometimes a smaller model running on your own server is the right answer. Sensitive data never leaves your infrastructure, and API costs go down significantly. We help you evaluate whether that trade-off makes sense and set it up if it does.
 
 ### Custom AI Solutions
-When off-the-shelf doesn't cut it, we build custom solutions. Fine-tuned models. RAG systems for your proprietary data. AI-powered applications that give you a competitive edge. Research from <a href="https://hai.stanford.edu" target="_blank" rel="noopener noreferrer">Stanford HAI</a> informs our approach to responsible AI development.
+When existing tools do not fit, we build custom solutions: fine-tuned models, RAG systems for your proprietary data, and AI-powered applications built for your specific workflow.
 
 ## Why Work With Us
 
-We can talk AI architecture with your engineers and explain the tradeoffs in plain English to everyone else. You don't need two different consultants for that."#.to_string(),
+We can talk architecture with your engineers and explain the same decision in plain English to everyone else. You do not need two different consultants for that."#.to_string(),
                     features: vec![
                         "AI strategy aligned with business objectives".to_string(),
                         "LLM integration (Claude, Llama, Gemini, Mistral)".to_string(),
@@ -1376,10 +1371,10 @@ We can talk AI architecture with your engineers and explain the tradeoffs in pla
                     title: "Web Development".to_string(),
                     icon: "globe".to_string(),
                     tagline: "Websites that load fast, rank high, and convert visitors into customers".to_string(),
-                    description: "Google research shows 53% of mobile users abandon sites that take over 3 seconds to load. Your website isn't just a digital brochure. It's a 24/7 sales machine that should be working while you sleep. We build sites that meet Google's Core Web Vitals standards, rank in search results, and turn visitors into paying customers.".to_string(),
-                    long_description: r#"## Every Second Costs You Money
+                    description: "A slow or confusing website costs you visitors before they ever read a word. We build sites that load fast, meet Google's Core Web Vitals standards, rank in search results, and make it easy for visitors to take the next step.".to_string(),
+                    long_description: r#"## Your Site Has One Job
 
-According to Google/SOASTA research, a 1-second delay in page load decreases conversions by 7%. If your site generates $100,000 annually, a slow site could be costing you $7,000 or more. And that's before considering the visitors who never found you because slow sites rank lower in search results.
+When someone finds your website, you have a few seconds to convince them to stay. If the page is slow, confusing, or looks like it was built in 2014, most people leave and do not come back. A fast, clear site that works on mobile is not a luxury. It is the baseline.
 
 ## How We Can Help
 
@@ -1437,10 +1432,12 @@ We build according to specifications from <a href="https://developer.mozilla.org
                     title: "Mobile App Development".to_string(),
                     icon: "smartphone".to_string(),
                     tagline: "Native and cross-platform apps built for performance and user retention".to_string(),
-                    description: "Mobile apps have 3x higher conversion rates than mobile web, according to Criteo research. But building an app that users actually keep on their phones requires more than code. It requires understanding platform guidelines, user expectations, and the economics of app store distribution. We build apps that get downloaded, used, and recommended.".to_string(),
-                    long_description: r#"## Mobile is Where Your Customers Are
+                    description: "Building an app people actually keep on their phones is harder than it looks. It takes more than writing code. You need to understand platform guidelines, what users expect, and how app store distribution works. We build apps that get used, not just downloaded once.".to_string(),
+                    long_description: r#"## Before We Talk About Apps
 
-Statista reports mobile devices account for over 60% of web traffic. But here's what matters more: users spend 90% of their mobile time in apps, not browsers. If your competitors have an app and you don't, you're invisible during most of your customers' screen time.
+Most people who come to us with an app idea do not actually need an app. They need a better website, or a simpler tool, or just a clear process. Before we build anything, we help you answer the honest question: will an app solve the problem, or just add something else to maintain?
+
+If the answer is yes, here is what we can do.
 
 ## How We Can Help
 
@@ -1460,9 +1457,9 @@ Not every app needs the App Store. PWAs install from the browser, work offline, 
 
 Have an existing app built on outdated technology? We modernize apps to meet current platform requirements, improve performance, and prepare for future updates.
 
-## The Honest Conversation
+## What We Will Not Do
 
-Before we build anything, we help you answer the hard questions: Do you actually need an app? What problem does it solve that a website can't? How will users discover it? Many businesses discover they need something simpler. We'd rather tell you that upfront than take your money for something that won't succeed."#.to_string(),
+We will not take your money to build something that will not succeed. If a simpler solution solves the problem, we will say so."#.to_string(),
                     features: vec![
                         "iOS development following Apple HIG standards".to_string(),
                         "Android development with Material Design".to_string(),
@@ -1498,36 +1495,36 @@ Before we build anything, we help you answer the hard questions: Do you actually
                     title: "Product Management".to_string(),
                     icon: "target".to_string(),
                     tagline: "Build products people actually want, on time and on budget".to_string(),
-                    description: "According to Gartner, 45% of product launches miss their target dates, and 80% of new products fail within their first year. The difference between success and failure isn't luck or even engineering talent. It's disciplined product management: knowing what to build, when to ship, and how to iterate based on real user feedback.".to_string(),
-                    long_description: r#"## The $10 Million Decision Problem
+                    description: "Most teams are not short on ideas. They are short on focus. Without someone deciding what to build next and why, engineers end up working on the wrong things while the features users actually want wait on a backlog nobody reads. We help you figure out what matters, cut what does not, and ship.".to_string(),
+                    long_description: r#"## The Problem with a Full Backlog
 
-Every feature you build costs money. Every feature you don't build has opportunity cost. Without clear product direction, teams waste months building things nobody asked for while ignoring the features that would actually move the needle. The best companies in the world understand this.
+Every feature you build costs engineering time. Every feature you do not build has an opportunity cost. Without a clear decision about what matters most, teams spend months on things nobody asked for, while the changes users actually want stay stuck in planning.
 
 ## How We Can Help
 
 ### Product Strategy
 
-Good product strategy starts with the problem, not the feature list. We help you figure out what actually matters to your users, cut what doesn't, and keep the team focused on the things that move the business forward.
+Good product strategy starts with the problem, not the feature list. We help you figure out what actually matters to your users, cut what does not, and keep the team focused on the work that moves the business forward.
 
 ### Roadmap Development
 
-A roadmap only works if everyone agrees on what success looks like. We help you define the number that matters most, then cut everything that doesn't move it.
+A roadmap only works if everyone agrees on what success looks like. We help you define the number that matters most, then cut everything that does not move it.
 
 ### User Research
 
-The best product teams at companies like <a href="https://gartner.com" target="_blank" rel="noopener noreferrer">Gartner</a> and <a href="https://forrester.com" target="_blank" rel="noopener noreferrer">Forrester</a> don't guess what users want. They watch users struggle. They count support tickets. They measure where people drop off. We set up the systems to capture this intelligence and turn it into roadmap decisions.
+Good product decisions come from watching users struggle, counting support tickets, and measuring where people drop off. We set up the systems to capture this information and use it to make roadmap decisions.
 
 ### Feature Definition
 
-Vague requirements lead to vague products. We write specifications that answer every question before engineering starts. What does this feature do? What doesn't it do? How do we know if it worked? Clear specs mean faster builds and fewer rewrites.
+Vague requirements lead to vague products. We write specifications that answer every question before engineering starts. What does this feature do? What does it not do? How do we know if it worked? Clear specs mean faster builds and fewer rewrites.
 
 ### Launch Planning
 
-Shipping isn't the finish line. It's the starting line. We plan launches that include measurement, iteration, and clear success criteria so you know within weeks (not months) whether a feature is working.
+Shipping is not the finish line. It is the starting line. We plan launches with measurement, iteration, and clear success criteria so you know within weeks, not months, whether a feature is working.
 
 ## Why This Matters
 
-Good product management pays for itself many times over. Skip features that won't move metrics. Ship faster by eliminating ambiguity. Build confidence with stakeholders through clear communication. The best engineering team in the world can't save a product nobody wants."#.to_string(),
+Good product management pays for itself. Skip features that will not change the metrics. Ship faster by removing ambiguity. The best engineering team in the world cannot save a product nobody wants."#.to_string(),
                     features: vec![
                         "Product strategy and vision development".to_string(),
                         "Roadmap planning and ruthless prioritization".to_string(),
@@ -1562,37 +1559,37 @@ Good product management pays for itself many times over. Skip features that won'
                     slug: "digital-marketing".to_string(),
                     title: "Digital Marketing & Customer Systems".to_string(),
                     icon: "megaphone".to_string(),
-                    tagline: "Turn website visitors into customers while you sleep".to_string(),
-                    description: "According to HubSpot, companies that automate lead management see a 10% or greater increase in revenue within 6-9 months. But most small businesses are still doing marketing manually, if at all. We build systems that capture leads, nurture relationships, and convert interest into revenue automatically.".to_string(),
-                    long_description: r#"## The Leaky Bucket Problem
+                    tagline: "Stop losing leads you already paid for".to_string(),
+                    description: "Most small businesses spend money getting people to their website, then have no system to follow up when those people leave. We build the email, SMS, and intake workflows that capture interested visitors and keep the conversation going until they are ready to buy.".to_string(),
+                    long_description: r#"## What Happens Without a Follow-Up System
 
-You're paying for traffic. Visitors come to your site, look around, and leave. Forever. Without a system to capture their information and follow up, you're filling a bucket with a hole in the bottom. The math is brutal: most websites convert less than 3% of visitors. That means 97% of your marketing spend walks out the door.
+Someone visits your site, reads your services page, and leaves. They were interested, but not ready yet. If nothing captures that visit and follows up, that person is gone. Most websites have no system for this, so most interested visitors never hear from you again.
 
 ## How We Can Help
 
 ### Email Marketing Systems
 
-Email marketing delivers $42 for every $1 spent, according to DMA research. But only if you actually do it. We set up systems using platforms like <a href="https://mailchimp.com" target="_blank" rel="noopener noreferrer">Mailchimp</a> for growing businesses or <a href="https://klaviyo.com" target="_blank" rel="noopener noreferrer">Klaviyo</a> for e-commerce that run automatically. Welcome sequences. Abandoned cart reminders. Re-engagement campaigns. Set it up once, let it work forever.
+Email is one of the best ways to stay in front of potential clients until they are ready to act. We set up sequences using <a href="https://mailchimp.com" target="_blank" rel="noopener noreferrer">Mailchimp</a> for growing businesses or <a href="https://klaviyo.com" target="_blank" rel="noopener noreferrer">Klaviyo</a> for e-commerce: welcome sequences, abandoned cart reminders, re-engagement campaigns. You set it up once and it keeps running.
 
 ### SMS & Phone Outreach
 
-Text messages have a 98% open rate (vs 20% for email). For time-sensitive offers or appointment reminders, nothing beats SMS. We integrate with <a href="https://twilio.com" target="_blank" rel="noopener noreferrer">Twilio</a> to build automated text campaigns that feel personal.
+Text messages get opened far more reliably than email. For time-sensitive offers or appointment reminders, SMS works well. We integrate with <a href="https://twilio.com" target="_blank" rel="noopener noreferrer">Twilio</a> to build automated text workflows that do not feel like spam.
 
 ### Customer Intake & Lead Capture
 
-Every form on your site should capture exactly what you need, route it to the right person, and trigger the right follow-up. No more leads disappearing into an unmonitored inbox. No more calling people back three days later.
+Every form on your site should capture exactly what you need, route it to the right person, and trigger the right follow-up. No more leads sitting in an unmonitored inbox. No more calling people back three days later.
 
 ### Marketing Automation
 
-When someone downloads your pricing guide, they should get a sequence of helpful emails. When they visit your pricing page three times, your sales team should get notified. We build intelligent workflows using <a href="https://hubspot.com" target="_blank" rel="noopener noreferrer">HubSpot</a> and similar platforms that respond to customer behavior in real-time.
+When someone downloads your pricing guide, they should get a sequence of helpful emails. When they visit your pricing page three times, your sales team should get notified. We build workflows using <a href="https://hubspot.com" target="_blank" rel="noopener noreferrer">HubSpot</a> and similar platforms that respond to customer behavior.
 
 ### Analytics & Tracking
 
-If you can't measure it, you can't improve it. We set up <a href="https://analytics.google.com" target="_blank" rel="noopener noreferrer">Google Analytics</a> tracking that actually answers your questions: Where are leads coming from? What's working? Where are people dropping off? Data-driven decisions, not guesswork.
+We set up <a href="https://analytics.google.com" target="_blank" rel="noopener noreferrer">Google Analytics</a> tracking that answers real questions: Where are leads coming from? What is working? Where are people dropping off?
 
-## The Compounding Effect
+## Why Systems Beat One-Off Campaigns
 
-Marketing automation isn't a one-time win. It's a compounding asset. Every email sequence you build keeps working. Every lead capture form keeps collecting. Every automation keeps running. The businesses that build these systems early create an advantage that compounds over time."#.to_string(),
+Every email sequence you build keeps running. Every lead capture form keeps collecting. The businesses that build these systems get more out of the traffic they are already paying for."#.to_string(),
                     features: vec![
                         "Email marketing setup with Mailchimp or Klaviyo".to_string(),
                         "SMS campaigns and automated text sequences".to_string(),
@@ -1628,36 +1625,36 @@ Marketing automation isn't a one-time win. It's a compounding asset. Every email
                     title: "Technical Strategy & Advisory".to_string(),
                     icon: "compass".to_string(),
                     tagline: "Get the decision right before you spend the money".to_string(),
-                    description: "According to Gartner, 83% of data migrations fail or exceed their budgets. The wrong technology decision can cost months of wasted effort and hundreds of thousands in sunk costs. Before you commit to a platform, sign with a vendor, or greenlight a build, you need someone in your corner who understands the technology and has no stake in the outcome.".to_string(),
-                    long_description: r#"## The $500,000 Mistake
+                    description: "The wrong technology decision can cost months of wasted effort and more money than anyone wants to admit. Before you commit to a platform, sign with a vendor, or approve a build, it helps to have someone in your corner who understands the technology and has no stake in the outcome.".to_string(),
+                    long_description: r#"## Expensive Mistakes Tend to Look Reasonable at the Time
 
-Every year, companies waste enormous budgets on technology that doesn't fit their needs. They choose vendors based on sales pitches instead of technical reality. They build custom when they should buy, or buy when they should build. These mistakes are expensive, and they're preventable.
+Companies pick the wrong platform because the demo was impressive. They build custom software when an off-the-shelf tool would have done the job. They sign long vendor contracts without understanding the exit costs. None of these feel like mistakes until months later, when the budget is spent and the problem is still there.
 
 ## How We Can Help
 
 ### Technology Assessment
 
-Firms like <a href="https://gartner.com" target="_blank" rel="noopener noreferrer">Gartner</a> and <a href="https://forrester.com" target="_blank" rel="noopener noreferrer">Forrester</a> publish research on technology trends, but their reports are written for everyone. We translate that research to your specific situation. What do you actually need? What's overkill? What's the minimum viable solution that solves your problem?
+We look at your specific situation and tell you what you actually need, what is overkill, and what the minimum solution is that solves your problem. We do not write reports for a general audience. We answer your question.
 
 ### Vendor Evaluation
 
-Sales teams are trained to tell you what you want to hear. Their technical demos are optimized to impress, not to reveal limitations. We help you ask the hard questions: What happens when this fails? What's the real total cost of ownership? What does the migration path look like?
+Sales teams are trained to tell you what you want to hear. Their demos are designed to impress, not to show you the limitations. We help you ask the harder questions: What happens when this fails? What is the real total cost of ownership? What does the migration path look like if you need to leave?
 
 ### Build vs Buy Analysis
 
-The <a href="https://thoughtworks.com/radar" target="_blank" rel="noopener noreferrer">ThoughtWorks Technology Radar</a> tracks which technologies are ready for adoption and which are still experimental. But even mature technology isn't always the right choice. Sometimes custom development delivers 10x value. Sometimes off-the-shelf at 20% of the cost is good enough. We help you make that call.
+Sometimes custom development is the right call. Sometimes off-the-shelf at a fraction of the cost is good enough. We help you make that decision with clear reasoning, not a gut feeling or a vendor's slide deck.
 
 ### Architecture Review
 
-Before you commit hundreds of engineering hours, have someone review the plan. We've seen the patterns that work and the patterns that fail. A few hours of review can prevent months of rework. <a href="https://ey.com" target="_blank" rel="noopener noreferrer">Ernst & Young</a> estimates that fixing architectural problems after launch costs 10-100x more than fixing them during design.
+Before you commit hundreds of engineering hours to a plan, have someone read it. We have seen the patterns that work and the ones that fail. A few hours of review can prevent months of rework.
 
 ### Due Diligence
 
-Acquiring a company or making a major technology investment? <a href="https://a16z.com" target="_blank" rel="noopener noreferrer">a16z</a> and other top VCs do technical due diligence for a reason. We assess code quality, technical debt, team capabilities, and scalability. Know what you're buying before you buy it.
+Acquiring a company or making a major technology investment? We assess code quality, technical debt, team capabilities, and scalability. Know what you are buying before you buy it.
 
-## The ROI of Good Advice
+## What Good Advice Is Worth
 
-One avoided mistake pays for dozens of hours of advisory work. One right decision compounds for years. The companies that invest in getting decisions right upfront outperform those that figure it out as they go."#.to_string(),
+One avoided mistake pays for many hours of advisory work. Getting the decision right the first time is almost always cheaper than fixing it later."#.to_string(),
                     features: vec![
                         "Technology assessments tailored to your business".to_string(),
                         "Vendor evaluation and negotiation support".to_string(),
@@ -1693,36 +1690,36 @@ One avoided mistake pays for dozens of hours of advisory work. One right decisio
                     title: "Business Solutions & Integration".to_string(),
                     icon: "zap".to_string(),
                     tagline: "Connect your systems, eliminate the busywork".to_string(),
-                    description: "According to Zapier's State of Business Automation report, small businesses using automation save over 20 hours per week on manual tasks. That's 1,000 hours per year spent on work that adds no value. We build integrations and automations that let your team focus on work that actually matters.".to_string(),
-                    long_description: r#"## The Hidden Cost of Manual Work
+                    description: "If your team spends hours each week copying data between systems, chasing approvals by email, or doing work that a computer could handle, that time adds up fast. We connect your tools and automate the repetitive parts so your team can focus on work that actually needs a human.".to_string(),
+                    long_description: r#"## The Real Cost of Doing It Manually
 
-Every time an employee copies data from one system to another, you're paying twice: once for their time, and again in the errors they inevitably make. Research shows manual data entry has error rates of 1-4%. At scale, that's hundreds of mistakes per month, each one requiring time to find and fix.
+Every time someone on your team copies data from one system to another, you are paying for their time twice: once for the work, and once for the mistakes. Manual data entry introduces errors. Errors take time to find and fix. At any real scale, this adds up to a meaningful chunk of your operating costs.
 
 ## How We Can Help
 
 ### System Integration
 
-<a href="https://zapier.com" target="_blank" rel="noopener noreferrer">Zapier</a> and <a href="https://make.com" target="_blank" rel="noopener noreferrer">Make</a> have made it possible to connect almost any business software without custom code. When a sale happens in your e-commerce platform, inventory updates, accounting records it, and shipping gets notified. Automatically. No copying, no pasting, no errors.
+<a href="https://zapier.com" target="_blank" rel="noopener noreferrer">Zapier</a> and <a href="https://make.com" target="_blank" rel="noopener noreferrer">Make</a> can connect almost any business software without custom code. When a sale happens in your e-commerce platform, inventory updates, accounting records it, and shipping gets notified. No copying, no pasting, no missed steps.
 
 ### Payment Processing
 
-<a href="https://stripe.com" target="_blank" rel="noopener noreferrer">Stripe</a> has become the backbone of internet commerce. We integrate Stripe with your existing systems so payments flow smoothly, subscriptions manage themselves, and financial reporting happens automatically. From simple checkout to complex billing logic, we build payment workflows that work.
+We integrate <a href="https://stripe.com" target="_blank" rel="noopener noreferrer">Stripe</a> with your existing systems so payments flow correctly, subscriptions manage themselves, and financial reporting happens without anyone manually pulling numbers. From simple checkout to more complex billing logic, we build payment workflows that work.
 
 ### Communication Automation
 
-<a href="https://twilio.com" target="_blank" rel="noopener noreferrer">Twilio</a> powers communications for companies from startups to the Fortune 500. We use it to build automated SMS notifications, voice systems, and communication workflows that keep your customers informed without requiring your team to manually send messages.
+We use <a href="https://twilio.com" target="_blank" rel="noopener noreferrer">Twilio</a> to build automated SMS notifications and communication workflows that keep customers informed without your team manually sending messages.
 
 ### Custom Internal Tools
 
-Sometimes the tool you need doesn't exist. A dashboard for your specific metrics. A calculator for your unique pricing model. An intake form that matches your exact workflow. We build internal tools that solve your specific problems without the overhead of enterprise software.
+Sometimes the tool you need does not exist. A dashboard for your specific metrics. A calculator for your pricing model. An intake form that matches your exact workflow. We build internal tools that fit your process without the overhead of buying software built for someone else's business.
 
 ### Data Migration & Cleanup
 
-Moving from one system to another is notoriously painful. We handle migrations so your data arrives clean, complete, and correctly mapped. No lost records. No broken relationships. No three-month cleanup project.
+Moving from one system to another is painful when done wrong. We handle migrations so your data arrives clean, complete, and correctly mapped. No lost records. No broken relationships.
 
-## The Automation Advantage
+## Why It Matters Over Time
 
-Every automation you build is an asset that keeps working forever. The hour spent building an automation that saves 5 minutes per day pays for itself in 12 days. After that, it's pure profit. The businesses that systematically eliminate manual work create compounding efficiency advantages."#.to_string(),
+An automation that saves 10 minutes a day pays for itself quickly. After that, it keeps saving time every day without anyone thinking about it. The businesses that systematically remove manual work from their operations get a lot done with fewer people."#.to_string(),
                     features: vec![
                         "Zapier and Make automation workflows".to_string(),
                         "Stripe payment and subscription integration".to_string(),

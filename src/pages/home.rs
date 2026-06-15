@@ -30,16 +30,16 @@ pub fn Home() -> Element {
         // Intro Section
         section { class: "section intro-section",
             div { class: "container",
-                h2 { class: "section-title", "Technology Should Work for You" }
+                h2 { class: "section-title", "Most Tech Problems Are Expensive and Avoidable" }
                 div { class: "intro-content glass-card",
                     p {
                         "A slow website costs you 7% in conversions for every extra second it takes to load. Manual processes that could be automated are eating 20+ hours of your week. The wrong technology decision can waste months and thousands of dollars."
                     }
                     p {
-                        "We fix these problems. We build fast websites that rank well and convert visitors. We automate the repetitive work that's draining your team. We help you make smart decisions before you commit."
+                        "We've helped companies like Paytient and Club Car Wash solve exactly these problems. The first step is a free 30-minute call where we figure out what you actually need, not what sounds impressive."
                     }
                     p {
-                        "No jargon. No overcomplicated solutions. Just clean work that delivers results."
+                        "No jargon. No overcomplicated solutions. Just clean work that lasts."
                     }
                 }
             }
@@ -57,7 +57,7 @@ pub fn Home() -> Element {
                     }
                     ServiceCard {
                         title: "Digital Marketing".to_string(),
-                        description: "Email sequences that nurture leads while you sleep. SMS reminders that reduce no-shows. Customer systems that run themselves.".to_string(),
+                        description: "Email sequences that keep leads warm. SMS reminders that reduce no-shows. Customer intake and follow-up systems that work without manual effort.".to_string(),
                         icon: "megaphone".to_string()
                     }
                     ServiceCard {
@@ -126,9 +126,9 @@ pub fn Home() -> Element {
 
         // CTA Section
         CtaSection {
-            title: "Ready to get started?".to_string(),
-            description: "Let's talk about what you're trying to build and how we can help.".to_string(),
-            button_text: "Schedule a Call".to_string(),
+            title: "Let's talk about your project.".to_string(),
+            description: "Book a free 30-minute call. We'll listen to what you're trying to accomplish, give you an honest read on what makes sense, and tell you if we're the right fit.".to_string(),
+            button_text: "Book a Free Call".to_string(),
             use_calendar_link: true
         }
     }

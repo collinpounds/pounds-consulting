@@ -14,9 +14,9 @@ pub fn Services() -> Element {
         section { class: "hero hero-services",
             div { class: "hero-bg-animation" }
             div { class: "hero-content",
-                h1 { class: "hero-title hero-title-animated", "Technical Solutions for Every Challenge" }
+                h1 { class: "hero-title hero-title-animated", "A Technical Partner, Not a Vendor" }
                 p { class: "hero-subtitle",
-                    "From AI strategy to web development, mobile apps to business automation. Whatever technical problem you're facing, we can help solve it."
+                    "Websites, marketing systems, integrations, honest strategy advice. We work alongside you to figure out what you actually need and build it right."
                 }
                 a {
                     href: "https://calendar.app.google/NxuWY3RDGE5Miaan7",
@@ -62,7 +62,7 @@ pub fn Services() -> Element {
                                 }
 
                                 div { class: "service-card-footer",
-                                    span { class: "service-card-cta", "Learn More" }
+                                    span { class: "service-card-cta", "See What's Included" }
                                     span { class: "service-card-arrow",
                                         Icon { name: IconName::ArrowRight, size: 20, color: "var(--service-accent, var(--color-secondary))".to_string() }
                                     }

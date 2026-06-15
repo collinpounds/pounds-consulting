@@ -7,7 +7,7 @@ asset_dir = "assets"
 title = "Pounds Consulting | Technical Solutions for Growing Businesses"
 
 [web.wasm_opt]
-level = "0"
+level = "s"
 
 [web.watcher]
 reload_html = true

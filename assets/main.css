@@ -4356,3 +4356,62 @@ a.contact-link:hover {
         opacity: 0.25;
     }
 }
+
+/* Brand wordmark lockup. Triangle uses currentColor; wordmark is styled per variant. */
+.brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    line-height: 1;
+    color: #FFFFFF;
+}
+
+.brand-logo__mark {
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+}
+
+.brand-logo__word {
+    font-family: 'Century Gothic', 'Futura', 'Avenir Next', 'Jost', 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* Header: white triangle, shiny gold wordmark, sized up. */
+.header .brand-logo {
+    font-size: 34px;
+}
+
+.header .brand-logo__word {
+    background: linear-gradient(180deg, #F6E08E 0%, #D4A017 52%, #9A7512 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* Footer: all white, sized up. */
+.footer .brand-logo {
+    font-size: 40px;
+}
+
+.footer .brand-logo__word {
+    color: #FFFFFF;
+}
+
+/* CTA band: the lines shader sits behind the content, kept very subtle. */
+.cta-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-container {
+    position: relative;
+    z-index: 1;
+}
+
+.shader-bg[data-shader="lines"] {
+    opacity: 0.18;
+}

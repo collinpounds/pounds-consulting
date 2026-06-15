@@ -1,4 +1,4 @@
-use crate::components::{ThemeCustomizer, ThemeToggleButton};
+use crate::components::{BrandLogo, ThemeCustomizer, ThemeToggleButton};
 use crate::Route;
 use dioxus::prelude::*;
 
@@ -14,27 +14,10 @@ pub fn Footer() -> Element {
             div { class: "footer-container",
                 div { class: "footer-brand",
                     Link { to: Route::Home {}, class: "footer-logo",
-                        svg {
-                            class: "logo-mark",
-                            xmlns: "http://www.w3.org/2000/svg",
-                            view_box: "0 0 64 64",
-                            width: "24",
-                            height: "24",
-                            fill: "none",
-                            line { x1: "8", y1: "56", x2: "56", y2: "8", stroke: "#D4A017", stroke_width: "2.5" }
-                            line { x1: "8", y1: "56", x2: "56", y2: "16", stroke: "#D4A017", stroke_width: "2.5" }
-                            line { x1: "8", y1: "56", x2: "56", y2: "24", stroke: "#D4A017", stroke_width: "2.5" }
-                            line { x1: "8", y1: "56", x2: "56", y2: "32", stroke: "#D4A017", stroke_width: "2.5" }
-                            line { x1: "8", y1: "56", x2: "56", y2: "40", stroke: "#D4A017", stroke_width: "2.5" }
-                            line { x1: "8", y1: "56", x2: "56", y2: "48", stroke: "#D4A017", stroke_width: "2.5" }
-                            line { x1: "8", y1: "56", x2: "56", y2: "56", stroke: "#D4A017", stroke_width: "2.5" }
-                            line { x1: "56", y1: "8", x2: "56", y2: "56", stroke: "#D4A017", stroke_width: "2.5" }
-                        }
-                        span { class: "logo-text", "POUNDS" }
-                        span { class: "logo-accent", "CONSULTING" }
+                        BrandLogo { variant: "footer".to_string() }
                     }
                     p { class: "footer-tagline",
-                        "Technical solutions for growing businesses."
+                        "Your technical partner."
                     }
                 }
 
