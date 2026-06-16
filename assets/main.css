@@ -4373,10 +4373,13 @@ a.contact-link:hover {
 }
 
 .brand-logo__word {
-    font-family: 'Century Gothic', 'Futura', 'Avenir Next', 'Jost', 'IBM Plex Sans', sans-serif;
-    font-weight: 300;
+    font-family: 'Avenir Next', 'Century Gothic', 'Questrial', 'Jost', 'IBM Plex Sans', sans-serif;
+    font-weight: 200;
     letter-spacing: 0.5px;
     white-space: nowrap;
+    /* Give descenders (the "g" tail) room so background-clip: text doesn't crop them. */
+    line-height: 1.3;
+    padding-bottom: 0.12em;
 }
 
 /* Header: white triangle, shiny gold wordmark, sized up. */

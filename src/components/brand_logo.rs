@@ -17,13 +17,11 @@ pub fn BrandLogo(variant: String) -> Element {
                 xmlns: "http://www.w3.org/2000/svg",
                 view_box: "0 0 64 64",
                 "aria-hidden": "true",
-                style: "stroke: currentColor; fill: none; stroke-width: 2.5px; stroke-linecap: square;",
+                style: "stroke: currentColor; fill: none; stroke-width: 1.4px; stroke-linecap: square;",
                 line { x1: "8", y1: "54", x2: "54", y2: "10" }
-                line { x1: "8", y1: "54", x2: "54", y2: "17" }
-                line { x1: "8", y1: "54", x2: "54", y2: "24" }
-                line { x1: "8", y1: "54", x2: "54", y2: "31" }
-                line { x1: "8", y1: "54", x2: "54", y2: "38" }
-                line { x1: "8", y1: "54", x2: "54", y2: "45" }
+                line { x1: "8", y1: "54", x2: "54", y2: "21" }
+                line { x1: "8", y1: "54", x2: "54", y2: "32" }
+                line { x1: "8", y1: "54", x2: "54", y2: "43" }
                 line { x1: "8", y1: "54", x2: "54", y2: "54" }
                 line { x1: "54", y1: "10", x2: "54", y2: "54" }
             }
